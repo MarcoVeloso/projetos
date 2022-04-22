@@ -1,0 +1,6 @@
+[http]
+	sslVerify = false
+[user]
+	name = Marco Veloso
+	email = marco.veloso@bcb.gov.br
+
