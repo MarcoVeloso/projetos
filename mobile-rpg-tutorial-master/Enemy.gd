@@ -8,6 +8,7 @@ export(int) var damage = 4
 onready var hpLabel = $HPLabel
 onready var hpBar = $HPBar
 onready var animationPlayer = $AnimationPlayer
+onready var sprite = $Sprite
 
 signal died
 signal end_turn
@@ -27,8 +28,10 @@ func _exit_tree():
 
 func attack() -> void:
 	yield(get_tree().create_timer(0.4), "timeout")
-	animationPlayer.play("Attack")
-	yield(animationPlayer, "animation_finished")
+#	animationPlayer.play("Attack")
+	sprite.play("attack")
+	yield(sprite, "animation_finished")
+	sprite.play("stand")
 	emit_signal("end_turn")
 
 func deal_damage():
