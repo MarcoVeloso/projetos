@@ -6,6 +6,7 @@ export(int) var hp = 25 setget set_hp
 export(int) var damage = 4
 
 onready var hpLabel = $HPLabel
+onready var hpBar = $HPBar
 onready var animationPlayer = $AnimationPlayer
 
 signal died
@@ -14,9 +15,11 @@ signal end_turn
 func set_hp(new_hp):
 	hp = new_hp
 	if hpLabel != null:
-		hpLabel.text = str(hp) + "hp"
+		hpLabel.text = str(hp)
+		hpBar.value = hp
 
 func _ready():
+	hpBar.max_value = hp
 	BattleUnits.Enemy = self
 
 func _exit_tree():
