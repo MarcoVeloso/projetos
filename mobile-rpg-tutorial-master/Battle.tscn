@@ -69,7 +69,6 @@ rect_min_size = Vector2( 70, 13 )
 text = "ENTER NEXT ROOM"
 
 [node name="StatsPanel" type="Panel" parent="UI"]
-visible = false
 margin_left = 3.0
 margin_top = 47.0
 margin_right = 87.0

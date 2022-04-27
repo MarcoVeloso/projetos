@@ -40,13 +40,14 @@ func deal_damage():
 
 func take_damage(amount):
 	self.hp -= amount
+	
+	animationPlayer.play("Shake")	
+	
 	if is_dead():
 		sprite.play("die")
 		yield(get_tree().create_timer(1.5), "timeout")
 		emit_signal("died")
 		queue_free()
-	else:
-		animationPlayer.play("Shake")
 
 func is_dead():
 	return hp <= 0
