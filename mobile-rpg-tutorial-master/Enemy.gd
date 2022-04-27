@@ -2,7 +2,7 @@ extends Node2D
 
 const BattleUnits = preload("res://BattleUnits.tres")
 
-export(int) var hp = 25 setget set_hp
+export(int) var hp = 5 setget set_hp
 export(int) var damage = 4
 
 onready var hpLabel = $HPLabel
@@ -21,6 +21,7 @@ func set_hp(new_hp):
 
 func _ready():
 	hpBar.max_value = hp
+	set_hp(hp)
 	BattleUnits.Enemy = self
 
 func _exit_tree():
@@ -40,6 +41,8 @@ func deal_damage():
 func take_damage(amount):
 	self.hp -= amount
 	if is_dead():
+		sprite.play("die")
+		yield(get_tree().create_timer(1.5), "timeout")
 		emit_signal("died")
 		queue_free()
 	else:
