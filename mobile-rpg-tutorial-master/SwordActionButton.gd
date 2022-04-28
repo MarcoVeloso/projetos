@@ -7,7 +7,7 @@ func _on_pressed():
 	var playerStats = BattleUnits.PlayerStats
 	
 	if enemy != null and playerStats != null:
-		var slash = Attack.instance().init("slash")
+		var slash = Attack.instance().init("triple")
 		get_tree().current_scene.add_child(slash)
 		slash.global_position = enemy.global_position
 		
