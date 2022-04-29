@@ -2,6 +2,7 @@ extends "res://ActionButton.gd"
 
 func _on_pressed():
 	execute_skill("triple")
+	set_textbox("Triple Attack \n Attack 3 times in a row")
 	
 #	var enemy = BattleUnits.Enemy
 #	var playerStats = BattleUnits.PlayerStats

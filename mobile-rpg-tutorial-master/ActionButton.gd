@@ -16,3 +16,7 @@ func execute_skill(skill_name):
 		playerStats.mp += 2
 		playerStats.ap -= 1
 	
+func set_textbox(description):
+	var textbox = get_tree().current_scene.find_node("Textbox")
+	
+	textbox.text = description
