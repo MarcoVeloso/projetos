@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Battle.gd" type="Script" id=1]
 [ext_resource path="res://Rat.tscn" type="PackedScene" id=2]
@@ -8,8 +8,12 @@
 [ext_resource path="res://SkillButton.gd" type="Script" id=6]
 [ext_resource path="res://DefaultTheme.tres" type="Theme" id=7]
 [ext_resource path="res://StatsPanel.gd" type="Script" id=8]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="ButtonGroup" id=3]
+resource_name = "skills"
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeToNewRoom"
@@ -42,7 +46,7 @@ texture = ExtResource( 5 )
 [node name="EnemyPosition" type="Position2D" parent="."]
 position = Vector2( 46, 29 )
 
-[node name="Slime" parent="EnemyPosition" instance=ExtResource( 3 )]
+[node name="Enemy" parent="EnemyPosition" instance=ExtResource( 9 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -141,6 +145,7 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 40, 13 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
+group = SubResource( 3 )
 text = "SLASH"
 script = ExtResource( 6 )
 
@@ -151,6 +156,7 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 40, 13 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
+group = SubResource( 3 )
 text = "CROSS"
 script = ExtResource( 6 )
 
@@ -161,6 +167,7 @@ margin_bottom = 29.0
 rect_min_size = Vector2( 40, 13 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
+group = SubResource( 3 )
 text = "TRIPLE"
 script = ExtResource( 6 )
 
@@ -172,6 +179,7 @@ margin_bottom = 29.0
 rect_min_size = Vector2( 40, 13 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
+group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 6 )
 
