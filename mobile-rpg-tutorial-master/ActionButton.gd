@@ -1,14 +1,14 @@
 extends Button
 
 const BattleUnits = preload("res://BattleUnits.tres")
-const Attack = preload("res://Attacks.tscn")
+const Skills = preload("res://Skills.tscn")
 
 func execute_skill(skill_name):
 	var enemy = BattleUnits.Enemy
 	var playerStats = BattleUnits.PlayerStats
 	
 	if enemy != null and playerStats != null:
-		var skill = Attack.instance().init(skill_name)
+		var skill = Skills.instance().init(skill_name)
 		get_tree().current_scene.add_child(skill)
 		skill.global_position = enemy.global_position
 		
