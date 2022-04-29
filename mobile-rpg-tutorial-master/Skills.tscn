@@ -1,30 +1,10 @@
 [gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://Images/Attacks/Cross.png" type="Texture" id=1]
-[ext_resource path="res://Images/Attacks/Combo.png" type="Texture" id=2]
+[ext_resource path="res://Images/Skills/Cross.png" type="Texture" id=1]
+[ext_resource path="res://Images/Skills/Combo.png" type="Texture" id=2]
 [ext_resource path="res://Skills.gd" type="Script" id=3]
-[ext_resource path="res://Images/Attacks/Slash.png" type="Texture" id=4]
-[ext_resource path="res://Images/Attacks/Triple.png" type="Texture" id=5]
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 1 )
-region = Rect2( 48, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 1 )
-region = Rect2( 144, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 48, 48 )
+[ext_resource path="res://Images/Skills/Slash.png" type="Texture" id=4]
+[ext_resource path="res://Images/Skills/Triple.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 2 )
@@ -114,6 +94,26 @@ region = Rect2( 528, 0, 48, 48 )
 atlas = ExtResource( 5 )
 region = Rect2( 576, 0, 48, 48 )
 
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 48, 48 )
+
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 48, 48 )
@@ -136,24 +136,24 @@ region = Rect2( 192, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
-"loop": false,
-"name": "cross",
-"speed": 12.0
-}, {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": false,
-"name": "combo",
+"name": "COMBO",
 "speed": 12.0
 }, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
 "loop": false,
-"name": "triple",
+"name": "TRIPLE",
 "speed": 25.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": false,
+"name": "CROSS",
+"speed": 12.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": false,
-"name": "slash",
+"name": "SLASH",
 "speed": 12.0
 } ]
 
@@ -162,7 +162,7 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-animation = "triple"
+animation = "TRIPLE"
 
 [connection signal="ready" from="." to="." method="_on_Slash_ready"]
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]

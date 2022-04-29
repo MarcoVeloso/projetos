@@ -6,12 +6,5 @@
 hp = 4
 damage = 3
 
-[node name="HoverInfo" parent="." index="2"]
-margin_left = -22.0
-margin_top = -10.0
-margin_right = 20.0
-margin_bottom = 11.0
-description = "A green slime."
-
-[node name="HPLabel" parent="." index="4"]
+[node name="HPLabel" parent="." index="3"]
 text = "35"

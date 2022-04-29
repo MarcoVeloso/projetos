@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cross.png-fc0feb65370e6df3f0704a23cb85e47e.stex"
+path="res://.import/Triple.png-8e3a2f19441ae292a23797da241b98c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Attacks/Cross.png"
-dest_files=[ "res://.import/Cross.png-fc0feb65370e6df3f0704a23cb85e47e.stex" ]
+source_file="res://Images/Skills/Triple.png"
+dest_files=[ "res://.import/Triple.png-8e3a2f19441ae292a23797da241b98c9.stex" ]
 
 [params]
 

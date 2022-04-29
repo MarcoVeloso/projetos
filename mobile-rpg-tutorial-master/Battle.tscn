@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Battle.gd" type="Script" id=1]
 [ext_resource path="res://Rat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Slime.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerStats.gd" type="Script" id=4]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=5]
+[ext_resource path="res://SkillButton.gd" type="Script" id=6]
 [ext_resource path="res://DefaultTheme.tres" type="Theme" id=7]
 [ext_resource path="res://StatsPanel.gd" type="Script" id=8]
-[ext_resource path="res://SwordActionButton.tscn" type="PackedScene" id=9]
-[ext_resource path="res://HealActionButton.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -128,19 +127,53 @@ looks"
 scroll_active = false
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
-margin_left = 9.0
+margin_left = 3.0
 margin_top = 73.0
-margin_right = 81.0
+margin_right = 89.0
 margin_bottom = 134.0
 custom_constants/vseparation = 3
-custom_constants/hseparation = 8
+custom_constants/hseparation = 4
 columns = 2
 
-[node name="SwordActionButton" parent="UI/BattleActionButtons" instance=ExtResource( 9 )]
+[node name="Slash" type="Button" parent="UI/BattleActionButtons"]
+margin_right = 40.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 40, 13 )
+rect_pivot_offset = Vector2( -99, 55 )
+toggle_mode = true
+text = "SLASH"
+script = ExtResource( 6 )
 
-[node name="HealActionButton" parent="UI/BattleActionButtons" instance=ExtResource( 10 )]
-margin_left = 40.0
-margin_right = 72.0
+[node name="Cross" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 44.0
+margin_right = 84.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 40, 13 )
+rect_pivot_offset = Vector2( -99, 55 )
+toggle_mode = true
+text = "CROSS"
+script = ExtResource( 6 )
+
+[node name="Triple" type="Button" parent="UI/BattleActionButtons"]
+margin_top = 16.0
+margin_right = 40.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 40, 13 )
+rect_pivot_offset = Vector2( -99, 55 )
+toggle_mode = true
+text = "TRIPLE"
+script = ExtResource( 6 )
+
+[node name="Combo" type="Button" parent="UI/BattleActionButtons"]
+margin_left = 44.0
+margin_top = 16.0
+margin_right = 84.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 40, 13 )
+rect_pivot_offset = Vector2( -99, 55 )
+toggle_mode = true
+text = "COMBO"
+script = ExtResource( 6 )
 
 [node name="Fade" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -159,3 +192,7 @@ anims/FadeToNewRoom = SubResource( 1 )
 [connection signal="hp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_hp_changed"]
 [connection signal="mp_changed" from="PlayerStats" to="UI/StatsPanel" method="_on_PlayerStats_mp_changed"]
 [connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
+[connection signal="toggled" from="UI/BattleActionButtons/Slash" to="UI/BattleActionButtons/Slash" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Cross" to="UI/BattleActionButtons/Cross" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Triple" to="UI/BattleActionButtons/Triple" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Combo" to="UI/BattleActionButtons/Combo" method="_on_toggled"]
