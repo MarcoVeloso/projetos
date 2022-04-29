@@ -1,14 +1,40 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Battle.gd" type="Script" id=1]
-[ext_resource path="res://Rat.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Slime.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerStats.gd" type="Script" id=4]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=5]
 [ext_resource path="res://SkillButton.gd" type="Script" id=6]
 [ext_resource path="res://DefaultTheme.tres" type="Theme" id=7]
 [ext_resource path="res://StatsPanel.gd" type="Script" id=8]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=9]
+
+[sub_resource type="PackedScene" id=4]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PoolIntArray(  ),
+"editable_instances": [  ],
+"names": PoolStringArray( "Rat" ),
+"node_count": 1,
+"node_paths": [  ],
+"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 0, 0 ),
+"variants": [ ExtResource( 9 ) ],
+"version": 2
+}
+
+[sub_resource type="PackedScene" id=5]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PoolIntArray(  ),
+"editable_instances": [  ],
+"names": PoolStringArray( "Slime", "hp", "damage", "HPLabel", "text" ),
+"node_count": 2,
+"node_paths": [ NodePath(".") ],
+"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 2, 1, 1, 2, 2, 0, 1073741824, -1, 2147483647, 1048579, -1, 1, 4, 3, 0 ),
+"variants": [ ExtResource( 9 ), 4, 3, "35" ],
+"version": 2
+}
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -34,7 +60,7 @@ tracks/0/keys = {
 
 [node name="Battle" type="Node"]
 script = ExtResource( 1 )
-enemies = [ ExtResource( 2 ), ExtResource( 3 ) ]
+enemies = [ SubResource( 4 ), SubResource( 5 ) ]
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -113,16 +139,15 @@ text = "MP
 align = 1
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
-margin_left = -2.0
-margin_top = 137.0
-margin_right = 92.0
-margin_bottom = 162.0
+margin_top = 135.0
+margin_right = 90.0
+margin_bottom = 160.0
 
 [node name="Textbox" type="RichTextLabel" parent="UI/TextboxPanel"]
 margin_left = 3.0
-margin_top = 2.0
+margin_top = 3.0
 margin_right = 91.0
-margin_bottom = 23.0
+margin_bottom = 24.0
 custom_constants/line_separation = 2
 custom_styles/normal = SubResource( 2 )
 text = "Here is a test

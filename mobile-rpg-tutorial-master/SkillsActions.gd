@@ -6,19 +6,19 @@ const Skills = preload("res://Skills.tscn")
 var skill_data = {
 	"SLASH": {
 		"damage":1,
-		"description":"Slash (Damage:1)  \nBasic slash attack"
+		"description":"Slash (1) \nBasic slash attack"
 	},
 	"CROSS": {
 		"damage":2,
-		"description":"Slash (Damage:2)  \nCross slash attack"
+		"description":"Cross Slash (2) \nCross slash attack"
 	},
 	"TRIPLE": {
 		"damage":3,
-		"description":"Slash (Damage:3)  \nTriple slash attack"
+		"description":"Triple Slash (3) \nTriple slash attack"
 	},
 	"COMBO": {
-		"damage":5,
-		"description":"Slash (Damage:5)  \nPowerful combo"
+		"damage":10,
+		"description":"Combo Slash (99) \nPowerful combo! Hits very very hard!"
 	},
 	
 }
