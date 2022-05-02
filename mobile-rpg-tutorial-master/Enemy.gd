@@ -33,6 +33,7 @@ func attack() -> void:
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
+	deal_damage()
 	emit_signal("end_turn")
 
 func deal_damage():
