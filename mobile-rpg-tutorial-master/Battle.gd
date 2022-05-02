@@ -1,6 +1,7 @@
 extends Node
 
 const BattleUnits = preload("res://BattleUnits.tres")
+const EnemyScene = preload("res://Enemy.tscn")
 
 export(Array, PackedScene) var enemies = []
 
@@ -10,7 +11,8 @@ onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
 onready var enemyPosition = $EnemyPosition
 
 func _ready():
-	randomize()
+	enemies = [EnemyScene, EnemyScene]
+	create_new_enemy()
 	start_player_turn()
 	var enemy = BattleUnits.Enemy
 	if enemy != null:
@@ -31,9 +33,8 @@ func start_player_turn():
 	yield(playerStats, "end_turn")
 	start_enemy_turn()
 
-func create_new_enemy():
-	enemies.shuffle()
-	var Enemy = enemies.front()
+func create_new_enemy():	
+	var Enemy = enemies.pop_front()
 	var enemy = Enemy.instance()
 	enemyPosition.add_child(enemy)
 	enemy.connect("died", self, "_on_Enemy_died")

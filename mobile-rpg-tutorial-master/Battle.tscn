@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Battle.gd" type="Script" id=1]
 [ext_resource path="res://Images/Hero/stand.png" type="Texture" id=2]
@@ -8,35 +8,6 @@
 [ext_resource path="res://SkillButton.gd" type="Script" id=6]
 [ext_resource path="res://DefaultTheme.tres" type="Theme" id=7]
 [ext_resource path="res://StatsPanel.gd" type="Script" id=8]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=9]
-
-[sub_resource type="PackedScene" id=4]
-_bundled = {
-"base_scene": 0,
-"conn_count": 0,
-"conns": PoolIntArray(  ),
-"editable_instances": [  ],
-"names": PoolStringArray( "Rat" ),
-"node_count": 1,
-"node_paths": [  ],
-"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 0, 0 ),
-"variants": [ ExtResource( 9 ) ],
-"version": 2
-}
-
-[sub_resource type="PackedScene" id=5]
-_bundled = {
-"base_scene": 0,
-"conn_count": 0,
-"conns": PoolIntArray(  ),
-"editable_instances": [  ],
-"names": PoolStringArray( "Slime", "hp", "damage", "HPLabel", "text" ),
-"node_count": 2,
-"node_paths": [ NodePath(".") ],
-"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 2, 1, 1, 2, 2, 0, 1073741824, -1, 2147483647, 1048579, -1, 1, 4, 3, 0 ),
-"variants": [ ExtResource( 9 ), 4, 3, "35" ],
-"version": 2
-}
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -121,7 +92,6 @@ tracks/0/keys = {
 
 [node name="Battle" type="Node"]
 script = ExtResource( 1 )
-enemies = [ SubResource( 4 ), SubResource( 5 ) ]
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -132,8 +102,6 @@ texture = ExtResource( 5 )
 
 [node name="EnemyPosition" type="Position2D" parent="."]
 position = Vector2( 46, 29 )
-
-[node name="Enemy" parent="EnemyPosition" instance=ExtResource( 9 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0

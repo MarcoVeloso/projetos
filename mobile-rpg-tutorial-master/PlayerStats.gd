@@ -21,8 +21,8 @@ func set_hp(value):
 func set_ap(value):
 	ap = clamp(value, 0, max_ap)
 	emit_signal("ap_changed", ap)
-	if ap == 0:
-		emit_signal("end_turn")
+#	if ap == 0:
+#		emit_signal("end_turn")
 
 func set_mp(value):
 	mp = clamp(value, 0, max_mp)
