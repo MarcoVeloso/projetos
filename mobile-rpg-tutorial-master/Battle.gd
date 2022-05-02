@@ -17,7 +17,7 @@ func _ready():
 		enemy.connect("died", self, "_on_Enemy_died")
 
 func start_enemy_turn():
-	battleActionButtons.hide()
+#	battleActionButtons.hide()
 	var enemy = BattleUnits.Enemy
 	if enemy != null and not enemy.is_queued_for_deletion():
 		enemy.attack()
@@ -25,7 +25,7 @@ func start_enemy_turn():
 	start_player_turn()
 
 func start_player_turn():
-	battleActionButtons.show()
+#	battleActionButtons.show()
 	var playerStats = BattleUnits.PlayerStats
 	playerStats.ap = playerStats.max_ap
 	yield(playerStats, "end_turn")

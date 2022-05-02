@@ -9,6 +9,7 @@ onready var hpLabel = $HPLabel
 onready var hpBar = $HPBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
+onready var playerSprite = get_node("/root/Battle/UI/PlayerPanel/Sprite")
 
 signal died
 signal end_turn
@@ -29,11 +30,17 @@ func _exit_tree():
 
 func attack() -> void:
 	yield(get_tree().create_timer(0.4), "timeout")
-#	animationPlayer.play("Attack")
+	
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
-	deal_damage(damage)
+
+	deal_damage(damage)	
+	
+	playerSprite.play("hurt")	
+	yield(playerSprite, "animation_finished")
+	playerSprite.play("stand")
+		
 	emit_signal("end_turn")
 
 func deal_damage(amount):
