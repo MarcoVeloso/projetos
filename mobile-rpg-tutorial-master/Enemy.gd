@@ -33,11 +33,11 @@ func attack() -> void:
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
-	deal_damage()
+	deal_damage(damage)
 	emit_signal("end_turn")
 
-func deal_damage():
-	BattleUnits.PlayerStats.hp -= damage
+func deal_damage(amount):
+	BattleUnits.PlayerStats.hp -= amount
 
 func take_damage(amount):
 	self.hp -= amount
