@@ -1,0 +1,56 @@
+AutoRPG
+
+
+Sounds and music
+---------------------------------------------
+Story
+---------------------------------------------
+Intro
+	Start
+		GOTO: Stage Select 
+---------------------------------------------
+Stage Select
+	Select stage
+		Select difficult
+		Hire Mercs
+		GOTO: Pre Battle
+
+	Access shop	
+		GOTO: Shop
+
+	Organize skills and passive
+		GOTO: Setup Player
+---------------------------------------------
+Shop
+	Select Skills
+		Base Stats
+		Passive skills
+		Skills
+		Stage skills
+		GOTO: Stage Select
+---------------------------------------------
+Setup Player
+	Show base stats
+	Select desired skills (max 8)
+	Select passive skills (max 2)
+	GOTO: Stage Select
+---------------------------------------------
+Pre Battle
+	Num Enemies to defeat
+	Counter (5 seconds) to begin next battle
+	Show collected coins
+	Show player base stats
+	Show player passive skills
+
+	Stage Skills Buttons (consume AP)
+		Run
+		Heal
+		Attack next enemy
+
+	Stage Actions Buttons
+		Turn left
+		Turn right
+---------------------------------------------
+Battle
+	
+		
