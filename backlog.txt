@@ -1,18 +1,15 @@
 AutoRPG
 
 
-Sounds and music
 ---------------------------------------------
-Story
----------------------------------------------
-Intro
+Intro (SCENE 1)
 	Start
 		GOTO: Stage Select 
 ---------------------------------------------
-Stage Select
+Stage Select (SCENE 2)
 	Select stage
 		Select difficult
-		Hire Mercs
+		Hire Mercs (auto money)
 		GOTO: Pre Battle
 
 	Access shop	
@@ -21,7 +18,7 @@ Stage Select
 	Organize skills and passive
 		GOTO: Setup Player
 ---------------------------------------------
-Shop
+Shop (SCENE 3)
 	Select Skills
 		Base Stats
 		Passive skills
@@ -29,14 +26,15 @@ Shop
 		Stage skills
 		GOTO: Stage Select
 ---------------------------------------------
-Setup Player
+Setup Player (SCENE 4)
 	Show base stats
 	Select desired skills (max 8)
 	Select passive skills (max 2)
 	GOTO: Stage Select
 ---------------------------------------------
-Pre Battle
+Pre Battle (SCENE 5)
 	Num Enemies to defeat
+		Show boss
 	Counter (5 seconds) to begin next battle
 	Show collected coins
 	Show player base stats
@@ -50,7 +48,26 @@ Pre Battle
 	Stage Actions Buttons
 		Turn left
 		Turn right
+	GOTO: Battle
 ---------------------------------------------
-Battle
-	
+Battle (SCENE 6)
+	Show button selected skills
+	GameOver (player dies)
+	Refactor Combo animation
+	Auto-turn logic (3 seconds between turns)
+	Read enemy list
+	Reorganize enemy files (create folder)
+	Status ailments
+	Enemy boss modifications
+		Large HPBar
+		Red Aura?
+		Bigger?
+	Enemy special attacks
+
+
+Sounds and music
+---------------------------------------------
+Story
+---------------------------------------------
+
 		
