@@ -1,10 +1,10 @@
 AutoRPG
 
 
----------------------------------------------
 Intro (SCENE 1)
 	Start
 		GOTO: Stage Select 
+
 ---------------------------------------------
 Stage Select (SCENE 2)
 	Select stage
@@ -17,6 +17,7 @@ Stage Select (SCENE 2)
 
 	Organize skills and passive
 		GOTO: Setup Player
+
 ---------------------------------------------
 Shop (SCENE 3)
 	Select Skills
@@ -25,12 +26,14 @@ Shop (SCENE 3)
 		Skills
 		Stage skills
 		GOTO: Stage Select
+
 ---------------------------------------------
 Setup Player (SCENE 4)
 	Show base stats
 	Select desired skills (max 8)
 	Select passive skills (max 2)
 	GOTO: Stage Select
+
 ---------------------------------------------
 Pre Battle (SCENE 5)
 	Num Enemies to defeat
@@ -49,6 +52,7 @@ Pre Battle (SCENE 5)
 		Turn left
 		Turn right
 	GOTO: Battle
+
 ---------------------------------------------
 Battle (SCENE 6)
 	Show button selected skills
@@ -58,16 +62,20 @@ Battle (SCENE 6)
 	Read enemy list
 	Reorganize enemy files (create folder)
 	Status ailments
+	Parametrize enemy sprite sheet?
+	Enemy levels
 	Enemy boss modifications
 		Large HPBar
 		Red Aura?
 		Bigger?
 	Enemy special attacks
 
-
+---------------------------------------------
 Sounds and music
+
 ---------------------------------------------
 Story
+
 ---------------------------------------------
 
 		

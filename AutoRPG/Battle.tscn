@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Battle.gd" type="Script" id=1]
-[ext_resource path="res://Images/Hero/stand.png" type="Texture" id=2]
-[ext_resource path="res://Images/Hero/hurt.png" type="Texture" id=3]
+[ext_resource path="res://Images/Player/stand.png" type="Texture" id=2]
+[ext_resource path="res://Images/Player/hurt.png" type="Texture" id=3]
 [ext_resource path="res://PlayerStats.gd" type="Script" id=4]
 [ext_resource path="res://Images/Dungeon.png" type="Texture" id=5]
 [ext_resource path="res://SkillButton.gd" type="Script" id=6]
@@ -26,10 +26,6 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 25, 25 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
@@ -55,17 +51,21 @@ region = Rect2( 100, 0, 25, 25 )
 atlas = ExtResource( 3 )
 region = Rect2( 125, 0, 25, 25 )
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 25, 25 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 6 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": false,
 "name": "hurt",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]

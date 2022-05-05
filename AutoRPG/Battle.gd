@@ -1,7 +1,7 @@
 extends Node
 
 const BattleUnits = preload("res://BattleUnits.tres")
-const EnemyScene = preload("res://Enemy.tscn")
+const EnemyScene = preload("res://Enemies/Enemy.tscn")
 
 export(Array, PackedScene) var enemies = []
 

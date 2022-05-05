@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Skelton.png-28eea6a8675ca658fd727eb204def36f.stex"
+path="res://.import/Skelton.png-256b58248189058b0b291d692fa3db23.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Skelton.png"
-dest_files=[ "res://.import/Skelton.png-28eea6a8675ca658fd727eb204def36f.stex" ]
+source_file="res://Images/Enemies/Skelton.png"
+dest_files=[ "res://.import/Skelton.png-256b58248189058b0b291d692fa3db23.stex" ]
 
 [params]
 
