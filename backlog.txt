@@ -59,10 +59,7 @@ Battle (SCENE 6)
 	GameOver (player dies)
 	Refactor Combo animation
 	Auto-turn logic (3 seconds between turns)
-	Read enemy list
-	Reorganize enemy files (create folder)
 	Status ailments
-	OK Parametrize enemy sprite sheet
 	Enemy levels
 	Enemy boss modifications
 		Large HPBar

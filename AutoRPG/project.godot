@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "BattleUnits",
 "language": "GDScript",
-"path": "res://BattleUnits.gd"
+"path": "res://Scenes/Battle/BattleUnits.gd"
 } ]
 _global_script_class_icons={
 "BattleUnits": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Flaremoon Projects: AutoRPG"
-run/main_scene="res://Battle.tscn"
+run/main_scene="res://Scenes/Battle/Battle.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -62,4 +62,4 @@ texture={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://UI/default_env.tres"
