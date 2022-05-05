@@ -27,6 +27,10 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 25, 25 )
+
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 25, 25 )
@@ -51,21 +55,17 @@ region = Rect2( 100, 0, 25, 25 )
 atlas = ExtResource( 3 )
 region = Rect2( 125, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 25, 25 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": false,
-"name": "hurt",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "stand",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 10.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -140,9 +140,9 @@ margin_right = 81.0
 margin_bottom = 10.0
 custom_styles/fg = SubResource( 8 )
 custom_styles/bg = SubResource( 9 )
-max_value = 25.0
+max_value = 10.0
 step = 1.0
-value = 25.0
+value = 10.0
 percent_visible = false
 
 [node name="HP" type="Label" parent="UI/PlayerPanel"]
@@ -150,7 +150,7 @@ margin_left = 39.0
 margin_right = 72.0
 margin_bottom = 12.0
 size_flags_horizontal = 3
-text = "25"
+text = "10"
 align = 1
 
 [node name="AP" type="Label" parent="UI/PlayerPanel"]

@@ -62,7 +62,7 @@ Battle (SCENE 6)
 	Read enemy list
 	Reorganize enemy files (create folder)
 	Status ailments
-	Parametrize enemy sprite sheet?
+	OK Parametrize enemy sprite sheet
 	Enemy levels
 	Enemy boss modifications
 		Large HPBar

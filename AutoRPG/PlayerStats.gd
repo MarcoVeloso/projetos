@@ -2,7 +2,7 @@ extends Node
 
 const BattleUnits = preload("res://BattleUnits.tres")
 
-var max_hp = 25
+var max_hp = 10
 var hp = max_hp setget set_hp
 var max_ap = 3
 var ap = max_ap setget set_ap
