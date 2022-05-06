@@ -24,6 +24,10 @@ config/name="Flaremoon Projects: AutoRPG"
 run/main_scene="res://Scenes/Battle/Battle.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SkillsData="*res://Objects/Skills/SkillsData.gd"
+
 [display]
 
 window/size/width=90
