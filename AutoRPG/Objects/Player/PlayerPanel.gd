@@ -13,6 +13,3 @@ func _on_PlayerStats_hp_changed(value):
 
 func _on_PlayerStats_ap_changed(value):
 	apLabel.text = "AP: " + str(value)
-
-#func _on_PlayerStats_mp_changed(value):
-#	mpLabel.text = "MP\n"+str(value)

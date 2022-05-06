@@ -7,9 +7,10 @@ var hp = max_hp setget set_hp
 var max_ap = 3
 var ap = max_ap setget set_ap
 
+var active_skill = "SLASH"
+
 signal hp_changed(value)
 signal ap_changed(value)
-signal end_turn
 
 func set_hp(value):
 	hp = clamp(value, 0, max_hp)
@@ -18,8 +19,6 @@ func set_hp(value):
 func set_ap(value):
 	ap = clamp(value, 0, max_ap)
 	emit_signal("ap_changed", ap)
-#	if ap == 0:
-#		emit_signal("end_turn")
 
 func _ready():
 	BattleUnits.PlayerStats = self

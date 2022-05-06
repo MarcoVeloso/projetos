@@ -1,4 +1,8 @@
-extends "res://Objects/Skills/SkillsActions.gd"
+extends Button
 
-func _on_toggled(selected):	
-	execute_skill(text)
+const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
+
+func _on_toggled(selected):
+	if (selected):
+		BattleUnits.PlayerStats.active_skill = text
+
