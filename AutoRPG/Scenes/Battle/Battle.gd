@@ -9,9 +9,12 @@ onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
 onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
 onready var enemyPosition = $EnemyPosition
+onready var timeBar = $TimeBar/Animation
 
 func _ready():
 	create_new_enemy()
+	
+	timeBar.play("turn")
 	
 	var enemy = BattleUnits.Enemy
 	
@@ -30,13 +33,13 @@ func start_enemy_turn():
 func start_player_turn():
 	var playerStats = BattleUnits.PlayerStats
 	
-	yield(get_tree().create_timer(2), "timeout")
-	
 	execute_skill(BattleUnits.PlayerStats.active_skill)
 	
 	playerStats.ap = playerStats.max_ap
+	
+	timeBar.play("turn")
 
-	start_enemy_turn()
+#	start_enemy_turn()
 
 func create_new_enemy():
 	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies.pop_front()
@@ -45,8 +48,6 @@ func create_new_enemy():
 	
 	enemyPosition.add_child(enemy)
 	enemy.connect("died", self, "_on_Enemy_died")
-	
-	start_player_turn()
 
 func _on_Enemy_died():
 	nextRoomButton.show()
@@ -77,3 +78,6 @@ func execute_skill(skill_name):
 
 		enemy.take_damage(skill_data["damage"])
 		playerStats.ap -= skill_data["ap"]
+
+func _on_TimeBar_start_turn():
+	start_enemy_turn()

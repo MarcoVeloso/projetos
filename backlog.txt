@@ -68,6 +68,7 @@ Battle (SCENE 6)
 		Red Aura?
 		Bigger?
 	Enemy special attacks
+	Passive skills logic
 
 ---------------------------------------------
 Sounds and music

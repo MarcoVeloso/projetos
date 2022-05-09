@@ -29,8 +29,6 @@ func _exit_tree():
 	BattleUnits.Enemy = null
 
 func attack() -> void:
-	yield(get_tree().create_timer(0.4), "timeout")
-	
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
@@ -56,6 +54,8 @@ func take_damage(amount):
 		yield(get_tree().create_timer(1.5), "timeout")
 		emit_signal("died")
 		queue_free()
+	else:
+		yield(animationPlayer, "animation_finished")
 
 func is_dead():
 	return hp <= 0
