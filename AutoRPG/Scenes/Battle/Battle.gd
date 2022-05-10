@@ -21,26 +21,18 @@ func _ready():
 	if enemy != null:
 		enemy.connect("died", self, "_on_Enemy_died")
 
-func start_enemy_turn():
+func enemy_turn():
 	var enemy = BattleUnits.Enemy
 	
 	if enemy != null and not enemy.is_queued_for_deletion():
 		enemy.attack()
-		yield(get_tree().create_timer(1.0), "timeout")
-		
-	start_player_turn()
 
-func start_player_turn():
-	var playerStats = BattleUnits.PlayerStats
+func player_turn():
+	var player = BattleUnits.PlayerStats
 	
-	yield(get_tree().create_timer(0.3), "timeout")
-	execute_skill(BattleUnits.PlayerStats.active_skill)
+	execute_skill(player)
 	
-	playerStats.ap = playerStats.max_ap
-	
-	timeBar.play("turn")
-
-#	start_enemy_turn()
+#	playerStats.ap = playerStats.max_ap
 
 func create_new_enemy():
 	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies.pop_front()
@@ -55,22 +47,21 @@ func _on_Enemy_died():
 	battleActionButtons.hide()
 
 func _on_NextRoomButton_pressed():
-	var playerStats = BattleUnits.PlayerStats
+	var player = BattleUnits.PlayerStats
 	
 	nextRoomButton.hide()
 	
 	animationPlayer.play("FadeToNewRoom")
 	yield(animationPlayer, "animation_finished")
 	
-	playerStats.ap = playerStats.max_ap
 	battleActionButtons.show()
 	create_new_enemy()
 
-func execute_skill(skill_name):
+func execute_skill(player):
 	var enemy = BattleUnits.Enemy
-	var playerStats = BattleUnits.PlayerStats
+	var skill_name = player.active_skill
 	
-	if enemy != null and playerStats != null:
+	if enemy != null and player != null:
 		var skill = Skills.instance().init(skill_name)
 		var skill_data = SkillsData.data[skill_name]
 
@@ -78,7 +69,14 @@ func execute_skill(skill_name):
 		skill.global_position = enemy.global_position
 
 		enemy.take_damage(skill_data["damage"])
-		playerStats.ap -= skill_data["ap"]
+		player.ap -= skill_data["ap"]
 
 func _on_TimeBar_start_turn():
-	start_enemy_turn()
+	var turn = ["player_turn", "enemy_turn"]
+#	turn.invert()
+
+	call(turn[0])
+	yield(get_tree().create_timer(1.0), "timeout")
+	call(turn[1])
+
+	timeBar.play("turn")
