@@ -2,9 +2,9 @@ extends Node
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-var max_hp = 10
+var max_hp = PlayerData.max_hp
 var hp = max_hp setget set_hp
-var max_ap = 3
+var max_ap = PlayerData.max_ap
 var ap = max_ap setget set_ap
 
 var active_skill = "SLASH"

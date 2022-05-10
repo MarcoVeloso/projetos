@@ -3,7 +3,7 @@ extends Node
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 const Skills = preload("res://Objects/Skills/Skills.tscn")
 
-export var enemies = ["Skelton", "HalfArmorSkelton", "FullArmorSkelton"]
+export var enemies = ["Skelton", "HalfArmorSkelton", "FullArmorSkelton", "HalfArmorSkelton", "FullArmorSkelton"]
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
@@ -26,13 +26,14 @@ func start_enemy_turn():
 	
 	if enemy != null and not enemy.is_queued_for_deletion():
 		enemy.attack()
-		yield(enemy, "end_turn")
+		yield(get_tree().create_timer(1.0), "timeout")
 		
 	start_player_turn()
 
 func start_player_turn():
 	var playerStats = BattleUnits.PlayerStats
 	
+	yield(get_tree().create_timer(0.3), "timeout")
 	execute_skill(BattleUnits.PlayerStats.active_skill)
 	
 	playerStats.ap = playerStats.max_ap

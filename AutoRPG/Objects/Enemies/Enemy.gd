@@ -9,10 +9,8 @@ onready var hpLabel = $HPLabel
 onready var hpBar = $HPBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
-onready var playerSprite = get_node("/root/Battle/UI/PlayerPanel/Sprite")
 
 signal died
-signal end_turn
 
 func set_hp(new_hp):
 	hp = new_hp
@@ -33,13 +31,7 @@ func attack() -> void:
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
 
-	deal_damage(damage)	
-	
-	playerSprite.play("hurt")	
-	yield(playerSprite, "animation_finished")
-	playerSprite.play("stand")
-		
-	emit_signal("end_turn")
+	deal_damage(damage)
 
 func deal_damage(amount):
 	BattleUnits.PlayerStats.hp -= amount
