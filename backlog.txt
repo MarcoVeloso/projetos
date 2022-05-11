@@ -59,7 +59,6 @@ Battle (SCENE 6)
 	Show button selected skills
 	GameOver (player dies)
 	Refactor Combo animation
-	Enemy Death Error
 	Status ailments
 	Buttons Management (Disable, toogle ...)
 	Enemy levels

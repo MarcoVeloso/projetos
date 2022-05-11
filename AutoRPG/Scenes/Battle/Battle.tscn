@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://UI/Images/Dungeon.png" type="Texture" id=2]
@@ -8,38 +8,6 @@
 [ext_resource path="res://Objects/Player/Images/hurt.png" type="Texture" id=6]
 [ext_resource path="res://Objects/Player/PlayerStats.gd" type="Script" id=7]
 [ext_resource path="res://Objects/Skills/SkillButton.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Battle/TimeBar.gd" type="Script" id=9]
-
-[sub_resource type="Animation" id=16]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=17]
-resource_name = "turn"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ) ]
-}
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -134,17 +102,6 @@ texture = ExtResource( 2 )
 
 [node name="EnemyPosition" type="Position2D" parent="."]
 position = Vector2( 46, 31 )
-
-[node name="TimeBar" type="Line2D" parent="."]
-position = Vector2( 17, 3 )
-points = PoolVector2Array( 0, 0, 56, 0 )
-width = 1.0
-default_color = Color( 0.368627, 0.376471, 0.419608, 1 )
-script = ExtResource( 9 )
-
-[node name="Animation" type="AnimationPlayer" parent="TimeBar"]
-anims/RESET = SubResource( 16 )
-anims/turn = SubResource( 17 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -347,10 +304,13 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeToNewRoom = SubResource( 1 )
 
+[node name="TurnTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
 [connection signal="ap_changed" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_hp_changed"]
-[connection signal="start_turn" from="TimeBar" to="." method="_on_TimeBar_start_turn"]
-[connection signal="animation_finished" from="TimeBar/Animation" to="TimeBar" method="_on_Animation_animation_finished"]
 [connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
 [connection signal="toggled" from="UI/BattleActionButtons/Slash" to="UI/BattleActionButtons/Slash" method="_on_toggled"]
 [connection signal="toggled" from="UI/BattleActionButtons/Cross" to="UI/BattleActionButtons/Cross" method="_on_toggled"]
@@ -360,3 +320,4 @@ anims/FadeToNewRoom = SubResource( 1 )
 [connection signal="toggled" from="UI/BattleActionButtons/Combo3" to="UI/BattleActionButtons/Combo3" method="_on_toggled"]
 [connection signal="toggled" from="UI/BattleActionButtons/Combo4" to="UI/BattleActionButtons/Combo4" method="_on_toggled"]
 [connection signal="toggled" from="UI/BattleActionButtons/Combo5" to="UI/BattleActionButtons/Combo5" method="_on_toggled"]
+[connection signal="timeout" from="TurnTimer" to="." method="_on_TurnTimer_timeout"]

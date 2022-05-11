@@ -10,8 +10,6 @@ onready var hpBar = $HPBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 
-signal died
-
 func set_hp(new_hp):
 	hp = new_hp
 	if hpLabel != null:
@@ -43,7 +41,6 @@ func take_damage(amount):
 	if is_dead():
 		sprite.play("die")
 		yield(get_tree().create_timer(1.5), "timeout")
-		emit_signal("died")
 		queue_free()
 	else:
 		yield(animationPlayer, "animation_finished")
