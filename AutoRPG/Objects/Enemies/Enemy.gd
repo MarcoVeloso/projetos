@@ -26,15 +26,12 @@ func _ready():
 func _exit_tree():
 	BattleUnits.Enemy = null
 
-func attack() -> void:
+func attack(player) -> void:
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
 
-	deal_damage(damage)
-
-func deal_damage(amount):
-	BattleUnits.PlayerStats.hp -= amount
+	player.hp -= damage
 
 func take_damage(amount):
 	self.hp -= amount
