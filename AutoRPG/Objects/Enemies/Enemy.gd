@@ -36,7 +36,9 @@ func attack(player) -> void:
 func take_damage(amount):
 	self.hp -= amount
 	
-	animationPlayer.play("Shake")	
+	animationPlayer.play("Shake")
+	yield(animationPlayer, "animation_finished")
+	animationPlayer.play("Stand")
 	
 	if is_dead():
 		sprite.play("die")
