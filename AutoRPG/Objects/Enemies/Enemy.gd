@@ -2,8 +2,9 @@ extends Node2D
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-export(int) var hp = 5 setget set_hp
-export(int) var damage = 4
+export(int) var hp = 99 setget set_hp
+export(int) var damage = 99
+export(String) var attack_anim = "attack"
 
 onready var hpLabel = $HPLabel
 onready var hpBar = $HPBar
@@ -25,7 +26,7 @@ func _exit_tree():
 	BattleUnits.Enemy = null
 
 func attack(player) -> void:
-	sprite.play("attack")
+	sprite.play(attack_anim)
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
 
