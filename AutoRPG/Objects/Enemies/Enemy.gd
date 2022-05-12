@@ -45,8 +45,6 @@ func take_damage(amount):
 		yield(sprite, "animation_finished")
 		animationPlayer.play("Fadeout")
 		yield(animationPlayer, "animation_finished")
-		
-		queue_free()
 
 func is_dead():
 	return hp <= 0

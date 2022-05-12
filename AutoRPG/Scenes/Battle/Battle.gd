@@ -46,9 +46,10 @@ func _on_TurnTimer_timeout():
 		attacker = player
 		attacked = enemy
 		
-	attacker.attack(attacked)
+	yield(attacker.attack(attacked),"completed")
 	
 	if attacked.is_dead():
+		attacked.queue_free()
 		nextRoomButton.show()
 		battleActionButtons.hide()
 	else:
