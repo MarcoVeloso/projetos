@@ -2,7 +2,7 @@ extends Node
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-export var enemies = ["Skelton", "HalfArmorSkelton", "FullArmorSkelton", "HalfArmorSkelton", "FullArmorSkelton"]
+export var enemies = ["SkeltonMACE", "SkeltonAXE", "SkeltonBOW", "SkeltonSPEAR", "SkeltonSPEAR"]
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer

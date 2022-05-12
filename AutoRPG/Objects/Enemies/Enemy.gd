@@ -4,7 +4,8 @@ const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
 export(int) var hp = 99 setget set_hp
 export(int) var damage = 99
-export(String) var attack_anim = "attack"
+export(String) var special = ""
+export(String) var special_condition = ""
 
 onready var hpLabel = $HPLabel
 onready var hpBar = $HPBar
@@ -26,7 +27,7 @@ func _exit_tree():
 	BattleUnits.Enemy = null
 
 func attack(player) -> void:
-	sprite.play(attack_anim)
+	sprite.play("attack")
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
 
