@@ -2,7 +2,7 @@ extends Node2D
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-export(int) var hp = 99 setget set_hp
+export(int) var hp = 999 setget set_hp
 export(int) var damage = 99
 export(String) var special = ""
 export(String) var special_condition = ""
@@ -31,10 +31,10 @@ func attack(player) -> void:
 	yield(sprite, "animation_finished")
 	sprite.play("stand")
 
-	player.hp -= damage
+	player.take_damage(damage)
 
-func take_damage(amount):
-	self.hp -= amount
+func take_damage(damage):
+	self.hp -= damage
 	
 	animationPlayer.play("Shake")
 	yield(animationPlayer, "animation_finished")

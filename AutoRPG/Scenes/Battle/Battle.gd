@@ -2,7 +2,7 @@ extends Node
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-export var enemies = ["SkeltonMACE", "SkeltonAXE", "SkeltonBOW", "SkeltonSPEAR", "SkeltonSPEAR"]
+export var stage1 = ["SkeltonMACE", "SkeltonAXE", "SkeltonBOW", "SkeltonSPEAR", "SkeltonSPEAR"]
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
@@ -10,11 +10,17 @@ onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
 onready var enemyPosition = $EnemyPosition
 onready var turnTimer = $TurnTimer
 
+var enemies = []
 var player_attacking = true
 
 func _ready():
+	init_stage(stage1)
+	
+func init_stage(stage):
+	enemies = stage
+	BattleUnits.PlayerStats.init()
 	create_new_enemy()
-
+	
 func create_new_enemy():
 	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies.pop_front()
 	var Enemy = load(enemySceneName)

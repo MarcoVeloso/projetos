@@ -6,6 +6,10 @@ onready var HPbar = $HPBar
 onready var playerSprite = $Sprite
 
 func _ready():
+	_on_PlayerStats_init_player()
+	
+func _on_PlayerStats_init_player():
+	playerSprite.play("stand")
 	HPbar.max_value = PlayerData.max_hp
 	updateHP(PlayerData.max_hp)
 	updateAP(PlayerData.max_ap)
@@ -26,4 +30,3 @@ func updateHP(value):
 	
 func updateAP(value):
 	apLabel.text = "AP: " + str(value)
-	
