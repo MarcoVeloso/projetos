@@ -19,7 +19,7 @@ func set_hp(new_hp):
 	emit_signal("hp_changed", hp)
 	
 func set_ap(new_ap):
-	ap = new_ap
+	ap = clamp(new_ap, 0, 99)
 	emit_signal("ap_changed", ap)
 	
 func _ready():
