@@ -42,24 +42,27 @@ func _on_TurnTimer_timeout():
 	var player = BattleUnits.PlayerStats
 	var enemy = BattleUnits.Enemy
 	
-	var attacker = enemy
-	var attacked = player
+	var continue_battle = true
 	
 	if player_attacking:
-		attacker = player
-		attacked = enemy
+		yield(player.attack(enemy),"completed")
 		
-	yield(attacker.attack(attacked),"completed")
+		if enemy.is_dead():
+			continue_battle = false
+			next_battle()
+	else:
+		player.ap += 1
+		
+		yield(enemy.attack(player),"completed")
+		
+		if player.is_dead():
+			continue_battle = false
+			enemy.queue_free()
+			game_over()
 	
 	updateActionButtons(player.ap)
 	
-	if attacked.is_dead():
-		if player_attacking:
-			next_battle()
-		else:
-			enemy.queue_free()
-			game_over()
-	else:
+	if continue_battle:
 		player_attacking = !player_attacking
 		turnTimer.start()
 		

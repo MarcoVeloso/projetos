@@ -3,8 +3,8 @@ extends Node
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 const Skills = preload("res://Objects/Skills/Skills.tscn")
 
-var hp = 999
-var ap = 99
+var hp = 999 setget set_hp
+var ap = 99 setget set_ap
 
 var active_skill = "SLASH"
 var status = ""
@@ -14,6 +14,14 @@ signal init_player()
 signal hp_changed(value)
 signal ap_changed(value)
 
+func set_hp(new_hp):
+	hp = new_hp
+	emit_signal("hp_changed", hp)
+	
+func set_ap(new_ap):
+	ap = new_ap
+	emit_signal("ap_changed", ap)
+	
 func _ready():
 	BattleUnits.PlayerStats = self
 
