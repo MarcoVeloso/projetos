@@ -50,8 +50,16 @@ func _on_TurnTimer_timeout():
 	
 	if attacked.is_dead():
 		attacked.queue_free()
-		nextRoomButton.show()
-		battleActionButtons.hide()
+		next_battle()
 	else:
 		player_attacking = !player_attacking
 		turnTimer.start()
+		
+func next_battle():
+	battleActionButtons.hide()
+	
+	animationPlayer.play("FadeToNewRoom")
+	yield(animationPlayer, "animation_finished")
+	
+	battleActionButtons.show()
+	create_new_enemy()
