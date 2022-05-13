@@ -18,7 +18,10 @@ func _ready():
 	
 func init_stage(stage):
 	enemies = stage.duplicate()
+	
 	BattleUnits.PlayerStats.init()
+	
+	updateActionButtons(BattleUnits.PlayerStats.ap)
 	create_new_enemy()
 	
 func create_new_enemy():
@@ -48,6 +51,8 @@ func _on_TurnTimer_timeout():
 		
 	yield(attacker.attack(attacked),"completed")
 	
+	updateActionButtons(player.ap)
+	
 	if attacked.is_dead():
 		if player_attacking:
 			next_battle()
@@ -70,3 +75,12 @@ func game_over():
 func battleFade():
 	animationPlayer.play("FadeToNewRoom")
 	yield(animationPlayer, "animation_finished")
+	
+func updateActionButtons(current_ap):
+	for button in battleActionButtons.get_children():
+		var skill_data = SkillsData.data[button.text]
+		
+		if (current_ap < skill_data["ap"]):
+			button.disabled = true
+		else:
+			button.disabled = false
