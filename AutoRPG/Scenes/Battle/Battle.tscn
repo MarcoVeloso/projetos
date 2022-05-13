@@ -112,19 +112,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="UI"]
+[node name="PostBattleContainer" type="CenterContainer" parent="UI"]
+visible = false
 margin_right = 90.0
 margin_bottom = 47.0
 mouse_filter = 2
 
-[node name="NextRoomButton" type="Button" parent="UI/CenterContainer"]
-visible = false
+[node name="RestartButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
 margin_top = 17.0
 margin_right = 80.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 70, 13 )
-text = "ENTER NEXT ROOM"
+text = "Try again?"
 
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 3.0
@@ -196,7 +196,7 @@ custom_constants/vseparation = 3
 custom_constants/hseparation = 4
 columns = 2
 
-[node name="Slash" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button1" type="Button" parent="UI/BattleActionButtons"]
 margin_right = 40.0
 margin_bottom = 11.0
 rect_min_size = Vector2( 40, 11 )
@@ -207,7 +207,7 @@ group = SubResource( 3 )
 text = "SLASH"
 script = ExtResource( 8 )
 
-[node name="Cross" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button2" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_right = 84.0
 margin_bottom = 11.0
@@ -218,7 +218,7 @@ group = SubResource( 3 )
 text = "CROSS"
 script = ExtResource( 8 )
 
-[node name="Triple" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button3" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 14.0
 margin_right = 40.0
 margin_bottom = 25.0
@@ -229,7 +229,7 @@ group = SubResource( 3 )
 text = "TRIPLE"
 script = ExtResource( 8 )
 
-[node name="Combo" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button4" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 14.0
 margin_right = 84.0
@@ -241,7 +241,7 @@ group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 8 )
 
-[node name="Combo2" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button5" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 28.0
 margin_right = 40.0
 margin_bottom = 39.0
@@ -253,7 +253,7 @@ group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 8 )
 
-[node name="Combo3" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button6" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 28.0
 margin_right = 84.0
@@ -266,7 +266,7 @@ group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 8 )
 
-[node name="Combo4" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button7" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 42.0
 margin_right = 40.0
 margin_bottom = 53.0
@@ -278,7 +278,7 @@ group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 8 )
 
-[node name="Combo5" type="Button" parent="UI/BattleActionButtons"]
+[node name="Button8" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 42.0
 margin_right = 84.0
@@ -311,13 +311,13 @@ autostart = true
 [connection signal="ap_changed" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_ap_changed"]
 [connection signal="hp_changed" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_hp_changed"]
 [connection signal="init_player" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_init_player"]
-[connection signal="pressed" from="UI/CenterContainer/NextRoomButton" to="." method="_on_NextRoomButton_pressed"]
-[connection signal="toggled" from="UI/BattleActionButtons/Slash" to="UI/BattleActionButtons/Slash" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Cross" to="UI/BattleActionButtons/Cross" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Triple" to="UI/BattleActionButtons/Triple" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Combo" to="UI/BattleActionButtons/Combo" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Combo2" to="UI/BattleActionButtons/Combo2" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Combo3" to="UI/BattleActionButtons/Combo3" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Combo4" to="UI/BattleActionButtons/Combo4" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Combo5" to="UI/BattleActionButtons/Combo5" method="_on_toggled"]
+[connection signal="pressed" from="UI/PostBattleContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button1" to="UI/BattleActionButtons/Button1" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button2" to="UI/BattleActionButtons/Button2" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button3" to="UI/BattleActionButtons/Button3" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button4" to="UI/BattleActionButtons/Button4" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button5" to="UI/BattleActionButtons/Button5" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button6" to="UI/BattleActionButtons/Button6" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button7" to="UI/BattleActionButtons/Button7" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/Button8" to="UI/BattleActionButtons/Button8" method="_on_toggled"]
 [connection signal="timeout" from="TurnTimer" to="." method="_on_TurnTimer_timeout"]

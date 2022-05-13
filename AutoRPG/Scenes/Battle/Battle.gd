@@ -6,7 +6,7 @@ export var stage1 = ["SkeltonMACE", "SkeltonAXE", "SkeltonBOW", "SkeltonSPEAR", 
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
-onready var nextRoomButton = $UI/CenterContainer/NextRoomButton
+onready var postBattleContainer = $UI/PostBattleContainer
 onready var enemyPosition = $EnemyPosition
 onready var turnTimer = $TurnTimer
 
@@ -17,7 +17,7 @@ func _ready():
 	init_stage(stage1)
 	
 func init_stage(stage):
-	enemies = stage
+	enemies = stage.duplicate()
 	BattleUnits.PlayerStats.init()
 	create_new_enemy()
 	
@@ -30,16 +30,10 @@ func create_new_enemy():
 	
 	turnTimer.start()
 
-func _on_NextRoomButton_pressed():
-	var player = BattleUnits.PlayerStats
-	
-	nextRoomButton.hide()
-	
-	animationPlayer.play("FadeToNewRoom")
-	yield(animationPlayer, "animation_finished")
-	
-	battleActionButtons.show()
-	create_new_enemy()
+func _on_RestartButton_pressed():
+	postBattleContainer.hide()
+	yield(battleFade(), "completed")
+	init_stage(stage1)
 
 func _on_TurnTimer_timeout():
 	var player = BattleUnits.PlayerStats
@@ -55,17 +49,24 @@ func _on_TurnTimer_timeout():
 	yield(attacker.attack(attacked),"completed")
 	
 	if attacked.is_dead():
-		attacked.queue_free()
-		next_battle()
+		if player_attacking:
+			next_battle()
+		else:
+			enemy.queue_free()
+			game_over()
 	else:
 		player_attacking = !player_attacking
 		turnTimer.start()
 		
 func next_battle():
-	battleActionButtons.hide()
+	yield(battleFade(), "completed")
+	create_new_enemy()
 	
+func game_over():
+	postBattleContainer.show()
+	var restart = postBattleContainer.get_node("RestartButton")
+	yield(restart, "pressed")
+
+func battleFade():
 	animationPlayer.play("FadeToNewRoom")
 	yield(animationPlayer, "animation_finished")
-	
-	battleActionButtons.show()
-	create_new_enemy()

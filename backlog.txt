@@ -57,7 +57,6 @@ Pre Battle (SCENE 5)
 Battle (SCENE 6)
 	Dynamic reading stage infos
 	Show button selected skills
-	GameOver (player dies)
 	Refactor Combo animation
 	Status ailments
 	Buttons Management (Disable, toogle ...)
