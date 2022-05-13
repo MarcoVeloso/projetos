@@ -17,9 +17,17 @@ func _on_PlayerStats_init_player():
 func _on_PlayerStats_hp_changed(value):
 	updateHP(value)
 	
-	playerSprite.play("hurt")
+	var anim_begin = "hurt"
+	var anim_end = "stand"
+
+	if value <= 0:
+		anim_end = "die"
+	elif value <= (PlayerData.max_hp * 0.5):
+		anim_end = "tired"
+	
+	playerSprite.play(anim_begin)
 	yield(playerSprite, "animation_finished")
-	playerSprite.play("stand")
+	playerSprite.play(anim_end)
 
 func _on_PlayerStats_ap_changed(value):
 	updateAP(value)
