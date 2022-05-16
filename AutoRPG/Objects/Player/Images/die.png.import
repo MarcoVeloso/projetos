@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stand.png-5b17b77f68994d4b3ab3df14553d3f4c.stex"
+path="res://.import/die.png-170364a40f3f461ee886e43849cbd7d3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Battle/stand.png"
-dest_files=[ "res://.import/stand.png-5b17b77f68994d4b3ab3df14553d3f4c.stex" ]
+source_file="res://Objects/Player/Images/die.png"
+dest_files=[ "res://.import/die.png-170364a40f3f461ee886e43849cbd7d3.stex" ]
 
 [params]
 

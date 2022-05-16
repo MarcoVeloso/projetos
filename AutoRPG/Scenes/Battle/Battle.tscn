@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://UI/Images/Dungeon.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Objects/Skills/SkillButton.gd" type="Script" id=8]
 [ext_resource path="res://Objects/Player/Images/tired.png" type="Texture" id=9]
 [ext_resource path="res://Objects/Player/Images/angry.png" type="Texture" id=10]
+[ext_resource path="res://Objects/Player/Images/die.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -33,9 +34,29 @@ corner_radius_bottom_left = 1
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 26, 26 )
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 30, 26 )
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 11 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 11 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 11 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 11 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 11 )
+region = Rect2( 130, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 10 )
@@ -80,10 +101,10 @@ animations = [ {
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ) ],
-"loop": true,
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": false,
 "name": "die",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
