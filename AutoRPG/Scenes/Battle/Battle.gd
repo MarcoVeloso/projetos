@@ -85,5 +85,9 @@ func updateActionButtons(current_ap):
 		
 		if (current_ap < skill_data["ap"]):
 			button.disabled = true
+			
+			if button.pressed:
+				button.pressed = false
+				battleActionButtons.get_node("Button1").pressed = true
 		else:
 			button.disabled = false
