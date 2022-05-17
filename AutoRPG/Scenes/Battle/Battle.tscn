@@ -30,42 +30,6 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 11 )
-region = Rect2( 26, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 11 )
-region = Rect2( 52, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 11 )
-region = Rect2( 78, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 11 )
-region = Rect2( 104, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 11 )
-region = Rect2( 130, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 30, 26 )
@@ -94,8 +58,59 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 6 )
 region = Rect2( 180, 0, 30, 26 )
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 11 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 11 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 11 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 11 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 11 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "die",
@@ -105,21 +120,6 @@ animations = [ {
 "loop": true,
 "name": "stand",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 20 ) ],
-"loop": true,
-"name": "angry",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": false,
-"name": "hurt",
-"speed": 15.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -182,14 +182,14 @@ text = "Try again?"
 
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 3.0
-margin_top = 57.0
+margin_top = 62.0
 margin_right = 87.0
-margin_bottom = 78.0
+margin_bottom = 83.0
 script = ExtResource( 4 )
 
 [node name="HPBar" type="ProgressBar" parent="UI/PlayerPanel"]
 margin_left = 26.0
-margin_top = 3.0
+margin_top = 4.0
 margin_right = 81.0
 margin_bottom = 10.0
 custom_styles/fg = SubResource( 8 )
@@ -201,8 +201,9 @@ percent_visible = false
 
 [node name="HP" type="Label" parent="UI/PlayerPanel"]
 margin_left = 39.0
+margin_top = 1.0
 margin_right = 72.0
-margin_bottom = 12.0
+margin_bottom = 13.0
 size_flags_horizontal = 3
 text = "10"
 align = 1
@@ -244,10 +245,10 @@ scroll_active = false
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
 margin_left = 3.0
-margin_top = 82.0
+margin_top = 86.0
 margin_right = 89.0
-margin_bottom = 131.0
-custom_constants/vseparation = 3
+margin_bottom = 133.0
+custom_constants/vseparation = 2
 custom_constants/hseparation = 4
 columns = 2
 
@@ -274,9 +275,9 @@ text = "CROSS"
 script = ExtResource( 8 )
 
 [node name="Button3" type="Button" parent="UI/BattleActionButtons"]
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 40.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
@@ -286,9 +287,9 @@ script = ExtResource( 8 )
 
 [node name="Button4" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
-margin_top = 13.0
+margin_top = 12.0
 margin_right = 84.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
@@ -297,9 +298,9 @@ text = "COMBO"
 script = ExtResource( 8 )
 
 [node name="Button5" type="Button" parent="UI/BattleActionButtons"]
-margin_top = 26.0
+margin_top = 24.0
 margin_right = 40.0
-margin_bottom = 36.0
+margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
@@ -310,9 +311,9 @@ script = ExtResource( 8 )
 
 [node name="Button6" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
-margin_top = 26.0
+margin_top = 24.0
 margin_right = 84.0
-margin_bottom = 36.0
+margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
@@ -322,9 +323,9 @@ text = "COMBO"
 script = ExtResource( 8 )
 
 [node name="Button7" type="Button" parent="UI/BattleActionButtons"]
-margin_top = 39.0
+margin_top = 36.0
 margin_right = 40.0
-margin_bottom = 49.0
+margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
@@ -335,9 +336,9 @@ script = ExtResource( 8 )
 
 [node name="Button8" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
-margin_top = 39.0
+margin_top = 36.0
 margin_right = 84.0
-margin_bottom = 49.0
+margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
