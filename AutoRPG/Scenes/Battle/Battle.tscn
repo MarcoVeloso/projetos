@@ -58,12 +58,12 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 6 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=21]
@@ -101,14 +101,14 @@ animations = [ {
 "name": "hurt",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
@@ -244,18 +244,18 @@ Line 3 Yay
 scroll_active = false
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
-margin_left = 3.0
+margin_left = 2.0
 margin_top = 86.0
-margin_right = 89.0
+margin_right = 88.0
 margin_bottom = 133.0
 custom_constants/vseparation = 2
-custom_constants/hseparation = 4
+custom_constants/hseparation = 2
 columns = 2
 
-[node name="Button1" type="Button" parent="UI/BattleActionButtons"]
-margin_right = 40.0
+[node name="0" type="Button" parent="UI/BattleActionButtons"]
+margin_right = 42.0
 margin_bottom = 10.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
 pressed = true
@@ -263,88 +263,88 @@ group = SubResource( 3 )
 text = "SLASH"
 script = ExtResource( 8 )
 
-[node name="Button2" type="Button" parent="UI/BattleActionButtons"]
+[node name="1" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
-margin_right = 84.0
+margin_right = 86.0
 margin_bottom = 10.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
 group = SubResource( 3 )
 text = "CROSS"
 script = ExtResource( 8 )
 
-[node name="Button3" type="Button" parent="UI/BattleActionButtons"]
+[node name="2" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 12.0
-margin_right = 40.0
+margin_right = 42.0
 margin_bottom = 22.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
 group = SubResource( 3 )
 text = "TRIPLE"
 script = ExtResource( 8 )
 
-[node name="Button4" type="Button" parent="UI/BattleActionButtons"]
+[node name="3" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 12.0
-margin_right = 84.0
+margin_right = 86.0
 margin_bottom = 22.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 toggle_mode = true
 group = SubResource( 3 )
 text = "COMBO"
 script = ExtResource( 8 )
 
-[node name="Button5" type="Button" parent="UI/BattleActionButtons"]
+[node name="4" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 24.0
-margin_right = 40.0
+margin_right = 42.0
 margin_bottom = 34.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
 toggle_mode = true
 group = SubResource( 3 )
-text = "COMBO"
+text = "SLASH"
 script = ExtResource( 8 )
 
-[node name="Button6" type="Button" parent="UI/BattleActionButtons"]
+[node name="5" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 24.0
-margin_right = 84.0
+margin_right = 86.0
 margin_bottom = 34.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
 toggle_mode = true
 group = SubResource( 3 )
-text = "COMBO"
+text = "SLASH"
 script = ExtResource( 8 )
 
-[node name="Button7" type="Button" parent="UI/BattleActionButtons"]
+[node name="6" type="Button" parent="UI/BattleActionButtons"]
 margin_top = 36.0
-margin_right = 40.0
+margin_right = 42.0
 margin_bottom = 46.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
 toggle_mode = true
 group = SubResource( 3 )
-text = "COMBO"
+text = "SLASH"
 script = ExtResource( 8 )
 
-[node name="Button8" type="Button" parent="UI/BattleActionButtons"]
+[node name="7" type="Button" parent="UI/BattleActionButtons"]
 margin_left = 44.0
 margin_top = 36.0
-margin_right = 84.0
+margin_right = 86.0
 margin_bottom = 46.0
-rect_min_size = Vector2( 40, 10 )
+rect_min_size = Vector2( 42, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
 toggle_mode = true
 group = SubResource( 3 )
-text = "COMBO"
+text = "SLASH"
 script = ExtResource( 8 )
 
 [node name="Fade" type="ColorRect" parent="."]
@@ -369,12 +369,12 @@ autostart = true
 [connection signal="hp_changed" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_hp_changed"]
 [connection signal="init_player" from="PlayerStats" to="UI/PlayerPanel" method="_on_PlayerStats_init_player"]
 [connection signal="pressed" from="UI/PostBattleContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button1" to="UI/BattleActionButtons/Button1" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button2" to="UI/BattleActionButtons/Button2" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button3" to="UI/BattleActionButtons/Button3" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button4" to="UI/BattleActionButtons/Button4" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button5" to="UI/BattleActionButtons/Button5" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button6" to="UI/BattleActionButtons/Button6" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button7" to="UI/BattleActionButtons/Button7" method="_on_toggled"]
-[connection signal="toggled" from="UI/BattleActionButtons/Button8" to="UI/BattleActionButtons/Button8" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/0" to="UI/BattleActionButtons/0" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/1" to="UI/BattleActionButtons/1" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/2" to="UI/BattleActionButtons/2" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/3" to="UI/BattleActionButtons/3" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/4" to="UI/BattleActionButtons/4" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/5" to="UI/BattleActionButtons/5" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/6" to="UI/BattleActionButtons/6" method="_on_toggled"]
+[connection signal="toggled" from="UI/BattleActionButtons/7" to="UI/BattleActionButtons/7" method="_on_toggled"]
 [connection signal="timeout" from="TurnTimer" to="." method="_on_TurnTimer_timeout"]

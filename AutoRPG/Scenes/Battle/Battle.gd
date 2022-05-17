@@ -21,7 +21,9 @@ func init_stage(stage):
 	
 	BattleUnits.PlayerStats.init()
 	
+	assignSkillsButtons()
 	updateActionButtons(BattleUnits.PlayerStats.ap)
+	
 	create_new_enemy()
 	
 func create_new_enemy():
@@ -88,6 +90,24 @@ func updateActionButtons(current_ap):
 			
 			if button.pressed:
 				button.pressed = false
-				battleActionButtons.get_node("Button1").pressed = true
+				battleActionButtons.get_node("0").pressed = true
 		else:
 			button.disabled = false
+			
+func assignSkillsButtons():
+	var skills = PlayerData.selected_skills
+	
+	for button in battleActionButtons.get_children():
+		var index = int(button.name)
+		
+		if (skills[index]):
+			button.text = skills[index]
+		else:
+			button.text = "SLASH"
+			button.visible = false
+			
+
+		
+		
+		
+
