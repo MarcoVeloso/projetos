@@ -41,6 +41,15 @@ func take_damage(damage):
 	animationPlayer.play("Stand")
 	
 	if is_dead():
+		hpBar.hide()
+
+		if hp < hpBar.max_value * -0.2:
+			hpLabel.text = "OVERKILL"
+		elif hp <= 0:
+			hpLabel.text = "Defeated"
+			
+		animationPlayer.play("DefeatedLabel")
+			
 		sprite.play("die")
 		yield(sprite, "animation_finished")
 		animationPlayer.play("Fadeout")
