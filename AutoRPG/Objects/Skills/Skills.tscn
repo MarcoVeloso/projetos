@@ -6,26 +6,6 @@
 [ext_resource path="res://Objects/Skills/Images/Slash.png" type="Texture" id=4]
 [ext_resource path="res://Objects/Skills/Images/Triple.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=45]
-atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=46]
-atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=47]
-atlas = ExtResource( 2 )
-region = Rect2( 144, 0, 48, 48 )
-
-[sub_resource type="AtlasTexture" id=48]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 0, 48, 48 )
-
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 48, 48 )
@@ -98,6 +78,26 @@ region = Rect2( 144, 0, 48, 48 )
 atlas = ExtResource( 1 )
 region = Rect2( 192, 0, 48, 48 )
 
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 48, 48 )
+
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 48, 48 )
@@ -120,11 +120,6 @@ region = Rect2( 192, 0, 48, 48 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
-"loop": false,
-"name": "COMBO",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
 "loop": false,
 "name": "TRIPLE",
@@ -133,6 +128,11 @@ animations = [ {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": false,
 "name": "CROSS",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"loop": false,
+"name": "COMBO",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],

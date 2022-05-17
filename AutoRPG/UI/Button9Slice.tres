@@ -3,6 +3,8 @@
 [ext_resource path="res://UI/Images/Button9Slice.png" type="Texture" id=1]
 
 [resource]
+content_margin_top = 0.0
+content_margin_bottom = 0.0
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 6, 6 )
 margin_left = 2.0
