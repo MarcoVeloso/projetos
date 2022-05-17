@@ -7,20 +7,19 @@ export(int) var damage = 99
 export(String) var special = ""
 export(String) var special_condition = ""
 
-onready var hpLabel = $HPLabel
-onready var hpBar = $HPBar
+onready var lifeBar = $LifeBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 
 func set_hp(new_hp):
 	hp = new_hp
-	if hpLabel != null:
-		hpLabel.text = str(hp)
-		hpBar.value = hp
+	
+	if lifeBar:
+		lifeBar.setHP(hp)
 
 func _ready():
-	hpBar.max_value = hp
-	set_hp(hp)
+	lifeBar.setMaxHP(hp)
+
 	BattleUnits.Enemy = self
 
 func _exit_tree():
@@ -41,17 +40,11 @@ func take_damage(damage):
 	animationPlayer.play("Stand")
 	
 	if is_dead():
-		hpBar.hide()
-
-		if hp < hpBar.max_value * -0.2:
-			hpLabel.text = "OVERKILL"
-		elif hp <= 0:
-			hpLabel.text = "Defeated"
-			
-		animationPlayer.play("DefeatedLabel")
+		lifeBar.dead()
 			
 		sprite.play("die")
 		yield(sprite, "animation_finished")
+		
 		animationPlayer.play("Fadeout")
 		yield(animationPlayer, "animation_finished")
 		
