@@ -1,6 +1,6 @@
 extends Node2D
 
-const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
+const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
 
 export(int) var hp = 999 setget set_hp
 export(int) var damage = 99

@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "BattleUnits",
 "language": "GDScript",
-"path": "res://Scenes/Battle/BattleUnits.gd"
+"path": "res://GameParts/Battle/BattleUnits.gd"
 } ]
 _global_script_class_icons={
 "BattleUnits": ""
@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Flaremoon Projects: AutoRPG"
-run/main_scene="res://Scenes/Battle/Battle.tscn"
+run/main_scene="res://GameParts/Battle/Battle.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 PlayerData="*res://Objects/Player/PlayerData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
+StagesData="*res://GameParts/StagesData.gd"
 
 [display]
 

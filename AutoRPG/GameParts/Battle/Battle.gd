@@ -1,8 +1,6 @@
 extends Node
 
-const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
-
-export var stage1 = ["SkeltonMACE", "SkeltonAXE", "SkeltonSPEAR", "SkeltonBOW", "SkeltonMACE"]
+const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
@@ -10,11 +8,12 @@ onready var postBattleContainer = $UI/PostBattleContainer
 onready var enemyPosition = $EnemyPosition
 onready var turnTimer = $TurnTimer
 
+var current_stage = 0
 var enemies = []
 var player_attacking = true
 
 func _ready():
-	init_stage(stage1)
+	init_stage(StagesData.data[current_stage])
 	
 func init_stage(stage):
 	enemies = stage.duplicate()
@@ -41,7 +40,7 @@ func create_new_enemy():
 func _on_RestartButton_pressed():
 	postBattleContainer.hide()
 	yield(battleFade(), "completed")
-	init_stage(stage1)
+	init_stage(StagesData.data[current_stage])
 
 func _on_TurnTimer_timeout():
 	var player = BattleUnits.PlayerStats

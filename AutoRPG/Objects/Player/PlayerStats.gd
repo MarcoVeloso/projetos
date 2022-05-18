@@ -1,6 +1,6 @@
 extends Node
 
-const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
+const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
 const Skills = preload("res://Objects/Skills/Skills.tscn")
 
 var hp = 999 setget set_hp
