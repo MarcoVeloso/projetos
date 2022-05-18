@@ -40,6 +40,7 @@ func take_damage(damage):
 	animationPlayer.play("Stand")
 	
 	if is_dead():
+		sprite.material = null
 		lifeBar.dead()
 			
 		sprite.play("die")
