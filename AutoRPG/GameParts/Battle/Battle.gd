@@ -72,7 +72,12 @@ func _on_TurnTimer_timeout():
 		
 func next_battle():
 	yield(battleFade(), "completed")
-	create_new_enemy()
+	
+	if (enemies.size() == 0):
+		current_stage += 1
+		init_stage(StagesData.data[current_stage])
+	else:
+		create_new_enemy()
 	
 func game_over():
 	postBattleContainer.show()
@@ -98,6 +103,9 @@ func updateActionButtons(current_ap):
 			
 func assignSkillsButtons():
 	var skills = PlayerData.selected_skills
+	
+	battleActionButtons.get_node("0").pressed = true
+	battleActionButtons.get_node("0").emit_signal("toggled",true)
 	
 	for button in battleActionButtons.get_children():
 		var index = int(button.name)

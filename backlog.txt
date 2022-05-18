@@ -55,7 +55,7 @@ Pre Battle (SCENE 5)
 
 ---------------------------------------------
 Battle (SCENE 6)
-	Load next stages logic
+	Load next stages logic (complete)
 	Status ailments
 	Buttons Management (Disable, toogle ...)
 	Enemy levels
