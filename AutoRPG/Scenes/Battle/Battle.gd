@@ -2,7 +2,7 @@ extends Node
 
 const BattleUnits = preload("res://Scenes/Battle/BattleUnits.tres")
 
-export var stage1 = ["SkeltonMACE", "SkeltonAXE", "SkeltonBOW", "SkeltonSPEAR", "SkeltonSPEAR"]
+export var stage1 = ["SkeltonMACE", "SkeltonAXE", "SkeltonSPEAR", "SkeltonBOW"]
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
@@ -32,6 +32,9 @@ func create_new_enemy():
 	var enemy = Enemy.instance()
 	
 	enemyPosition.add_child(enemy)
+	
+	if (enemies.size() == 0):
+		enemy.boss_setup()
 	
 	turnTimer.start()
 

@@ -52,3 +52,12 @@ func take_damage(damage):
 
 func is_dead():
 	return hp <= 0
+	
+func boss_setup():
+	self.scale = Vector2(0.9, 0.9)
+	sprite.material = ShaderMaterial.new()
+	sprite.material.shader = load("res://UI/OutlineAura.tres")
+	
+	hp *= 2
+	damage *= 2
+	lifeBar.setMaxHP(hp)
