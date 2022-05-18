@@ -56,15 +56,11 @@ Pre Battle (SCENE 5)
 ---------------------------------------------
 Battle (SCENE 6)
 	Dynamic reading stage infos
-	Show button selected skills
-	Refactor Combo animation
 	Status ailments
 	Buttons Management (Disable, toogle ...)
 	Enemy levels
 	Enemy boss modifications
 		Large HPBar
-		Red Aura?
-		Bigger?
 	Enemy special attacks
 	Passive skills logic
 
