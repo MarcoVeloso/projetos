@@ -58,7 +58,7 @@ func is_dead():
 func boss_setup():
 	self.scale = Vector2(0.85, 0.85)
 	sprite.material = ShaderMaterial.new()
-	sprite.material.shader = load("res://UI/OutlineAura.tres")
+	sprite.material.shader = load("res://UI/Outline.tres")
 	
 	hp *= 2
 	damage *= round(1.5)

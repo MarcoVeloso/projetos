@@ -3,9 +3,9 @@
 [resource]
 code = "shader_type canvas_item;
 
-uniform float max_line_width = 3;
+uniform float max_line_width = 1;
 uniform float min_line_width = 1;
-uniform float freq = 10;
+uniform float freq = 1;
 uniform float block_size = 10;
 uniform vec4 starting_colour = vec4(1,0,0,1);
 uniform vec4 ending_colour = vec4(0.5,0,0,1);
