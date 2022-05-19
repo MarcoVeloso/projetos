@@ -35,6 +35,30 @@ region = Rect2( 320, 1280, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 0, 640, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 896, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 896, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 128, 64, 64 )
@@ -63,30 +87,6 @@ region = Rect2( 320, 128, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 384, 128, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 896, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 896, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 896, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 896, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 1 )
-region = Rect2( 256, 896, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 1 )
-region = Rect2( 320, 896, 64, 64 )
-
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
@@ -99,15 +99,15 @@ animations = [ {
 "name": "stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
-"loop": false,
-"name": "cast",
-"speed": 7.0
-}, {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ) ],
 "loop": false,
 "name": "attack",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": false,
+"name": "cast",
+"speed": 7.0
 } ]
 
 [node name="Enemy" type="Node2D"]
@@ -115,6 +115,7 @@ scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 2 )
 hp = 5
 damage = 1
+gold = 4
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -3 )

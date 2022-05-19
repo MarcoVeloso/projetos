@@ -4,6 +4,7 @@ const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
 
 export(int) var hp = 999 setget set_hp
 export(int) var damage = 99
+export(int) var gold = 999
 export(String) var special = ""
 export(String) var special_condition = ""
 
@@ -61,4 +62,5 @@ func boss_setup():
 	
 	hp *= 2
 	damage *= round(1.5)
+	gold *= 3
 	lifeBar.setMaxHP(hp)

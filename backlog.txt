@@ -61,8 +61,6 @@ Battle (SCENE 6)
 	Enemy levels
 	Enemy boss modifications
 		Large HPBar
-	Coin logic
-	Enemies Remain logic
 	Enemy special attacks
 	Passive skills logic
 

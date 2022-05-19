@@ -5,10 +5,14 @@ const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer
 onready var postBattleContainer = $UI/PostBattleContainer
+onready var topInfosContainer = $UI/TopInfosContainer
 onready var enemyPosition = $EnemyPosition
 onready var turnTimer = $TurnTimer
 
 var current_stage = 0
+var current_gold = 0
+var enemies_left = 0
+
 var enemies = []
 var player_attacking = true
 
@@ -17,6 +21,7 @@ func _ready():
 	
 func init_stage(stage):
 	enemies = stage.duplicate()
+	current_gold = 0
 	
 	BattleUnits.PlayerStats.init()
 	
@@ -32,8 +37,12 @@ func create_new_enemy():
 	
 	enemyPosition.add_child(enemy)
 	
-	if (enemies.size() == 0):
+	enemies_left = enemies.size()
+	
+	if (enemies_left == 0):
 		enemy.boss_setup()
+	
+	updateTopInfos()
 	
 	turnTimer.start()
 
@@ -52,6 +61,7 @@ func _on_TurnTimer_timeout():
 		yield(player.attack(enemy),"completed")
 		
 		if enemy.is_dead():
+			current_gold += enemy.gold
 			continue_battle = false
 			next_battle()
 	else:
@@ -73,7 +83,7 @@ func _on_TurnTimer_timeout():
 func next_battle():
 	yield(battleFade(), "completed")
 	
-	if (enemies.size() == 0):
+	if (enemies_left == 0):
 		current_stage += 1
 		init_stage(StagesData.data[current_stage])
 	else:
@@ -81,7 +91,7 @@ func next_battle():
 	
 func game_over():
 	postBattleContainer.show()
-	var restart = postBattleContainer.get_node("RestartButton")
+	var restart = $UI/PostBattleContainer/RestartButton
 	yield(restart, "pressed")
 
 func battleFade():
@@ -102,10 +112,11 @@ func updateActionButtons(current_ap):
 			button.disabled = false
 			
 func assignSkillsButtons():
+	var fisrt_button = battleActionButtons.get_node("0")
 	var skills = PlayerData.selected_skills
 	
-	battleActionButtons.get_node("0").pressed = true
-	battleActionButtons.get_node("0").emit_signal("toggled",true)
+	fisrt_button.pressed = true
+	fisrt_button.emit_signal("toggled",true)
 	
 	for button in battleActionButtons.get_children():
 		var index = int(button.name)
@@ -115,6 +126,15 @@ func assignSkillsButtons():
 		else:
 			button.text = "SLASH"
 			button.visible = false
+
+func updateTopInfos():
+	var stage = $UI/TopInfosContainer/Stage
+	var gold = $UI/TopInfosContainer/Gold
+	var enemies_count = $UI/TopInfosContainer/Enemies
+	
+	stage.text = "Stage " + str(current_stage)
+	gold.text = str(current_gold)
+	enemies_count.text = str(enemies_left)
 			
 
 		
