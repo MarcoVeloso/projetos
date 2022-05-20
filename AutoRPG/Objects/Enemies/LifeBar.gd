@@ -12,10 +12,10 @@ func setHP(hp):
 	label.text = str(hp)
 	bar.value = hp
 
-func dead():
+func dead(overkill):
 	bar.hide()
 
-	if int(label.text) < bar.max_value * -0.2:
+	if overkill:
 		label.text = "OVERKILL"
 	else:
 		label.text = "Defeated"

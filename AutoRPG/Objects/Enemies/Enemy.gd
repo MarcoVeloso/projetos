@@ -12,6 +12,8 @@ onready var lifeBar = $LifeBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 
+var max_hp = 999
+
 func set_hp(new_hp):
 	hp = new_hp
 	
@@ -19,7 +21,8 @@ func set_hp(new_hp):
 		lifeBar.setHP(hp)
 
 func _ready():
-	lifeBar.setMaxHP(hp)
+	max_hp = hp
+	lifeBar.setMaxHP(max_hp)
 
 	BattleUnits.Enemy = self
 
@@ -42,7 +45,14 @@ func take_damage(damage):
 	
 	if is_dead():
 		sprite.material = null
-		lifeBar.dead()
+		
+		var overkill = false
+			
+		if hp < max_hp * -0.2:
+			gold = ceil(gold * 1.2)
+			overkill = true
+				
+		lifeBar.dead(overkill)
 			
 		sprite.play("die")
 		yield(sprite, "animation_finished")
@@ -61,6 +71,6 @@ func boss_setup():
 	sprite.material.shader = load("res://UI/Outline.tres")
 	
 	hp *= 2
-	damage *= round(1.5)
+	damage = ceil(damage * 1.5)
 	gold *= 3
 	lifeBar.setMaxHP(hp)
