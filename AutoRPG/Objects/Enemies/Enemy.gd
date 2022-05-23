@@ -46,13 +46,13 @@ func take_damage(damage):
 	if is_dead():
 		sprite.material = null
 		
-		var overkill = false
-			
+		var dead_text = str(gold) + " gold"
+		
 		if hp < max_hp * -0.2:
 			gold = ceil(gold * 1.2)
-			overkill = true
+			dead_text = "OVERKILL\n" + str(gold) + " gold"
 				
-		lifeBar.dead(overkill)
+		lifeBar.dead(dead_text)
 			
 		sprite.play("die")
 		yield(sprite, "animation_finished")

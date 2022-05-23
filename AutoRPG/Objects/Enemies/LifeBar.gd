@@ -12,12 +12,9 @@ func setHP(hp):
 	label.text = str(hp)
 	bar.value = hp
 
-func dead(overkill):
+func dead(gold_text):
 	bar.hide()
 
-	if overkill:
-		label.text = "OVERKILL"
-	else:
-		label.text = "Defeated"
+	label.text = gold_text
 		
 	animationPlayer.play("Dead")
