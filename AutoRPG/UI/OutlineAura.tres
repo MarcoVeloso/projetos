@@ -3,7 +3,7 @@
 [resource]
 code = "shader_type canvas_item;
 
-uniform float max_line_width = 1;
+uniform float max_line_width = 2;
 uniform float min_line_width = 1;
 uniform float freq = 1;
 uniform float block_size = 10;
@@ -13,6 +13,10 @@ uniform vec4 ending_colour = vec4(0.5,0,0,1);
 const float pi = 3.1415;
 const int ang_res = 16;
 const int grad_res = 8;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * 1.0;
+}
 
 float hash(vec2 p, float s) {
 	return fract(35.1 * sin(dot(vec3(112.3, 459.2, 753.2), vec3(p, s))));
