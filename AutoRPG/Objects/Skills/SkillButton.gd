@@ -1,6 +1,6 @@
 extends Button
 
-const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
+const BattleUnits = preload("res://GameScenes/Battle/BattleUnits.tres")
 
 func _on_toggled(selected):
 	if (selected):

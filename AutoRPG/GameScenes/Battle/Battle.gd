@@ -1,6 +1,6 @@
 extends Node
 
-const BattleUnits = preload("res://GameParts/Battle/BattleUnits.tres")
+const BattleUnits = preload("res://GameScenes/Battle/BattleUnits.tres")
 
 onready var battleActionButtons = $UI/BattleActionButtons
 onready var animationPlayer = $AnimationPlayer

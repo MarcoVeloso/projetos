@@ -56,8 +56,17 @@ Pre Battle (SCENE 5)
 ---------------------------------------------
 Battle (SCENE 6)
 	Load next stages logic (complete)
-	Status ailments
-	Buttons Management (Disable, toogle ...)
+	Status and boosts logic and anim
+		Status ailments
+			Poison
+			Weaken
+			Paralize
+			Sleep
+		Boosts
+			Regen
+			Stronger
+			SpeedUp
+	Chests logic
 	Enemy levels
 	Enemy boss modifications
 		Large HPBar
