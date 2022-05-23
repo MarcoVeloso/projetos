@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=9]
 [ext_resource path="res://Objects/Player/Images/hurt.png" type="Texture" id=10]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
+[ext_resource path="res://UI/Images/coins.png" type="Texture" id=12]
+[ext_resource path="res://UI/Images/skull.png" type="Texture" id=13]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -58,6 +60,10 @@ region = Rect2( 130, 0, 26, 26 )
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 26, 26 )
 
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
+
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 26, 26 )
@@ -90,10 +96,6 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 10 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
@@ -106,6 +108,11 @@ animations = [ {
 "name": "stand",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
 "name": "angry",
@@ -115,11 +122,6 @@ animations = [ {
 "loop": false,
 "name": "hurt",
 "speed": 15.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -186,8 +188,9 @@ margin_right = 90.0
 margin_bottom = 10.0
 
 [node name="Enemies" type="Label" parent="UI/TopInfosContainer"]
-margin_left = 11.0
-margin_right = 27.0
+margin_left = 67.0
+margin_top = 9.53674e-07
+margin_right = 83.0
 margin_bottom = 12.0
 rect_scale = Vector2( 0.8, 0.8 )
 text = "99"
@@ -201,12 +204,21 @@ text = "Stage x"
 align = 1
 
 [node name="Gold" type="Label" parent="UI/TopInfosContainer"]
-margin_left = 60.0
-margin_right = 84.0
+margin_left = 18.0
+margin_right = 42.0
 margin_bottom = 12.0
 rect_scale = Vector2( 0.8, 0.8 )
-text = "9999"
-align = 2
+text = "999"
+
+[node name="GoldSprite" type="Sprite" parent="UI/TopInfosContainer"]
+position = Vector2( 17, 5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="SkullSprite" type="Sprite" parent="UI/TopInfosContainer"]
+position = Vector2( 67, 5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
 
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 3.0
