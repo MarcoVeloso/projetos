@@ -49,13 +49,13 @@ func take_damage(damage):
 		
 		var dead_text = "+" + str(gold) + " gold"
 		
-		if hp < max_hp * -0.2:
-			gold = ceil(gold * 1.2)
-			dead_text = "OVERKILL\n+" + str(gold) + " gold"
-			
 		if chest:
 			lifeBar.show()
-			dead_text = "VICTORY!\n+" + str(gold) + " gold"
+			dead_text = "VICTORY!\n" + "+" + str(gold) + " gold"
+			
+		elif hp < max_hp * -0.2:
+			gold = ceil(gold * 1.2)
+			dead_text = "OVERKILL\n" + "+" + str(gold) + " gold"
 				
 		lifeBar.dead(dead_text)
 			

@@ -17,10 +17,11 @@ var enemies = []
 var player_attacking = true
 
 func _ready():
-	init_stage(StagesData.data[current_stage])
+	init_stage()
 	
-func init_stage(stage):
-	enemies = stage.duplicate()
+func init_stage():
+	var stage = StagesData.data[current_stage]
+	enemies = stage.enemies.duplicate()
 	current_gold = 0
 	
 	BattleUnits.PlayerStats.init()
@@ -39,8 +40,11 @@ func create_new_enemy():
 	
 	enemies_left = enemies.size()
 	
-	if (enemies_left == 1):
+	if enemies_left == 1:
 		enemy.boss_setup()
+		
+	if enemy.chest:
+		enemy.chest_setup(StagesData.data[current_stage].chest_base_gold)
 	
 	updateTopInfos()
 	
@@ -49,7 +53,7 @@ func create_new_enemy():
 func _on_RestartButton_pressed():
 	postBattleContainer.hide()
 	yield(battleFade(), "completed")
-	init_stage(StagesData.data[current_stage])
+	init_stage()
 
 func _on_TurnTimer_timeout():
 	var player = BattleUnits.PlayerStats
@@ -86,7 +90,7 @@ func next_battle():
 	if (enemies_left == 0):
 		player_attacking = true
 		current_stage += 1
-		init_stage(StagesData.data[current_stage])
+		init_stage()
 	else:
 		create_new_enemy()
 	
@@ -133,7 +137,7 @@ func updateTopInfos():
 	var gold = $UI/TopInfosContainer/Gold
 	var enemies_count = $UI/TopInfosContainer/Enemies
 	
-	stage.text = "Stage " + str(current_stage)
+	stage.text = StagesData.data[current_stage].name
 	gold.text = str(current_gold)
 	enemies_count.text = str(enemies_left)
 			
