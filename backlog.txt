@@ -75,6 +75,8 @@ Battle (SCENE 6)
 
 ---------------------------------------------
 GIMMICKS
+	Release mode Apk
+		https://godotlearn.com/godot-3-1-how-to-export-for-android-simple-steps/#:~:text=How%20to%20make%20a%20release%20keystore%3F
 	Tutorials
 	Use ingame GOLD to avoid ADs temporarily
 	Site FlareMoon Projects
@@ -89,6 +91,8 @@ Story
 
 ---------------------------------------------
 Monetize via ADs
+	https://godotlearn.com/godot-3-2-how-to-integrate-google-ads-admob-for-android/
+	https://www.youtube.com/watch?v=0a6EvlNgLL0
 
 ---------------------------------------------
 Distribute APK
