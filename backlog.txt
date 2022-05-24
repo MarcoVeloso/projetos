@@ -74,11 +74,32 @@ Battle (SCENE 6)
 	Passive skills logic
 
 ---------------------------------------------
+GIMMICKS
+	Tutorials
+	Use ingame GOLD to avoid ADs temporarily
+	Site FlareMoon Projects
+		github.io
+	flaremoon.projects@gmail.com
+
+---------------------------------------------
 Sounds and music
 
 ---------------------------------------------
 Story
 
 ---------------------------------------------
+Monetize via ADs
 
-		
+---------------------------------------------
+Distribute APK
+
+Free:
+	Amazon App Store
+	Apkmirror
+	Apkpure
+	Aptoide
+	Mobango
+
+OneTime Fee $25
+	Google Play Store
+---------------------------------------------
