@@ -5,6 +5,7 @@ const BattleUnits = preload("res://GameScenes/Battle/BattleUnits.tres")
 export(int) var hp = 999 setget set_hp
 export(int) var damage = 99
 export(int) var gold = 999
+export(bool) var chest = false
 export(String) var special = ""
 export(String) var special_condition = ""
 
@@ -46,11 +47,15 @@ func take_damage(damage):
 	if is_dead():
 		sprite.material = null
 		
-		var dead_text = str(gold) + " gold"
+		var dead_text = "+" + str(gold) + " gold"
 		
 		if hp < max_hp * -0.2:
 			gold = ceil(gold * 1.2)
-			dead_text = "OVERKILL\n" + str(gold) + " gold"
+			dead_text = "OVERKILL\n+" + str(gold) + " gold"
+			
+		if chest:
+			lifeBar.show()
+			dead_text = "VICTORY!\n+" + str(gold) + " gold"
 				
 		lifeBar.dead(dead_text)
 			
@@ -74,3 +79,7 @@ func boss_setup():
 	damage = ceil(damage * 1.5)
 	gold *= 2
 	lifeBar.setMaxHP(hp)
+	
+func chest_setup(chest_base_gold):
+	gold = chest_base_gold * gold 
+	lifeBar.hide()
