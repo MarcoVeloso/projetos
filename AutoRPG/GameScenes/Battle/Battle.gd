@@ -39,7 +39,7 @@ func create_new_enemy():
 	
 	enemies_left = enemies.size()
 	
-	if (enemies_left == 0):
+	if (enemies_left == 1):
 		enemy.boss_setup()
 	
 	updateTopInfos()
@@ -84,6 +84,7 @@ func next_battle():
 	yield(battleFade(), "completed")
 	
 	if (enemies_left == 0):
+		player_attacking = true
 		current_stage += 1
 		init_stage(StagesData.data[current_stage])
 	else:

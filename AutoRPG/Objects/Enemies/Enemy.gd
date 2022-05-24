@@ -72,5 +72,5 @@ func boss_setup():
 	
 	hp *= 2
 	damage = ceil(damage * 1.5)
-	gold *= 3
+	gold *= 2
 	lifeBar.setMaxHP(hp)

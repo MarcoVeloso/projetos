@@ -1,8 +1,8 @@
 extends Node
 
 const data = [
-	["SkeltonMACE", "SkeltonMACE", "SkeltonMACE"],
-	["SkeltonMACE", "SkeltonMACE", "SkeltonAXE"],
-	["SkeltonMACE", "SkeltonAXE", "SkeltonAXE", "SkeltonSPEAR"],
-	["SkeltonAXE", "SkeltonSPEAR", "SkeltonSPEAR", "SkeltonBOW"],
+	["SkeltonMACE", "SkeltonMACE", "SkeltonMACE", "ChestRED"],
+	["SkeltonMACE", "SkeltonMACE", "SkeltonAXE", "ChestRED"],
+	["SkeltonMACE", "SkeltonAXE", "SkeltonAXE", "SkeltonSPEAR", "ChestRED"],
+	["SkeltonAXE", "SkeltonSPEAR", "SkeltonSPEAR", "SkeltonBOW", "ChestRED"],
 ]
