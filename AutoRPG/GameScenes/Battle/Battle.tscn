@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 [ext_resource path="res://UI/Images/coins.png" type="Texture" id=12]
 [ext_resource path="res://UI/Images/skull.png" type="Texture" id=13]
+[ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -31,6 +32,38 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
@@ -64,55 +97,8 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 10 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 7 )
-region = Rect2( 26, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 7 )
-region = Rect2( 52, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 7 )
-region = Rect2( 78, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 7 )
-region = Rect2( 104, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 7 )
-region = Rect2( 130, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": false,
-"name": "hurt",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 20 ) ],
-"loop": true,
-"name": "angry",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "die",
@@ -122,6 +108,21 @@ animations = [ {
 "loop": true,
 "name": "stand",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 15.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -130,7 +131,7 @@ animations = [ {
 resource_name = "skills"
 
 [sub_resource type="Animation" id=1]
-resource_name = "FadeToNewRoom"
+resource_name = "FadeToNextScreen"
 length = 0.5
 step = 0.05
 tracks/0/type = "value"
@@ -168,19 +169,33 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PostBattleContainer" type="CenterContainer" parent="UI"]
+[node name="PostBattleContainer" type="VBoxContainer" parent="UI"]
 visible = false
 margin_right = 90.0
-margin_bottom = 47.0
+margin_bottom = 61.0
 mouse_filter = 2
+alignment = 1
+script = ExtResource( 14 )
+
+[node name="PrepareNextBattle" type="Label" parent="UI/PostBattleContainer"]
+margin_top = 21.0
+margin_right = 90.0
+margin_bottom = 40.0
+align = 1
 
 [node name="RestartButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 17.0
+margin_top = 35.0
 margin_right = 80.0
-margin_bottom = 30.0
+margin_bottom = 48.0
 rect_min_size = Vector2( 70, 13 )
-text = "Try again?"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Restart stage"
+
+[node name="Timer" type="Timer" parent="UI/PostBattleContainer"]
+wait_time = 3.0
+one_shot = true
 
 [node name="TopInfosContainer" type="Control" parent="UI"]
 margin_top = -2.0
@@ -399,7 +414,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeToNewRoom = SubResource( 1 )
+anims/FadeToNextScreen = SubResource( 1 )
 
 [node name="TurnTimer" type="Timer" parent="."]
 wait_time = 1.5

@@ -51,8 +51,7 @@ func create_new_enemy():
 	turnTimer.start()
 
 func _on_RestartButton_pressed():
-	postBattleContainer.hide()
-	yield(battleFade(), "completed")
+	yield(fade_next_screen(), "completed")
 	init_stage()
 
 func _on_TurnTimer_timeout():
@@ -76,7 +75,7 @@ func _on_TurnTimer_timeout():
 		if player.is_dead():
 			continue_battle = false
 			enemy.queue_free()
-			game_over()
+			yield(postBattleContainer.show_game_over(),"completed")
 	
 	updateActionButtons(player.ap)
 	
@@ -85,7 +84,8 @@ func _on_TurnTimer_timeout():
 		turnTimer.start()
 		
 func next_battle():
-	yield(battleFade(), "completed")
+	yield(postBattleContainer.show_prepare_next_battle(),"completed")
+	yield(fade_next_screen(), "completed")
 	
 	if (enemies_left == 0):
 		player_attacking = true
@@ -93,14 +93,9 @@ func next_battle():
 		init_stage()
 	else:
 		create_new_enemy()
-	
-func game_over():
-	postBattleContainer.show()
-	var restart = $UI/PostBattleContainer/RestartButton
-	yield(restart, "pressed")
 
-func battleFade():
-	animationPlayer.play("FadeToNewRoom")
+func fade_next_screen():
+	animationPlayer.play("FadeToNextScreen")
 	yield(animationPlayer, "animation_finished")
 	
 func updateActionButtons(current_ap):
