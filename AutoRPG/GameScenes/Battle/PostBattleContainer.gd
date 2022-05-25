@@ -9,7 +9,6 @@ onready var restartButton = $RestartButton
 func _process(delta):
 	if timer.time_left > 0:
 		prepareNextBattle.text = default_text + "%.2f" % (timer.time_left)
-#		prepareNextBattle.text = default_text + str(stepify(timer.time_left,0.1))
 
 func show_game_over():
 	prepareNextBattle.hide()

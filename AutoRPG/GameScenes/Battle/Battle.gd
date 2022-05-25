@@ -11,7 +11,8 @@ onready var turnTimer = $TurnTimer
 
 var current_stage = 0
 var current_gold = 0
-var enemies_left = 0
+var current_enemy = 0
+var last_enemy = 0
 
 var enemies = []
 var player_attacking = true
@@ -20,27 +21,27 @@ func _ready():
 	init_stage()
 	
 func init_stage():
-	var stage = StagesData.data[current_stage]
-	enemies = stage.enemies.duplicate()
+	enemies = StagesData.data[current_stage].enemies
+	
 	current_gold = 0
+	current_enemy = 0
+	last_enemy = enemies.size() - 1
 	
 	BattleUnits.PlayerStats.init()
 	
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.PlayerStats.ap)
 	
-	create_new_enemy()
+	create_new_enemy(current_enemy)
 	
-func create_new_enemy():
-	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies.pop_front()
+func create_new_enemy(enemy_index):
+	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies[enemy_index]
 	var Enemy = load(enemySceneName)
 	var enemy = Enemy.instance()
 	
 	enemyPosition.add_child(enemy)
 	
-	enemies_left = enemies.size()
-	
-	if enemies_left == 1:
+	if current_enemy == last_enemy:
 		enemy.boss_setup()
 		
 	if enemy.chest:
@@ -87,12 +88,13 @@ func next_battle():
 	yield(postBattleContainer.show_prepare_next_battle(),"completed")
 	yield(fade_next_screen(), "completed")
 	
-	if (enemies_left == 0):
+	if (current_enemy == last_enemy):
 		player_attacking = true
 		current_stage += 1
 		init_stage()
 	else:
-		create_new_enemy()
+		current_enemy += 1
+		create_new_enemy(current_enemy)
 
 func fade_next_screen():
 	animationPlayer.play("FadeToNextScreen")
@@ -134,7 +136,7 @@ func updateTopInfos():
 	
 	stage.text = StagesData.data[current_stage].name
 	gold.text = str(current_gold)
-	enemies_count.text = str(enemies_left)
+	enemies_count.text = str(last_enemy)
 			
 
 		
