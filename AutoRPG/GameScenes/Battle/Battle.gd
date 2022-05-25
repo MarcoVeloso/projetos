@@ -35,8 +35,14 @@ func init_stage():
 	create_new_enemy(current_enemy)
 	
 func create_new_enemy(enemy_index):
-	var enemySceneName = "res://Objects/Enemies/%s.tscn" % enemies[enemy_index]
-	var Enemy = load(enemySceneName)
+	var enemySceneName = ""
+	
+	if (enemy_index < 90):
+		enemySceneName = enemies[enemy_index]
+	else:
+		enemySceneName = StagesData.chests_scene_name[enemy_index]
+	
+	var Enemy = load("res://Objects/Enemies/%s.tscn" % enemySceneName)
 	var enemy = Enemy.instance()
 	
 	enemyPosition.add_child(enemy)
@@ -85,16 +91,20 @@ func _on_TurnTimer_timeout():
 		turnTimer.start()
 		
 func next_battle():
-	yield(postBattleContainer.show_prepare_next_battle(),"completed")
-	yield(fade_next_screen(), "completed")
-	
-	if (current_enemy == last_enemy):
-		player_attacking = true
+	if (current_enemy < 90):
+		if (current_enemy == last_enemy):
+			player_attacking = true
+			current_enemy = 90
+		else:
+			yield(postBattleContainer.show_prepare_next_battle(),"completed")
+			current_enemy += 1
+			
+		yield(fade_next_screen(), "completed")
+		create_new_enemy(current_enemy)
+	else:
+		yield(fade_next_screen(), "completed")
 		current_stage += 1
 		init_stage()
-	else:
-		current_enemy += 1
-		create_new_enemy(current_enemy)
 
 func fade_next_screen():
 	animationPlayer.play("FadeToNextScreen")
@@ -136,10 +146,7 @@ func updateTopInfos():
 	
 	stage.text = StagesData.data[current_stage].name
 	gold.text = str(current_gold)
-	enemies_count.text = str(last_enemy)
+	enemies_count.text = str(last_enemy - current_enemy)
 			
 
-		
-		
-		
 
