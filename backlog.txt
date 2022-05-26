@@ -62,10 +62,12 @@ Battle (SCENE 6)
 			Weaken
 			Paralize
 			Sleep
+			Silence (dont use skills)
 		Boosts
 			Regen
 			Stronger
 			SpeedUp
+			(AP half costs use)
 	Chests logic
 	Enemy levels
 	Enemy boss modifications
@@ -114,7 +116,10 @@ Credits
 	Enemies
 		Universal LPC Spritesheet Generator
 			https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Skeleton_beige&weapon=Slash_dagger
-
+	Skills
+		Superpowers
+			https://github.com/sparklinlabs/superpowers-asset-packs
+			 http://superpowers-html5.com/
 	Inspiration:
 		Mobile RPG Tutorial by HeartBeast
 		https://github.com/uheartbeast/mobile-rpg-tutorial

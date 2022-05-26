@@ -11,14 +11,14 @@ const data = {
 		"ap":3,
 		"description":"Cross Slash - 3AP\nCross slash attack"
 	},
-	"TRIPLE": {
+	"CRESCENT": {
 		"damage":3,
 		"ap":5,
-		"description":"Triple Slash - 5AP\nTriple slash attack"
+		"description":"Crescent Slash - 5AP\nA powerful curved slash attack"
 	},
-	"COMBO": {
+	"ULTIMA": {
 		"damage":10,
 		"ap":10,
-		"description":"Combo Slash - 10AP\nPowerful combo! Hits very very hard!"
+		"description":"Ultima Explosion - 10AP\nUltimate explosion magic! Hits very very hard!"
 	},
 }

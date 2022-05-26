@@ -33,9 +33,33 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 130, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
@@ -69,40 +93,21 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 10 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 7 )
-region = Rect2( 26, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 7 )
-region = Rect2( 52, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 7 )
-region = Rect2( 78, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 7 )
-region = Rect2( 104, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 7 )
-region = Rect2( 130, 0, 26, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 20 ) ],
 "loop": true,
-"name": "stand",
+"name": "angry",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": false,
+"name": "die",
+"speed": 6.0
 }, {
 "frames": [ SubResource( 11 ) ],
 "loop": true,
@@ -114,15 +119,10 @@ animations = [ {
 "name": "hurt",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
-"name": "angry",
+"name": "stand",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": false,
-"name": "die",
-"speed": 6.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]

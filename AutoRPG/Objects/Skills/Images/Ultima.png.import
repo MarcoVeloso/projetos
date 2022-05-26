@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Triple.png-6f924962cc29a2f4547fedf20378381a.stex"
+path="res://.import/Ultima.png-eaf6db0dfffada62d236466e8f45886c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Skills/Images/Triple.png"
-dest_files=[ "res://.import/Triple.png-6f924962cc29a2f4547fedf20378381a.stex" ]
+source_file="res://Objects/Skills/Images/Ultima.png"
+dest_files=[ "res://.import/Ultima.png-eaf6db0dfffada62d236466e8f45886c.stex" ]
 
 [params]
 

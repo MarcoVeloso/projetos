@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Blood.png-78328ce3b987c06478273ad778ce75fa.stex"
+path="res://.import/Crescent.png-bb6d253d5c984b87b1ed96205fff277e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Skills/Images/Blood.png"
-dest_files=[ "res://.import/Blood.png-78328ce3b987c06478273ad778ce75fa.stex" ]
+source_file="res://Objects/Skills/Images/Crescent.png"
+dest_files=[ "res://.import/Crescent.png-bb6d253d5c984b87b1ed96205fff277e.stex" ]
 
 [params]
 
