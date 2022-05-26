@@ -107,3 +107,16 @@ Free:
 OneTime Fee $25
 	Google Play Store
 ---------------------------------------------
+Credits
+	Hero
+		Pipoya 
+			https://pipoya.itch.io/
+	Enemies
+		Universal LPC Spritesheet Generator
+			https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Skeleton_beige&weapon=Slash_dagger
+
+	Inspiration:
+		Mobile RPG Tutorial by HeartBeast
+		https://github.com/uheartbeast/mobile-rpg-tutorial
+
+---------------------------------------------

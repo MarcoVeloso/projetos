@@ -56,10 +56,6 @@ func create_new_enemy(enemy_index):
 	
 	turnTimer.start()
 
-func _on_RestartButton_pressed():
-	yield(fade_next_screen(), "completed")
-	init_stage()
-
 func _on_TurnTimer_timeout():
 	var player = BattleUnits.PlayerStats
 	var enemy = BattleUnits.Enemy
@@ -82,6 +78,8 @@ func _on_TurnTimer_timeout():
 			continue_battle = false
 			enemy.queue_free()
 			yield(postBattleContainer.show_game_over(),"completed")
+			yield(fade_next_screen(), "completed")
+			init_stage()
 	
 	updateActionButtons(player.ap)
 	
@@ -103,6 +101,7 @@ func next_battle():
 		yield(fade_next_screen(), "completed")
 		create_new_enemy(current_enemy)
 	else:
+		yield(postBattleContainer.show_stage_results(current_gold),"completed")
 		yield(fade_next_screen(), "completed")
 		current_stage += 1
 		init_stage()
@@ -144,17 +143,16 @@ func updateTopInfos():
 	var stage = $UI/TopInfosContainer/Stage
 	var gold = $UI/TopInfosContainer/Gold
 	var enemies_count = $UI/TopInfosContainer/Enemies
-	var skull = $UI/TopInfosContainer/SkullSprite
+	var topInfos = $UI/TopInfosContainer
 	var enemies_left = last_enemy - current_enemy
 	
-	skull.show()
+	topInfos.show()
 	
 	stage.text = StagesData.data[current_stage].name
 	gold.text = str(current_gold)
 	
 	if enemies_left < 0:
-		skull.hide()
-		enemies_count.text = ""
+		topInfos.hide()
 	elif enemies_left == 0:
 		enemies_count.text = "BOSS"
 	else:
