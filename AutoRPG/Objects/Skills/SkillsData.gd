@@ -8,9 +8,9 @@ const data = {
 		"description":"Slash - 0AP\nBasic slash attack"
 	},
 	"HEAL": {
-		"type":"damage",
+		"type":"heal",
 		"effect":5,
-		"ap":2,
+		"ap":5,
 		"description":"Heal - 2AP\nHeal a tiny portion of Hero HP"
 	},
 	"CROSS": {
@@ -21,26 +21,26 @@ const data = {
 	},
 	"CRESCENT": {
 		"type":"damage",
-		"effect":3,
+		"effect":4,
 		"ap":5,
 		"description":"Crescent Slash - 5AP\nA powerful curved slash attack"
 	},
 	"EXPLOSION": {
 		"type":"damage",
-		"effect":5,
-		"ap":8,
+		"effect":7,
+		"ap":10,
 		"description":"Explosion - 8AP\nPowerful explosion"
 	},
 	"FIREBALLS": {
 		"type":"damage",
-		"effect":8,
-		"ap":10,
+		"effect":10,
+		"ap":12,
 		"description":"Fireballs - 10AP\nTwo nasty fireballs"
 	},
 	"ULTIMA": {
 		"type":"damage",
-		"effect":10,
-		"ap":15,
+		"effect":15,
+		"ap":20,
 		"description":"Ultima Explosion - 15AP\nUltimate explosion magic! Hits very very hard!"
 	},
 }

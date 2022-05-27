@@ -15,10 +15,13 @@ func _on_PlayerStats_init_player():
 	updateAP(PlayerData.max_ap)
 	
 func _on_PlayerStats_hp_changed(value):
-	updateHP(value)
+	var healed = updateHP(value)
 	
 	var anim_begin = "hurt"
 	var anim_end = "stand"
+	
+	if healed:
+		anim_begin = "stand"
 
 	if value <= 0:
 		anim_end = "die"
@@ -33,8 +36,15 @@ func _on_PlayerStats_ap_changed(value):
 	updateAP(value)
 	
 func updateHP(value):
+	var healed = false
+	
+	if HPbar.value < value:
+		healed = true
+		
 	hpLabel.text = str(value)
 	HPbar.value = value
+	
+	return healed
 	
 func updateAP(value):
 	apLabel.text = "AP: " + str(value)
