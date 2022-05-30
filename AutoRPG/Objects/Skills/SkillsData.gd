@@ -7,6 +7,12 @@ const data = {
 		"ap":0,
 		"description":"Slash - 0AP\nBasic slash attack"
 	},
+	"DEFEND": {
+		"type":"shield",
+		"effect":1,
+		"ap":1,
+		"description":"Defend - 1AP\nAbsorb 1 point of damage"
+	},
 	"HEAL": {
 		"type":"heal",
 		"effect":5,

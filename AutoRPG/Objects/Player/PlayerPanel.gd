@@ -38,6 +38,8 @@ func _on_PlayerStats_update_player_face(type):
 			anim_end = "die"
 		"heal":
 			anim_begin = "smile"
+		"defend":
+			anim_end = "defend"
 		
 	playerSprite.play(anim_begin)
 	yield(playerSprite, "animation_finished")

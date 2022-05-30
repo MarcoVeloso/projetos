@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://UI/Images/skull.png" type="Texture" id=13]
 [ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=15]
+[ext_resource path="res://Objects/Player/Images/defend.png" type="Texture" id=16]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -33,6 +34,34 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 16 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 16 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 16 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 16 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 16 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 16 )
+region = Rect2( 156, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 15 )
@@ -104,6 +133,11 @@ region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": false,
+"name": "defend",
+"speed": 8.0
+}, {
 "frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
 "loop": false,
 "name": "smile",
@@ -287,8 +321,8 @@ text = "AP: 99"
 position = Vector2( 13, 9.5 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 7 )
-animation = "smile"
-frame = 4
+animation = "defend"
+frame = 6
 playing = true
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
