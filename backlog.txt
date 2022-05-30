@@ -68,12 +68,24 @@ Battle (SCENE 6)
 			Stronger
 			SpeedUp
 			(AP half costs use)
-	Chests logic
 	Enemy levels
 	Enemy boss modifications
-		Large HPBar
+		Fix Aura
 	Enemy special attacks
 	Passive skills logic
+
+	Weak Strike Skill (50% att recover 1 AP)
+	Player attributes
+		Attack
+		Magic
+		HP
+		AP
+		Wallet
+	Skill logic based on %Player attributes
+	Fix bug on chest phase (force Slash attack)
+	Refactor player face animations logic
+	Defend Skill animation and logic
+	Attack % modifier when do damages
 
 ---------------------------------------------
 GIMMICKS
