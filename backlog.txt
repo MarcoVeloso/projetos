@@ -82,7 +82,6 @@ Battle (SCENE 6)
 		AP
 		Wallet
 	Skill logic based on %Player attributes
-	Fix bug on chest phase (force Slash attack)
 	Defend Skill animation and logic
 	Attack % modifier when do damages
 

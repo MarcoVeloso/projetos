@@ -63,6 +63,10 @@ func _on_TurnTimer_timeout():
 	var continue_battle = true
 	
 	if player_attacking:
+		
+		if enemy.chest:
+			player.active_skill = "SLASH"
+		
 		yield(player.attack(enemy),"completed")
 		
 		if enemy.is_dead():
