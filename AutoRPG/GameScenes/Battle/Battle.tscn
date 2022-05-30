@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://UI/Images/coins.png" type="Texture" id=12]
 [ext_resource path="res://UI/Images/skull.png" type="Texture" id=13]
 [ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
+[ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
@@ -32,6 +33,10 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 7 )
@@ -99,6 +104,11 @@ region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
+"loop": false,
+"name": "smile",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "die",
@@ -194,6 +204,7 @@ size_flags_vertical = 4
 text = "Restart stage"
 
 [node name="Timer" type="Timer" parent="UI/PostBattleContainer"]
+wait_time = 2.0
 one_shot = true
 
 [node name="TopInfosContainer" type="Control" parent="UI"]
@@ -276,7 +287,8 @@ text = "AP: 99"
 position = Vector2( 13, 9.5 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 7 )
-animation = "stand"
+animation = "smile"
+frame = 4
 playing = true
 
 [node name="TextboxPanel" type="Panel" parent="UI"]

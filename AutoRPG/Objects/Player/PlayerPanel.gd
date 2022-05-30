@@ -36,7 +36,7 @@ func _on_PlayerStats_update_player_face(type):
 	elif type == "die":
 		anim_end = "die"
 	elif type == "heal":
-		anim_begin = "angry"
+		anim_begin = "smile"
 		
 	playerSprite.play(anim_begin)
 	yield(playerSprite, "animation_finished")

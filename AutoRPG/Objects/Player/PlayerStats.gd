@@ -47,7 +47,7 @@ func attack(enemy) -> void:
 			skill.global_position = Vector2(16,71.5)
 			set_hp(hp + skill_data["effect"]) 
 			emit_signal("update_player_face", "heal")
-			yield(get_tree().create_timer(1), "timeout")
+			yield(get_tree().create_timer(0.5), "timeout")
 					
 func take_damage(damage):
 	set_hp(hp - damage)
