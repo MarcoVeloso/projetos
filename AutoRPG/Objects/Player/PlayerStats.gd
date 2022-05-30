@@ -13,6 +13,7 @@ var boost = ""
 signal init_player()
 signal hp_changed(value)
 signal ap_changed(value)
+signal update_player_face(type)
 
 func set_hp(new_hp):
 	hp = clamp(new_hp, 0, PlayerData.max_hp)
@@ -45,13 +46,23 @@ func attack(enemy) -> void:
 		if skill_data["type"] == "heal":
 			skill.global_position = Vector2(16,71.5)
 			set_hp(hp + skill_data["effect"]) 
+			emit_signal("update_player_face", "heal")
 			yield(get_tree().create_timer(1), "timeout")
 					
 func take_damage(damage):
 	set_hp(hp - damage)
+	
+	if hp <= (PlayerData.max_hp * 0.5):
+		emit_signal("update_player_face", "weak")
+	else:
+		emit_signal("update_player_face", "damage")
 		
 func is_dead():
-	return hp <= 0
+	if hp <= 0:
+		emit_signal("update_player_face", "die")
+		return true
+	else:
+		return false
 	
 func init():
 	hp = PlayerData.max_hp

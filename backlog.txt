@@ -83,7 +83,6 @@ Battle (SCENE 6)
 		Wallet
 	Skill logic based on %Player attributes
 	Fix bug on chest phase (force Slash attack)
-	Refactor player face animations logic
 	Defend Skill animation and logic
 	Attack % modifier when do damages
 
