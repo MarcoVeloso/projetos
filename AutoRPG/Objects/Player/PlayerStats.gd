@@ -36,18 +36,21 @@ func attack(enemy) -> void:
 		var skill = Skills.instance().init(skill_name)
 		var skill_data = SkillsData.data[skill_name]
 		
+		var player_position = Vector2(16,71.5)
+		
 		set_ap(ap - skill_data["ap"])
 
 		get_tree().current_scene.add_child(skill)
 		
-		if skill_data["type"] == "damage":
-			skill.global_position = enemy.global_position
-			yield(enemy.take_damage(skill_data["effect"]),"completed")
-		if skill_data["type"] == "heal":
-			skill.global_position = Vector2(16,71.5)
-			set_hp(hp + skill_data["effect"]) 
-			emit_signal("update_player_face", "heal")
-			yield(get_tree().create_timer(0.5), "timeout")
+		match skill_data["type"]:
+			"damage":
+				skill.global_position = enemy.global_position
+				yield(enemy.take_damage(skill_data["effect"]),"completed")
+			"heal":
+				skill.global_position = player_position
+				set_hp(hp + skill_data["effect"]) 
+				emit_signal("update_player_face", "heal")
+				yield(get_tree().create_timer(0.5), "timeout")
 					
 func take_damage(damage):
 	set_hp(hp - damage)

@@ -31,12 +31,13 @@ func _on_PlayerStats_update_player_face(type):
 	var anim_begin = "hurt"
 	var anim_end = "stand"
 	
-	if type == "weak":
-		anim_end = "tired"
-	elif type == "die":
-		anim_end = "die"
-	elif type == "heal":
-		anim_begin = "smile"
+	match type:
+		"weak":
+			anim_end = "tired"
+		"die":
+			anim_end = "die"
+		"heal":
+			anim_begin = "smile"
 		
 	playerSprite.play(anim_begin)
 	yield(playerSprite, "animation_finished")
