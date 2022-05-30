@@ -11,7 +11,7 @@ const data = {
 		"type":"shield",
 		"effect":1,
 		"ap":1,
-		"description":"Defend - 1AP\nAbsorb 1 point of damage"
+		"description":"Defend - 1AP\nAbsorb 1 point of damage on next turn"
 	},
 	"HEAL": {
 		"type":"heal",
