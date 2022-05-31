@@ -51,12 +51,12 @@ func attack(enemy) -> void:
 				skill.global_position = player_position
 				set_hp(hp + skill_data["effect"]) 
 				emit_signal("update_player_face", "heal")
-				yield(get_tree().create_timer(0.5), "timeout")
+				yield(self, "update_player_face")
 			"shield":
 				skill.global_position = player_position
 				damage_mod = -skill_data["effect"]
 				emit_signal("update_player_face", "defend")
-				yield(get_tree().create_timer(0.5), "timeout")
+				yield(self, "update_player_face")
 					
 func take_damage(damage):
 	set_hp(hp - (damage + damage_mod))
