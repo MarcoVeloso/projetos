@@ -77,7 +77,7 @@ func is_dead():
 	
 func init():
 	hp = PlayerData.max_hp
-	ap = PlayerData.max_ap
+	ap = PlayerData.start_ap
 	active_skill = "SLASH"
 	status = ""
 	boost = ""

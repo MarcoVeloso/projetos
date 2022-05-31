@@ -12,7 +12,7 @@ func _on_PlayerStats_init_player():
 	playerSprite.play("stand")
 	HPbar.max_value = PlayerData.max_hp
 	updateHP(PlayerData.max_hp)
-	updateAP(PlayerData.max_ap)
+	updateAP(PlayerData.start_ap)
 	
 func _on_PlayerStats_hp_changed(value):
 	updateHP(value)
