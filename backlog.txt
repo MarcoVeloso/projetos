@@ -82,7 +82,7 @@ Battle (SCENE 6)
 		AP
 		Wallet
 	Skill logic based on %Player attributes
-	Attack % modifier when do damages
+	Enemy Attack % modifier when do damages
 
 ---------------------------------------------
 GIMMICKS

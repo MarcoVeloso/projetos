@@ -9,7 +9,7 @@ var ap = 99 setget set_ap
 var active_skill = "SLASH"
 var status = ""
 var boost = ""
-var shield = 0
+var damage_mod = 0
 
 signal init_player()
 signal hp_changed(value)
@@ -54,14 +54,14 @@ func attack(enemy) -> void:
 				yield(get_tree().create_timer(0.5), "timeout")
 			"shield":
 				skill.global_position = player_position
-				shield = skill_data["effect"]
+				damage_mod = -skill_data["effect"]
 				emit_signal("update_player_face", "defend")
 				yield(get_tree().create_timer(0.5), "timeout")
 					
 func take_damage(damage):
-	set_hp(hp - (damage - shield))
+	set_hp(hp - (damage + damage_mod))
 	
-	shield = 0
+	damage_mod = 0
 	
 	if hp <= (PlayerData.max_hp * 0.5):
 		emit_signal("update_player_face", "weak")
