@@ -74,6 +74,7 @@ func boss_setup():
 	self.scale = Vector2(0.85, 0.85)
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = load("res://UI/OutlineAura.tres")
+	animationPlayer.get_animation("Stand").track_set_enabled(0,false)
 	
 	hp *= 2
 	damage = ceil(damage * 1.5)

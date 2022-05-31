@@ -5,9 +5,9 @@ code = "shader_type canvas_item;
 render_mode unshaded;
 
 uniform bool Smooth = true;
-uniform float width : hint_range(0.0, 64) = 5.0;
+uniform float width : hint_range(0.0, 64) = 25.0;
 uniform vec4 outline_color : hint_color = vec4(0.8, 0.0, 0.0, 1.0);
-uniform int pixel_size : hint_range(1, 10) = 3;
+uniform int pixel_size : hint_range(1, 10) = 8;
 uniform float width_speed :hint_range(0.1, 10) = 5;
 
 void fragment()
