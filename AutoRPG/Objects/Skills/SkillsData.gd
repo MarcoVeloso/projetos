@@ -11,7 +11,7 @@ var data = {
 		"desc_text":"Basic slash attack",
 	},
 	"DEFEND": {
-		"type":"shield",
+		"type":"positive",
 		"subtype":"shield",
 		"effect":1,
 		"ap":1,
@@ -20,9 +20,9 @@ var data = {
 		"desc_text":"Rise a shield",
 	},
 	"HEAL": {
-		"type":"heal",
+		"type":"positive",
 		"subtype":"heal",
-		"effect":5,
+		"effect":2,
 		"ap":5,
 		"desc_name":"Heal",
 		"desc_effect":"Restore %sx MAG HP",
@@ -40,7 +40,7 @@ var data = {
 	"CRESCENT": {
 		"type":"damage",
 		"subtype":"attack",
-		"effect":4,
+		"effect":3,
 		"ap":5,
 		"desc_name":"Crescent Slash",
 		"desc_effect":"Deals %sx ATK Damage",
@@ -49,7 +49,7 @@ var data = {
 	"EXPLOSION": {
 		"type":"damage",
 		"subtype":"magic",
-		"effect":7,
+		"effect":5,
 		"ap":10,
 		"desc_name":"Explosion",
 		"desc_effect":"Deals %sx MAG Damage",
@@ -58,7 +58,7 @@ var data = {
 	"FIREBALLS": {
 		"type":"damage",
 		"subtype":"magic",
-		"effect":10,
+		"effect":7,
 		"ap":12,
 		"desc_name":"Fireballs",
 		"desc_effect":"Deals %sx MAG Damage",
@@ -67,7 +67,7 @@ var data = {
 	"ULTIMA": {
 		"type":"damage",
 		"subtype":"magic",
-		"effect":15,
+		"effect":10,
 		"ap":20,
 		"desc_name":"Ultima Explosion",
 		"desc_effect":"Deals %sx MAG Damage",

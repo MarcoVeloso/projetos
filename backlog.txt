@@ -81,7 +81,6 @@ Battle (SCENE 6)
 		HP
 		AP
 		Wallet
-	Skill logic based on %Player attributes
 	Enemy Attack % modifier when do damages
 
 ---------------------------------------------

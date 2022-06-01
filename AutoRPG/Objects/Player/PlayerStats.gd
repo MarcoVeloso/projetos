@@ -5,10 +5,10 @@ const Skills = preload("res://Objects/Skills/Skills.tscn")
 
 var hp = 999 setget set_hp
 var ap = 99 setget set_ap
+var atk = 99
+var mag = 99
 
 var active_skill = "SLASH"
-var status = ""
-var boost = ""
 var damage_mod = 0
 
 signal init_player()
@@ -45,18 +45,30 @@ func attack(enemy) -> void:
 		
 		match skill_data["type"]:
 			"damage":
+				var damage = skill_data["effect"] * atk
+				
+				if skill_data["subtype"] == "magic":
+					damage = skill_data["effect"] * mag
+					
 				skill.global_position = enemy.global_position
-				yield(enemy.take_damage(skill_data["effect"]),"completed")
-			"heal":
+				yield(enemy.take_damage(damage),"completed")
+				
+			"positive":
+				var player_face = ""
+				
+				match skill_data["subtype"]:
+					"heal":
+						player_face = "heal"
+						set_hp(hp + skill_data["effect"])
+					"shield":
+						player_face = "defend"
+						damage_mod = -skill_data["effect"]
+				
 				skill.global_position = player_position
-				set_hp(hp + skill_data["effect"]) 
-				emit_signal("update_player_face", "heal")
+				emit_signal("update_player_face", player_face)
 				yield(get_tree().create_timer(0.2), "timeout")
-			"shield":
-				skill.global_position = player_position
-				damage_mod = -skill_data["effect"]
-				emit_signal("update_player_face", "defend")
-				yield(get_tree().create_timer(0.2), "timeout")
+			"negative":
+				pass
 					
 func take_damage(damage):
 	set_hp(hp - (damage + damage_mod))
@@ -78,7 +90,8 @@ func is_dead():
 func init():
 	hp = PlayerData.max_hp
 	ap = PlayerData.start_ap
+	atk = PlayerData.attack_power
+	mag = PlayerData.magic_power
 	active_skill = "SLASH"
-	status = ""
-	boost = ""
+
 	emit_signal("init_player")
