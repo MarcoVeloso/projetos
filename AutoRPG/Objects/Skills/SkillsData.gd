@@ -1,52 +1,88 @@
 extends Node
 
-const data = {
+var data = {
 	"SLASH": {
 		"type":"damage",
+		"subtype":"attack",
 		"effect":1,
 		"ap":0,
-		"description":"Slash - 0AP\nBasic slash attack"
+		"desc_name":"Slash",
+		"desc_effect":"Deals %sx ATK Damage",
+		"desc_text":"Basic slash attack",
 	},
 	"DEFEND": {
 		"type":"shield",
+		"subtype":"shield",
 		"effect":1,
 		"ap":1,
-		"description":"Defend - 1AP\nAbsorb 1 point of damage on next turn"
+		"desc_name":"Defend",
+		"desc_effect":"Blocks %s Damage next turn",
+		"desc_text":"Rise a shield",
 	},
 	"HEAL": {
 		"type":"heal",
+		"subtype":"heal",
 		"effect":5,
 		"ap":5,
-		"description":"Heal - 2AP\nHeal a tiny portion of Hero HP"
+		"desc_name":"Heal",
+		"desc_effect":"Restore %sx MAG HP",
+		"desc_text":"Heal a portion of HP",
 	},
 	"CROSS": {
 		"type":"damage",
+		"subtype":"attack",
 		"effect":2,
 		"ap":3,
-		"description":"Cross Slash - 3AP\nCross slash attack"
+		"desc_name":"Cross Slash",
+		"desc_effect":"Deals %sx ATK Damage",
+		"desc_text":"Cross slash attack",
 	},
 	"CRESCENT": {
 		"type":"damage",
+		"subtype":"attack",
 		"effect":4,
 		"ap":5,
-		"description":"Crescent Slash - 5AP\nA powerful curved slash attack"
+		"desc_name":"Crescent Slash",
+		"desc_effect":"Deals %sx ATK Damage",
+		"desc_text":"Heavy curved slash attack",
 	},
 	"EXPLOSION": {
 		"type":"damage",
+		"subtype":"magic",
 		"effect":7,
 		"ap":10,
-		"description":"Explosion - 8AP\nPowerful explosion"
+		"desc_name":"Explosion",
+		"desc_effect":"Deals %sx MAG Damage",
+		"desc_text":"Powerful magic explosion",
 	},
 	"FIREBALLS": {
 		"type":"damage",
+		"subtype":"magic",
 		"effect":10,
 		"ap":12,
-		"description":"Fireballs - 10AP\nTwo nasty fireballs"
+		"desc_name":"Fireballs",
+		"desc_effect":"Deals %sx MAG Damage",
+		"desc_text":"Two nasty fireballs",
 	},
 	"ULTIMA": {
 		"type":"damage",
+		"subtype":"magic",
 		"effect":15,
 		"ap":20,
-		"description":"Ultima Explosion - 15AP\nUltimate explosion magic! Hits very very hard!"
+		"desc_name":"Ultima Explosion",
+		"desc_effect":"Deals %sx MAG Damage",
+		"desc_text":"Ultimate explosion magic",
 	},
 }
+
+var description = {}
+
+func _ready():
+	for skill in data:
+		var s = data[skill]
+		
+		var desc = "%s - %s AP\n" % [s["desc_name"], s["ap"]]
+		desc += s["desc_effect"] % s["effect"]
+		desc += "\n%s" % s["desc_text"]
+		
+		description[skill] = desc 
