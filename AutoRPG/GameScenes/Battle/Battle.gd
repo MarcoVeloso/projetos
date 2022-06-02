@@ -43,7 +43,7 @@ func create_new_enemy(enemy_index):
 	else:
 		enemySceneName = StagesData.chests_scene_name[enemy_index]
 	
-	var Enemy = load("res://Objects/Enemies/%s.tscn" % enemySceneName)
+	var Enemy = load("res://Objects/Enemies/Scenes/%s.tscn" % enemySceneName)
 	var enemy = Enemy.instance()
 	
 	enemyPosition.add_child(enemy)

@@ -1,39 +1,11 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Objects/Enemies/Images/SkeltonAXE.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Enemies/Images/SkeltonKNIFE.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Enemies/LifeBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Enemies/Anims/Fadeout.tres" type="Animation" id=5]
 [ext_resource path="res://Objects/Enemies/Anims/Shake.tres" type="Animation" id=6]
 [ext_resource path="res://Objects/Enemies/Anims/Stand.tres" type="Animation" id=7]
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 1 )
-region = Rect2( 256, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 1 )
-region = Rect2( 320, 1280, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 640, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 1 )
@@ -87,8 +59,46 @@ region = Rect2( 320, 128, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 384, 128, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 640, 64, 64 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ) ],
+"loop": false,
+"name": "attack",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": false,
+"name": "cast",
+"speed": 7.0
+}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
 "name": "die",
@@ -98,24 +108,15 @@ animations = [ {
 "loop": false,
 "name": "stand",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 40 ) ],
-"loop": false,
-"name": "attack",
-"speed": 8.0
-}, {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
-"loop": false,
-"name": "cast",
-"speed": 7.0
 } ]
 
 [node name="Enemy" type="Node2D"]
 scale = Vector2( 0.7, 0.7 )
+z_index = 1
 script = ExtResource( 2 )
-hp = 5
+hp = 1
 damage = 1
-gold = 4
+gold = 1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -3 )
