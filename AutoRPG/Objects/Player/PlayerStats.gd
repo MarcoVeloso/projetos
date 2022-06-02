@@ -47,8 +47,12 @@ func attack(enemy) -> void:
 			"other":
 				var damage = skill_data["effect"] * atk
 				
-				if skill_data["type"] == "magic":
-					damage = skill_data["effect"] * mag
+				match skill_data["type"]:
+					"magic":
+						damage = skill_data["effect"] * mag
+					"APgain":
+						damage = skill_data["effect"]
+						set_ap(ap + 1)
 					
 				skill.global_position = enemy.global_position
 				yield(enemy.take_damage(damage),"completed")

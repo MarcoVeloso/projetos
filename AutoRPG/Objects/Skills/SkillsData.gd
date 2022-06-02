@@ -7,7 +7,15 @@ var data = {
 		"effect":1,
 		"ap":0,
 		"desc_name":"Slash",
-		"desc_effect":"Deals %sx ATK Damage",
+		"desc_effect":"Deal %sx ATK Damage",
+	},
+	"SWIFT": {
+		"target":"other",
+		"type":"APgain",
+		"effect":1,
+		"ap":0,
+		"desc_name":"Swift Attack",
+		"desc_effect":"Deal %s Damage and grant 1 AP to user",
 	},
 	"DEFEND": {
 		"target":"self",
@@ -31,7 +39,7 @@ var data = {
 		"effect":2,
 		"ap":3,
 		"desc_name":"Cross Slash",
-		"desc_effect":"Deals %sx ATK Damage",
+		"desc_effect":"Deal %sx ATK Damage",
 	},
 	"CRESCENT": {
 		"target":"other",
@@ -39,7 +47,7 @@ var data = {
 		"effect":3,
 		"ap":5,
 		"desc_name":"Crescent Slash",
-		"desc_effect":"Deals %sx ATK Damage",
+		"desc_effect":"Deal %sx ATK Damage",
 	},
 	"EXPLOSION": {
 		"target":"other",
@@ -47,7 +55,7 @@ var data = {
 		"effect":5,
 		"ap":10,
 		"desc_name":"Explosion",
-		"desc_effect":"Deals %sx MAG Damage",
+		"desc_effect":"Deal %sx MAG Damage",
 	},
 	"FIREBALLS": {
 		"target":"other",
@@ -55,7 +63,7 @@ var data = {
 		"effect":7,
 		"ap":12,
 		"desc_name":"Fireballs",
-		"desc_effect":"Deals %sx MAG Damage",
+		"desc_effect":"Deal %sx MAG Damage",
 	},
 	"ULTIMA": {
 		"target":"other",
@@ -63,7 +71,7 @@ var data = {
 		"effect":10,
 		"ap":20,
 		"desc_name":"Ultima Explosion",
-		"desc_effect":"Deals %sx MAG Damage",
+		"desc_effect":"Deal %sx MAG Damage",
 	},
 }
 
