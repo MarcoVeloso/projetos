@@ -31,8 +31,12 @@ func _exit_tree():
 	BattleUnits.Enemy = null
 
 func attack(player) -> void:
+	if self.is_in_group("attack_oversized"):
+		sprite.offset.y = 12
+		
 	sprite.play("attack")
 	yield(sprite, "animation_finished")
+	sprite.offset.y = 0
 	sprite.play("stand")
 
 	player.take_damage(damage)

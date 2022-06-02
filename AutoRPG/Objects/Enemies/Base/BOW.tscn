@@ -119,23 +119,24 @@ animations = [ {
 "name": "cast",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 42 ) ],
-"loop": false,
-"name": "stand",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
 "name": "die",
 "speed": 7.0
+}, {
+"frames": [ SubResource( 42 ) ],
+"loop": false,
+"name": "stand",
+"speed": 5.0
 } ]
 
 [node name="Enemy" type="Node2D"]
 scale = Vector2( 0.7, 0.7 )
+z_index = 1
 script = ExtResource( 2 )
-hp = 5
-damage = 2
-gold = 5
+hp = 1
+damage = 1
+gold = 1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -3 )
