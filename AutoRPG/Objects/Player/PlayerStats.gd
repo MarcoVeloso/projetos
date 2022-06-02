@@ -43,20 +43,20 @@ func attack(enemy) -> void:
 
 		get_tree().current_scene.add_child(skill)
 		
-		match skill_data["type"]:
-			"damage":
+		match skill_data["target"]:
+			"other":
 				var damage = skill_data["effect"] * atk
 				
-				if skill_data["subtype"] == "magic":
+				if skill_data["type"] == "magic":
 					damage = skill_data["effect"] * mag
 					
 				skill.global_position = enemy.global_position
 				yield(enemy.take_damage(damage),"completed")
 				
-			"positive":
+			"self":
 				var player_face = ""
 				
-				match skill_data["subtype"]:
+				match skill_data["type"]:
 					"heal":
 						player_face = "heal"
 						set_hp(hp + skill_data["effect"])
@@ -67,8 +67,7 @@ func attack(enemy) -> void:
 				skill.global_position = player_position
 				emit_signal("update_player_face", player_face)
 				yield(get_tree().create_timer(0.2), "timeout")
-			"negative":
-				pass
+				
 					
 func take_damage(damage):
 	set_hp(hp - (damage + damage_mod))

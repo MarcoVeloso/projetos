@@ -35,16 +35,8 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 6 )
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=12]
@@ -75,8 +67,12 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 10 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 15 )
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=21]
@@ -102,6 +98,10 @@ region = Rect2( 104, 0, 26, 26 )
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 7 )
 region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 16 )
@@ -133,19 +133,9 @@ region = Rect2( 156, 0, 26, 26 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 20 ) ],
-"loop": true,
-"name": "angry",
+"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
+"loop": false,
+"name": "smile",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
@@ -153,14 +143,24 @@ animations = [ {
 "name": "hurt",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
-"loop": false,
-"name": "smile",
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "stand",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
@@ -330,20 +330,33 @@ margin_top = 135.0
 margin_right = 90.0
 margin_bottom = 160.0
 
-[node name="Textbox" type="RichTextLabel" parent="UI/TextboxPanel"]
+[node name="Title" type="Label" parent="UI/TextboxPanel"]
 margin_left = 3.0
-margin_top = 3.0
-margin_right = 91.0
-margin_bottom = 26.0
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_constants/line_separation = 4
+margin_top = 1.0
+margin_right = 89.0
+margin_bottom = 8.0
+custom_constants/line_spacing = 3
 custom_styles/normal = SubResource( 2 )
-text = "Testing a TextBox
-Line 1
-Line2
+text = "Testing a Title
 
 "
-scroll_active = false
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Description" type="Label" parent="UI/TextboxPanel"]
+margin_left = 3.0
+margin_top = 10.0
+margin_right = 89.0
+margin_bottom = 23.0
+custom_constants/line_spacing = 3
+custom_styles/normal = SubResource( 2 )
+text = "Testing a description 
+
+"
+valign = 1
+autowrap = true
+clip_text = true
 
 [node name="BattleActionButtons" type="GridContainer" parent="UI"]
 margin_left = 2.0
