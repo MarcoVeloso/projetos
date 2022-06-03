@@ -75,6 +75,7 @@ func is_dead():
 	return hp <= 0
 	
 func boss_setup():
+	lifeBar.setBossHPBar()
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = load("res://UI/OutlineAura.tres")
 	

@@ -18,3 +18,6 @@ func dead(gold_text):
 	label.text = gold_text
 		
 	animationPlayer.play("Dead")
+
+func setBossHPBar():
+	bar.rect_scale.x = 1.5
