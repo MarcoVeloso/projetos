@@ -79,8 +79,8 @@ func boss_setup():
 	sprite.material = ShaderMaterial.new()
 	sprite.material.shader = load("res://UI/OutlineAura.tres")
 	
-	hp *= 2
-	damage = ceil(damage * 1.5)
+	hp = floor(hp * 1.5)
+	damage = floor(damage * 1.5)
 	gold *= 2
 	lifeBar.setMaxHP(hp)
 	
