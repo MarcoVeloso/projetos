@@ -74,7 +74,9 @@ func attack(enemy) -> void:
 				
 					
 func take_damage(damage):
-	set_hp(hp - (damage + damage_mod))
+	var final_damage = damage + damage_mod
+	
+	set_hp(hp - clamp(final_damage, 0, final_damage))
 	
 	damage_mod = 0
 	

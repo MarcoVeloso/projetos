@@ -20,7 +20,7 @@ var data = {
 	"DEFEND": {
 		"target":"self",
 		"type":"shield",
-		"effect":1,
+		"effect":2,
 		"ap":1,
 		"desc_name":"Defend",
 		"desc_effect":"Blocks %s Damage next turn using a shield",
