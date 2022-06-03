@@ -25,10 +25,10 @@ func set_ap(new_ap):
 	emit_signal("ap_changed", ap)
 	
 func _ready():
-	BattleUnits.PlayerStats = self
+	BattleUnits.Player = self
 
 func _exit_tree():
-	BattleUnits.PlayerStats = null
+	BattleUnits.Player = null
 	
 func attack(enemy) -> void:
 	var skill_name = active_skill

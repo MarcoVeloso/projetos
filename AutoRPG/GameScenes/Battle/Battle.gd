@@ -27,11 +27,11 @@ func init_stage():
 	current_enemy = 0
 	last_enemy = enemies.size() - 1
 	
-	BattleUnits.PlayerStats.init()
+	BattleUnits.Player.init()
 	
 	updateTopInfos()
 	assignSkillsButtons()
-	updateActionButtons(BattleUnits.PlayerStats.ap)
+	updateActionButtons(BattleUnits.Player.ap)
 	
 	create_new_enemy(current_enemy)
 	
@@ -57,7 +57,7 @@ func create_new_enemy(enemy_index):
 	turnTimer.start()
 
 func _on_TurnTimer_timeout():
-	var player = BattleUnits.PlayerStats
+	var player = BattleUnits.Player
 	var enemy = BattleUnits.Enemy
 	
 	var continue_battle = true
