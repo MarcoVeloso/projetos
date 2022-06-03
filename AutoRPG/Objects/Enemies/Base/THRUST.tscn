@@ -118,7 +118,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Enemy" type="Node2D"]
+[node name="THRUST" type="Node2D"]
 scale = Vector2( 0.7, 0.7 )
 z_index = 1
 script = ExtResource( 2 )

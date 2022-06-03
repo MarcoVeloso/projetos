@@ -5,7 +5,7 @@ const BattleUnits = preload("res://GameScenes/Battle/BattleUnits.tres")
 export(int) var hp = 999 setget set_hp
 export(int) var damage = 99
 export(int) var gold = 999
-export(bool) var chest = false
+
 export(String) var special = ""
 export(String) var special_condition = ""
 
@@ -31,7 +31,7 @@ func _exit_tree():
 	BattleUnits.Enemy = null
 
 func attack(player) -> void:
-	if self.is_in_group("attack_oversized"):
+	if self.name == "OVERSIZE":
 		sprite.offset.y = 12
 		
 	sprite.play("attack")
@@ -53,7 +53,7 @@ func take_damage(damage):
 		
 		var dead_text = "+" + str(gold) + " gold"
 		
-		if chest:
+		if self.name == "CHEST":
 			lifeBar.show()
 			dead_text = "VICTORY!\n" + "+" + str(gold) + " gold"
 			

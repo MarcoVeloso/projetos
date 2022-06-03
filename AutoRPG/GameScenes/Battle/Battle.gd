@@ -51,7 +51,7 @@ func create_new_enemy(enemy_index):
 	if current_enemy == last_enemy:
 		enemy.boss_setup()
 		
-	if enemy.chest:
+	if enemy.name == "CHEST":
 		enemy.chest_setup(StagesData.data[current_stage].chest_base_gold)
 	
 	turnTimer.start()
@@ -64,7 +64,7 @@ func _on_TurnTimer_timeout():
 	
 	if player_attacking:
 		
-		if enemy.chest:
+		if enemy.name == "CHEST":
 			player.active_skill = "SLASH"
 		
 		yield(player.attack(enemy),"completed")
