@@ -36,9 +36,12 @@ func _on_Player_update_player_face(type):
 			anim_end = "tired"
 		"die":
 			anim_end = "die"
-		"heal":
+		"happy":
 			anim_begin = "smile"
-		"defend":
+		"stayhappy":
+			anim_begin = "smile"
+			anim_end = "smile"
+		"shield":
 			anim_end = "defend"
 		
 	playerSprite.play(anim_begin)

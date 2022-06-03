@@ -57,15 +57,18 @@ func attack(enemy) -> void:
 				skill.global_position = enemy.global_position
 				yield(enemy.take_damage(damage),"completed")
 				
+				if enemy.name == "CHEST":
+					emit_signal("update_player_face", "stayhappy")
+				
 			"self":
 				var player_face = ""
 				
 				match skill_data["type"]:
 					"heal":
-						player_face = "heal"
+						player_face = "happy"
 						set_hp(hp + skill_data["effect"])
 					"shield":
-						player_face = "defend"
+						player_face = "shield"
 						damage_mod = -skill_data["effect"]
 				
 				skill.global_position = player_position
