@@ -11,6 +11,9 @@ onready var turnTimer = $TurnTimer
 
 var current_stage = 0
 var current_gold = 0
+var current_enemy = 0
+var last_enemy = 0
+var next_object = null
 
 var enemies = []
 var objects = []
@@ -21,10 +24,13 @@ func _ready():
 
 
 func init_stage():
-	enemies = StagesData.data[current_stage].enemies.duplicate(true)
-	objects = StagesData.data[current_stage].objects.duplicate(true)
+	enemies = StagesData.data[current_stage].enemies
+	objects = StagesData.data[current_stage].objects
 	
 	current_gold = 0
+	current_enemy = 0
+	last_enemy = enemies.size() - 1
+	next_object = null
 	
 	BattleUnits.Player.init()
 	
@@ -32,7 +38,7 @@ func init_stage():
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.Player.ap)
 	
-	create_new_object(enemies.pop_front())
+	create_new_object(enemies[current_enemy])
 
 
 func _on_TurnTimer_timeout():
@@ -72,27 +78,33 @@ func _on_TurnTimer_timeout():
 
 
 func next_battle():
-	var enemies_left = enemies.size()
-	var object = objects.pop_front()
-	
+	var enemies_left = last_enemy - current_enemy
+
 	updateTopInfos()
 	
-	if object:
+	if next_object:
 		yield(fade_next_screen(), "completed")
 		
-		create_new_object(object)
+		create_new_object(next_object)
+		
+		next_object = null
 	
 	elif enemies_left > 0:
+		current_enemy += 1
+		
 		yield(postBattleContainer.show_prepare_next_battle(),"completed")
 		yield(fade_next_screen(), "completed")
 
-		create_new_object(enemies.pop_front())
+		create_new_object(enemies[current_enemy])
+		
+		next_object = objects[current_enemy]
 
 	else:
+		current_stage += 1
+		
 		yield(postBattleContainer.show_stage_results(current_gold),"completed")
 		yield(fade_next_screen(), "completed")
 
-		current_stage += 1
 		init_stage()
 
 
@@ -137,7 +149,7 @@ func updateTopInfos():
 	var gold = $UI/TopInfosContainer/Gold
 	var enemies_count = $UI/TopInfosContainer/Enemies
 	var topInfos = $UI/TopInfosContainer
-	var enemies_left = enemies.size() - 1
+	var enemies_left = last_enemy - current_enemy
 	
 	topInfos.show()
 	
@@ -160,7 +172,7 @@ func create_new_object(object_name):
 
 	if instance.name == "CHEST": 
 		instance.chest_setup(StagesData.data[current_stage].chest_base_gold)
-	elif enemies.size() == 0:
+	elif current_enemy == last_enemy:
 		instance.boss_setup()
 			
 	turnTimer.start()
