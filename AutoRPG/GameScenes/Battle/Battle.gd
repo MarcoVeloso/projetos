@@ -149,22 +149,18 @@ func assignSkillsButtons():
 func updateTopInfos():
 	var stage = $UI/TopInfosContainer/Stage
 	var gold = $UI/TopInfosContainer/Gold
-	var enemies_count = $UI/TopInfosContainer/Enemies
-	var topInfos = $UI/TopInfosContainer
-	var enemies_left = last_object - current_object
-	
-	topInfos.show()
+	var room = $UI/TopInfosContainer/Room
+	var object_count = (last_object - current_object) - 1
 	
 	stage.text = StagesData.data[current_stage].name
 	gold.text = str(current_gold)
 	
-	if enemies_left < 0:
-		topInfos.hide()
-	elif enemies_left == 0:
-		enemies_count.text = "BOSS"
+	if object_count > 0:
+		room.text = "Room " + str(object_count)
+	elif object_count == 0:
+		room.text = "BOSS"
 	else:
-		enemies_count.text = str(enemies_left)
-
+		room.text = "FINAL"
 
 func create_new_object(object_name):
 	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)

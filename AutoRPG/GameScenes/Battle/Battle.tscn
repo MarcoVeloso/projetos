@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Objects/Player/Images/hurt.png" type="Texture" id=10]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 [ext_resource path="res://UI/Images/coins.png" type="Texture" id=12]
-[ext_resource path="res://UI/Images/skull.png" type="Texture" id=13]
 [ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=15]
 [ext_resource path="res://Objects/Player/Images/defend.png" type="Texture" id=16]
@@ -34,6 +33,42 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 10 )
+region = Rect2( 30, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 10 )
+region = Rect2( 60, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 10 )
+region = Rect2( 90, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 10 )
+region = Rect2( 120, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 10 )
+region = Rect2( 150, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 180, 0, 30, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 7 )
@@ -59,16 +94,8 @@ region = Rect2( 104, 0, 26, 26 )
 atlas = ExtResource( 7 )
 region = Rect2( 130, 0, 26, 26 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=10]
@@ -103,39 +130,16 @@ region = Rect2( 130, 0, 26, 26 )
 atlas = ExtResource( 16 )
 region = Rect2( 156, 0, 26, 26 )
 
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 10 )
-region = Rect2( 30, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 10 )
-region = Rect2( 60, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 10 )
-region = Rect2( 90, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 10 )
-region = Rect2( 120, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 10 )
-region = Rect2( 150, 0, 30, 26 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 10 )
-region = Rect2( 180, 0, 30, 26 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
-"name": "die",
+"name": "hurt",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ) ],
@@ -143,14 +147,14 @@ animations = [ {
 "name": "angry",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
 "loop": false,
 "name": "smile",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 10 ) ],
@@ -162,11 +166,6 @@ animations = [ {
 "loop": false,
 "name": "defend",
 "speed": 10.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": false,
-"name": "hurt",
-"speed": 15.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -258,13 +257,14 @@ margin_top = -2.0
 margin_right = 90.0
 margin_bottom = 10.0
 
-[node name="Enemies" type="Label" parent="UI/TopInfosContainer"]
-margin_left = 67.0
+[node name="Room" type="Label" parent="UI/TopInfosContainer"]
+margin_left = 61.0
 margin_top = 1.0
-margin_right = 83.0
+margin_right = 91.0
 margin_bottom = 13.0
 rect_scale = Vector2( 0.7, 0.7 )
-text = "99"
+text = "Room 0"
+align = 1
 
 [node name="Stage" type="Label" parent="UI/TopInfosContainer"]
 margin_left = 31.0
@@ -276,22 +276,17 @@ text = "Stage x"
 align = 1
 
 [node name="Gold" type="Label" parent="UI/TopInfosContainer"]
-margin_left = 18.0
+margin_left = 16.0
 margin_top = 1.0
-margin_right = 42.0
+margin_right = 40.0
 margin_bottom = 13.0
 rect_scale = Vector2( 0.7, 0.7 )
 text = "999"
 
 [node name="GoldSprite" type="Sprite" parent="UI/TopInfosContainer"]
-position = Vector2( 17, 5 )
+position = Vector2( 15, 5 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 12 )
-
-[node name="SkullSprite" type="Sprite" parent="UI/TopInfosContainer"]
-position = Vector2( 67, 5 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 13 )
 
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 3.0
