@@ -84,7 +84,7 @@ func next_battle():
 	if current_object < last_object:
 		var show_secret_button = false
 		
-		if enemies[current_object] == "ChestRED":
+		if enemies[current_object][0] != "E":
 			show_secret_button = true
 			current_object += 1
 		
