@@ -13,11 +13,10 @@ var current_stage = 0
 var current_gold = 0
 var current_enemy = 0
 var last_enemy = 0
-var next_object = null
 
 var enemies = []
-var objects = []
 var player_attacking = true
+
 
 func _ready():
 	init_stage()
@@ -25,12 +24,14 @@ func _ready():
 
 func init_stage():
 	enemies = StagesData.data[current_stage].enemies
-	objects = StagesData.data[current_stage].objects
 	
 	current_gold = 0
 	current_enemy = 0
-	last_enemy = enemies.size() - 1
-	next_object = null
+	last_enemy = - 1
+	
+	for item in enemies:
+		if item != "ChestRED":
+			last_enemy += 1
 	
 	BattleUnits.Player.init()
 	
@@ -78,26 +79,15 @@ func _on_TurnTimer_timeout():
 
 
 func next_battle():
-	var enemies_left = last_enemy - current_enemy
-
-	updateTopInfos()
 	
-	if next_object:
-		yield(fade_next_screen(), "completed")
-		
-		create_new_object(next_object)
-		
-		next_object = null
-	
-	elif enemies_left > 0:
+	if current_enemy <= last_enemy:
 		current_enemy += 1
 		
+		updateTopInfos()
 		yield(postBattleContainer.show_prepare_next_battle(),"completed")
 		yield(fade_next_screen(), "completed")
 
 		create_new_object(enemies[current_enemy])
-		
-		next_object = objects[current_enemy]
 
 	else:
 		current_stage += 1
