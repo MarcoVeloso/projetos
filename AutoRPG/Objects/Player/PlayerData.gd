@@ -7,4 +7,4 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
-var selected_skills = ["SLASH", "DEFEND", "HEAL", "SWIFT", "CROSS", "CRESCENT", "EXPLOSION", "ULTIMA"]
+var selected_skills = ["SLASH", "HEAL", "DEFEND", "SWIFT", "CROSS", "CRESCENT", "EXPLOSION", "ULTIMA"]

@@ -48,7 +48,7 @@ func _on_TurnTimer_timeout():
 	if player_attacking:
 		
 		if enemy.name == "CHEST":
-			player.active_skill = "SLASH"
+			selectFirstSkill()
 		
 		yield(player.attack(enemy),"completed")
 		
@@ -124,17 +124,15 @@ func updateActionButtons(current_ap):
 			
 			if button.pressed:
 				button.pressed = false
-				battleActionButtons.get_node("0").pressed = true
+				selectFirstSkill()
 		else:
 			button.disabled = false
 
 
 func assignSkillsButtons():
-	var fisrt_button = battleActionButtons.get_node("0")
 	var skills = PlayerData.selected_skills
 	
-	fisrt_button.pressed = true
-	fisrt_button.emit_signal("toggled",true)
+	selectFirstSkill()
 	
 	for button in battleActionButtons.get_children():
 		var index = int(button.name)
@@ -170,6 +168,8 @@ func create_new_object(object_name):
 
 	if instance.name == "CHEST": 
 		instance.chest_setup(StagesData.data[current_stage].chest_base_gold)
+		selectFirstSkill()
+		
 	elif current_object == last_object - 1:
 		instance.boss_setup()
 			
@@ -181,3 +181,8 @@ func _on_SecretButton_toggled(selected):
 		dont_jump_next_object = true
 	else:
 		dont_jump_next_object = false
+		
+func selectFirstSkill():
+	var fisrt_button = battleActionButtons.get_node("0")
+	fisrt_button.pressed = true
+	fisrt_button.emit_signal("toggled",true)
