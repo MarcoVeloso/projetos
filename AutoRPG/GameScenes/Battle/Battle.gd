@@ -11,8 +11,9 @@ onready var turnTimer = $TurnTimer
 
 var current_stage = 0
 var current_gold = 0
-var current_enemy = 0
-var last_enemy = 0
+var current_object = 0
+var last_object = 0
+var dont_jump_next_object = false
 
 var enemies = []
 var player_attacking = true
@@ -26,12 +27,8 @@ func init_stage():
 	enemies = StagesData.data[current_stage].enemies
 	
 	current_gold = 0
-	current_enemy = 0
-	last_enemy = - 1
-	
-	for item in enemies:
-		if item != "ChestRED":
-			last_enemy += 1
+	current_object = 0
+	last_object = enemies.size() - 1
 	
 	BattleUnits.Player.init()
 	
@@ -39,7 +36,7 @@ func init_stage():
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.Player.ap)
 	
-	create_new_object(enemies[current_enemy])
+	create_new_object(enemies[current_object])
 
 
 func _on_TurnTimer_timeout():
@@ -79,16 +76,31 @@ func _on_TurnTimer_timeout():
 
 
 func next_battle():
+	dont_jump_next_object = false
+	current_object += 1
 	
-	if current_enemy <= last_enemy:
-		current_enemy += 1
+	updateTopInfos()
+	
+	if current_object < last_object:
+		var show_secret_button = false
 		
-		updateTopInfos()
-		yield(postBattleContainer.show_prepare_next_battle(),"completed")
+		if enemies[current_object] == "ChestRED":
+			show_secret_button = true
+			current_object += 1
+			updateTopInfos()
+		
+		yield(postBattleContainer.show_prepare_next_battle(show_secret_button),"completed")
 		yield(fade_next_screen(), "completed")
+		
+		if dont_jump_next_object:
+			current_object -= 1
 
-		create_new_object(enemies[current_enemy])
-
+		create_new_object(enemies[current_object])
+		
+	elif current_object == last_object:
+		yield(fade_next_screen(), "completed")
+		
+		create_new_object(enemies[current_object])
 	else:
 		current_stage += 1
 		
@@ -139,7 +151,7 @@ func updateTopInfos():
 	var gold = $UI/TopInfosContainer/Gold
 	var enemies_count = $UI/TopInfosContainer/Enemies
 	var topInfos = $UI/TopInfosContainer
-	var enemies_left = last_enemy - current_enemy
+	var enemies_left = last_object - current_object
 	
 	topInfos.show()
 	
@@ -162,7 +174,14 @@ func create_new_object(object_name):
 
 	if instance.name == "CHEST": 
 		instance.chest_setup(StagesData.data[current_stage].chest_base_gold)
-	elif current_enemy == last_enemy:
+	elif current_object == last_object - 1:
 		instance.boss_setup()
 			
 	turnTimer.start()
+	
+	
+func _on_SecretButton_toggled(selected):
+	if selected:
+		dont_jump_next_object = true
+	else:
+		dont_jump_next_object = false

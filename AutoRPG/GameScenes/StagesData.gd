@@ -9,7 +9,7 @@ const data = [
 	{
 		"name":"Dungeon 1",
 		"chest_base_gold":15,
-		"enemies":["SkeltonKNIFE", "SkeltonKNIFE", "SkeltonBOW", "SkeltonKNIFE", "ChestRED"],
+		"enemies":["SkeltonKNIFE", "SkeltonKNIFE", "ChestRED", "SkeltonBOW", "SkeltonKNIFE", "ChestRED"],
 	},
 	{
 		"name":"Dungeon 2",
