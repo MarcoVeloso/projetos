@@ -25,6 +25,7 @@ func show_game_over():
 func show_prepare_next_battle(show_secret_button):
 	label.text = "Prepare to\nnext battle...\n"
 	secretButton.text = "Try another way..."
+	secretButton.pressed = false
 	button.hide()
 	secretButton.visible = show_secret_button
 	self.show()
