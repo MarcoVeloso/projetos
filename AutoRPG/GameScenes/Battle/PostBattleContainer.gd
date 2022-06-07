@@ -14,6 +14,7 @@ func _process(delta):
 func show_game_over():
 	label.text = "You lose"
 	button.text = "Restart stage"
+	secretButton.hide()
 	button.show()
 	self.show()
 	
@@ -23,6 +24,7 @@ func show_game_over():
 	
 func show_prepare_next_battle(show_secret_button):
 	label.text = "Prepare to\nnext battle...\n"
+	secretButton.text = "Try another way..."
 	button.hide()
 	secretButton.visible = show_secret_button
 	self.show()
@@ -36,6 +38,7 @@ func show_prepare_next_battle(show_secret_button):
 func show_stage_results(gold):
 	label.text = "You beat the stage!\nTotal Gold: " + str(gold)
 	button.text = "Go to next stage"
+	secretButton.hide()
 	button.show()
 	self.show()
 	

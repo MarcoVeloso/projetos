@@ -87,14 +87,14 @@ func next_battle():
 		if enemies[current_object] == "ChestRED":
 			show_secret_button = true
 			current_object += 1
-			updateTopInfos()
 		
 		yield(postBattleContainer.show_prepare_next_battle(show_secret_button),"completed")
 		yield(fade_next_screen(), "completed")
 		
 		if dont_jump_next_object:
 			current_object -= 1
-
+			
+		updateTopInfos()
 		create_new_object(enemies[current_object])
 		
 	elif current_object == last_object:
