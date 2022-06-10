@@ -315,7 +315,23 @@ align = 1
 [node name="AP" type="Label" parent="UI/PlayerPanel"]
 margin_left = 22.0
 margin_top = 8.0
-margin_right = 50.0
+margin_right = 46.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "AP: 99"
+
+[node name="ATK" type="Label" parent="UI/PlayerPanel"]
+margin_left = 43.0
+margin_top = 8.0
+margin_right = 67.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "AP: 99"
+
+[node name="MAG" type="Label" parent="UI/PlayerPanel"]
+margin_left = 62.0
+margin_top = 8.0
+margin_right = 86.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "AP: 99"
