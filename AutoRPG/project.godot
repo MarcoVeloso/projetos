@@ -26,6 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+GameData="*res://GameScenes/GameData.gd"
 PlayerData="*res://Objects/Player/PlayerData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
 StagesData="*res://GameScenes/StagesData.gd"

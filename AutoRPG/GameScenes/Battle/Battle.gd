@@ -21,7 +21,7 @@ var player_attacking = true
 
 func _ready():
 	init_stage()
-
+	
 
 func init_stage():
 	enemies = StagesData.data[current_stage].enemies
@@ -151,14 +151,14 @@ func updateTopInfos():
 	var object_count = (last_object - current_object) - 1
 	
 	stage.text = StagesData.data[current_stage].name
-	gold.text = str(current_gold)
+	gold.text = GameData.icon.GOLD + ' ' + str(current_gold)
 	
 	if object_count > 0:
-		room.text = "Room " + str(object_count)
+		room.text = GameData.icon.CHEST + ' ' + str(object_count)
 	elif object_count == 0:
 		room.text = "BOSS"
 	else:
-		room.text = "FINAL"
+		room.text = "CHEST"
 
 func create_new_object(object_name):
 	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)

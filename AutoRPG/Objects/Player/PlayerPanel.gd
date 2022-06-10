@@ -25,7 +25,7 @@ func updateHP(value):
 	HPbar.value = value
 	
 func updateAP(value):
-	apLabel.text = "AP: " + str(value)
+	apLabel.text = GameData.icon.AP + ' ' + str(value)
 
 func _on_Player_update_player_face(type):
 	var anim_begin = "hurt"
