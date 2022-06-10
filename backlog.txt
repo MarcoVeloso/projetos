@@ -134,5 +134,8 @@ Credits
 	Inspiration:
 		Mobile RPG Tutorial by HeartBeast
 		https://github.com/uheartbeast/mobile-rpg-tutorial
+	Font
+		Base: monogram
+		Editor: http://www.pentacom.jp/pentacom/bitfontmaker2/
 
 ---------------------------------------------
