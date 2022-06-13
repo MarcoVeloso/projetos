@@ -117,16 +117,20 @@ func fade_next_screen():
 
 func updateActionButtons(current_ap):
 	for button in battleActionButtons.get_children():
-		var skill_data = SkillsData.data[button.text]
 		
-		if (current_ap < skill_data["ap"]):
-			button.disabled = true
+		if button.text != GameData.icon.LOCK:
+			var skill_data = SkillsData.data[button.text]
 			
-			if button.pressed:
-				button.pressed = false
-				selectFirstSkill()
+			if (current_ap < skill_data["ap"]):
+				button.disabled = true
+				
+				if button.pressed:
+					button.pressed = false
+					selectFirstSkill()
+			else:
+				button.disabled = false
 		else:
-			button.disabled = false
+			button.disabled = true
 
 
 func assignSkillsButtons():
@@ -140,8 +144,7 @@ func assignSkillsButtons():
 		if (skills[index]):
 			button.text = skills[index]
 		else:
-			button.text = "SLASH"
-			button.visible = false
+			button.text = GameData.icon.LOCK
 
 
 func updateTopInfos():
@@ -154,11 +157,12 @@ func updateTopInfos():
 	gold.text = GameData.icon.GOLD + ' ' + str(current_gold)
 	
 	if object_count > 0:
-		room.text = GameData.icon.CHEST + ' ' + str(object_count)
+		room.text = GameData.icon.FINAL + ' ' + str(object_count)
 	elif object_count == 0:
 		room.text = "BOSS"
 	else:
 		room.text = "CHEST"
+
 
 func create_new_object(object_name):
 	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)

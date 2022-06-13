@@ -9,5 +9,5 @@ const icon = {
 	"GOLD":"✷",
 	"LOCK":"⚠",
 	"SKULL":"☆",
-	"CHEST":"☀",
+	"FINAL":"☀",
 }
