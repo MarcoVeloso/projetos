@@ -51,15 +51,15 @@ func take_damage(damage):
 	if is_dead():
 		sprite.material = null
 		
-		var dead_text = "+" + str(gold) + " gold"
+		var dead_text = "+" + str(gold) + " $"
 		
 		if self.name == "CHEST":
 			lifeBar.show()
-			dead_text = "VICTORY!\n" + "+" + str(gold) + " gold"
+			dead_text = "Treasure!\n+" + str(gold) + " $"
 			
 		elif hp < max_hp * -0.2:
 			gold = ceil(gold * 1.2)
-			dead_text = "OVERKILL\n" + "+" + str(gold) + " gold"
+			dead_text = "OVERKILL Bonus!\n+" + str(gold) + " $"
 				
 		lifeBar.dead(dead_text)
 			

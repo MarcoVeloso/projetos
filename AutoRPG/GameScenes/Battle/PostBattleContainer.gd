@@ -37,7 +37,7 @@ func show_prepare_next_battle(show_secret_button):
 	self.hide()
 	
 func show_stage_results(gold):
-	label.text = "You beat the stage!\nTotal Gold: " + str(gold)
+	label.text = "You beat the stage!\nTotal $: " + str(gold)
 	button.text = "Go to next stage"
 	secretButton.hide()
 	button.show()
