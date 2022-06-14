@@ -74,7 +74,7 @@ func battle_turn():
 			init_stage()
 		elif enemy.name == "TRAP":
 			continue_battle = false
-			enemy.queue_free()
+			yield(enemy.die_and_free(),"completed")
 			next_battle()
 	
 	updateActionButtons(player.ap)

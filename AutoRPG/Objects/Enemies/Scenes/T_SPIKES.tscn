@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Objects/Enemies/Images/T_SPIKES.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.gd" type="Script" id=2]
@@ -32,17 +32,26 @@ region = Rect2( 350, 0, 70, 40 )
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 70, 40 )
 
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 350, 0, 70, 40 )
+
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
 "name": "attack",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 13 ) ],
 "loop": false,
 "name": "stand",
 "speed": 7.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "die",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=14]

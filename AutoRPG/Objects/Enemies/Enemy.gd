@@ -49,30 +49,33 @@ func take_damage(damage):
 	animationPlayer.play("Stand")
 	
 	if is_dead():
-		sprite.material = null
-		
-		var dead_text = "+" + str(gold) + " $"
-		
-		if self.name == "CHEST":
-			lifeBar.show()
-			dead_text = "Treasure!\n+" + str(gold) + " $"
-			
-		elif hp < max_hp * -0.2:
-			gold = ceil(gold * 1.2)
-			dead_text = "OVERKILL Bonus!\n+" + str(gold) + " $"
-				
-		lifeBar.dead(dead_text)
-			
-		sprite.play("die")
-		yield(sprite, "animation_finished")
-		
-		animationPlayer.play("Fadeout")
-		yield(animationPlayer, "animation_finished")
-		
-		queue_free()
+		yield(die_and_free(),"completed")
 
 func is_dead():
 	return hp <= 0
+	
+func die_and_free():
+	sprite.material = null
+	
+	var dead_text = "+" + str(gold) + " $"
+	
+	if self.name == "CHEST":
+		lifeBar.show()
+		dead_text = "Treasure!\n+" + str(gold) + " $"
+		
+	elif hp < max_hp * -0.2:
+		gold = ceil(gold * 1.2)
+		dead_text = "OVERKILL Bonus!\n+" + str(gold) + " $"
+			
+	lifeBar.dead(dead_text)
+		
+	sprite.play("die")
+	yield(sprite, "animation_finished")
+	
+	animationPlayer.play("Fadeout")
+	yield(animationPlayer, "animation_finished")
+	
+	queue_free()
 	
 func boss_setup():
 	lifeBar.setBossHPBar()
