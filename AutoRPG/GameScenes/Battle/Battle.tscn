@@ -33,8 +33,40 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 78, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 104, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 130, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
+
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=28]
@@ -64,34 +96,6 @@ region = Rect2( 130, 0, 26, 26 )
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 16 )
 region = Rect2( 156, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 7 )
-region = Rect2( 26, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 7 )
-region = Rect2( 52, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 7 )
-region = Rect2( 78, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 7 )
-region = Rect2( 104, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 7 )
-region = Rect2( 130, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 15 )
-region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 6 )
@@ -125,31 +129,32 @@ region = Rect2( 150, 0, 30, 26 )
 atlas = ExtResource( 10 )
 region = Rect2( 180, 0, 30, 26 )
 
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 26, 26 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
-"loop": false,
-"name": "defend",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "die",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "tired",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "stand",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
 "loop": false,
 "name": "smile",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": false,
+"name": "defend",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 20 ) ],
 "loop": true,
@@ -160,11 +165,6 @@ animations = [ {
 "loop": false,
 "name": "hurt",
 "speed": 15.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "tired",
-"speed": 5.0
 } ]
 
 [sub_resource type="StyleBoxEmpty" id=2]
@@ -216,33 +216,42 @@ visible = false
 margin_right = 90.0
 margin_bottom = 61.0
 mouse_filter = 2
-custom_constants/separation = 0
+custom_constants/separation = 1
 alignment = 1
 script = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="UI/PostBattleContainer"]
-margin_top = 21.0
+margin_top = 1.0
 margin_right = 90.0
-margin_bottom = 40.0
+margin_bottom = 17.0
 custom_constants/line_spacing = 0
 align = 1
 
-[node name="Button" type="Button" parent="UI/PostBattleContainer"]
+[node name="RestartButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 35.0
+margin_top = 18.0
 margin_right = 80.0
-margin_bottom = 48.0
+margin_bottom = 31.0
 rect_min_size = Vector2( 70, 13 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Restart stage"
 
-[node name="SecretButton" type="Button" parent="UI/PostBattleContainer"]
-visible = false
+[node name="NextStageButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 35.0
+margin_top = 32.0
 margin_right = 80.0
-margin_bottom = 48.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 70, 13 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Go to next stage"
+
+[node name="SecretButton" type="Button" parent="UI/PostBattleContainer"]
+margin_left = 10.0
+margin_top = 46.0
+margin_right = 80.0
+margin_bottom = 59.0
 rect_min_size = Vector2( 70, 13 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -504,6 +513,8 @@ autostart = true
 [connection signal="hp_changed" from="Player" to="UI/PlayerPanel" method="_on_Player_hp_changed"]
 [connection signal="init_player" from="Player" to="UI/PlayerPanel" method="_on_Player_init_player"]
 [connection signal="update_player_face" from="Player" to="UI/PlayerPanel" method="_on_Player_update_player_face"]
+[connection signal="pressed" from="UI/PostBattleContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="UI/PostBattleContainer/NextStageButton" to="." method="_on_NextStageButton_pressed"]
 [connection signal="toggled" from="UI/PostBattleContainer/SecretButton" to="." method="_on_SecretButton_toggled"]
 [connection signal="toggled" from="UI/BattleActionButtons/0" to="UI/BattleActionButtons/0" method="_on_toggled"]
 [connection signal="toggled" from="UI/BattleActionButtons/1" to="UI/BattleActionButtons/1" method="_on_toggled"]

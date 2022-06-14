@@ -26,6 +26,8 @@ func _ready():
 func init_stage():
 	enemies = StagesData.data[current_stage].enemies
 	
+	player_attacking = true
+	
 	current_gold = 0
 	current_object = 0
 	last_object = enemies.size() - 1
@@ -41,6 +43,7 @@ func init_stage():
 
 func _on_TurnTimer_timeout():
 	battle_turn()
+	
 	
 func battle_turn():
 	var player = BattleUnits.Player
@@ -69,9 +72,7 @@ func battle_turn():
 		if player.is_dead():
 			continue_battle = false
 			enemy.queue_free()
-			yield(postBattleContainer.show_game_over(),"completed")
-			yield(fade_next_screen(), "completed")
-			init_stage()
+			postBattleContainer.show_game_over()
 		elif enemy.name == "TRAP":
 			continue_battle = false
 			yield(enemy.die_and_free(),"completed")
@@ -111,15 +112,11 @@ func next_battle():
 		
 		create_new_object(enemies[current_object])
 	else:
-		current_stage += 1
-		
-		yield(postBattleContainer.show_stage_results(current_gold),"completed")
-		yield(fade_next_screen(), "completed")
-
-		init_stage()
+		postBattleContainer.show_stage_results(current_gold)
 
 
 func fade_next_screen():
+	postBattleContainer.hide()
 	animationPlayer.play("FadeToNextScreen")
 	yield(animationPlayer, "animation_finished")
 
@@ -190,14 +187,25 @@ func create_new_object(object_name):
 	battle_turn()
 	
 	
+func selectFirstSkill():
+	var fisrt_button = battleActionButtons.get_node("0")
+	fisrt_button.pressed = true
+	fisrt_button.emit_signal("toggled",true)
+	
+	
 func _on_SecretButton_toggled(selected):
 	if selected:
 		dont_jump_next_object = true
 	else:
 		dont_jump_next_object = false
-		
-		
-func selectFirstSkill():
-	var fisrt_button = battleActionButtons.get_node("0")
-	fisrt_button.pressed = true
-	fisrt_button.emit_signal("toggled",true)
+
+
+func _on_RestartButton_pressed():
+	yield(fade_next_screen(), "completed")
+	init_stage()
+
+
+func _on_NextStageButton_pressed():
+	current_stage += 1
+	yield(fade_next_screen(), "completed")
+	init_stage()
