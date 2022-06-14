@@ -17,6 +17,7 @@ var dont_jump_next_object = false
 
 var enemies = []
 var player_attacking = false
+var ap_gain = 1
 
 
 func _ready():
@@ -38,6 +39,7 @@ func init_stage():
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.Player.ap)
 	
+	player_passive_skills()
 	create_new_object()
 
 
@@ -55,7 +57,6 @@ func create_new_object():
 	elif current_object == last_object - 1:
 		instance.boss_setup()
 	
-	player_passive_skills()
 	yield(get_tree().create_timer(0.5), "timeout")
 	battle_turn()
 
@@ -79,7 +80,7 @@ func battle_turn():
 			continue_battle = false
 			
 	else:
-		player.ap += 1
+		player.ap += ap_gain
 		
 		yield(enemy.attack(player),"completed")
 		
@@ -227,10 +228,7 @@ func player_passive_skills():
 		"Magic +1":
 			player.mag += 1
 			
-		"Auto Heal":
-			player.hp += 3
-			
-		"AP Gain":
-			player.ap += 3
+		"AP Boost":
+			ap_gain += 1
 	
 	
