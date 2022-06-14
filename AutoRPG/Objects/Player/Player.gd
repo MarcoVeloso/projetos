@@ -5,24 +5,30 @@ const Skills = preload("res://Objects/Skills/Skills.tscn")
 
 var hp = 999 setget set_hp
 var ap = 99 setget set_ap
-var atk = 99
-var mag = 99
+var atk = 99 setget set_atk
+var mag = 99 setget set_mag
 
 var active_skill = "SLASH"
 var damage_mod = 0
 
-signal init_player()
-signal hp_changed(value)
-signal ap_changed(value)
+signal stat_changed(stat, value)
 signal update_player_face(type)
 
 func set_hp(new_hp):
 	hp = clamp(new_hp, 0, PlayerData.max_hp)
-	emit_signal("hp_changed", hp)
+	emit_signal("stat_changed", "hp", hp)
 	
 func set_ap(new_ap):
 	ap = clamp(new_ap, 0, PlayerData.max_ap)
-	emit_signal("ap_changed", ap)
+	emit_signal("stat_changed", "ap", ap)
+	
+func set_atk(new_atk):
+	atk = clamp(new_atk, 0, new_atk)
+	emit_signal("stat_changed", "atk", atk)
+	
+func set_mag(new_mag):
+	mag = clamp(new_mag, 0, new_mag)
+	emit_signal("stat_changed", "mag", mag)
 	
 func _ready():
 	BattleUnits.Player = self
@@ -96,10 +102,11 @@ func is_dead():
 		return false
 	
 func init():
-	hp = PlayerData.max_hp
-	ap = PlayerData.start_ap
-	atk = PlayerData.attack_power
-	mag = PlayerData.magic_power
+	set_hp(PlayerData.max_hp)
+	set_ap(PlayerData.max_ap)
+	set_atk(PlayerData.attack_power)
+	set_mag(PlayerData.magic_power)
+	
 	active_skill = "SLASH"
 
-	emit_signal("init_player")
+	emit_signal("update_player_face", "normal")

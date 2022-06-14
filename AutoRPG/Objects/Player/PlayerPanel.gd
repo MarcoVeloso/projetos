@@ -5,40 +5,33 @@ onready var hpLabel = $HP
 onready var apLabel = $AP
 onready var atkLabel = $ATK
 onready var magLabel = $MAG
-
 onready var playerSprite = $Sprite
 
-func _ready():
-	_on_Player_init_player()
-	
-func _on_Player_init_player():
-	playerSprite.play("stand")
-	
-	HPbar.max_value = PlayerData.max_hp
-	
-	updateHP(PlayerData.max_hp)
-	updateAP(PlayerData.start_ap)
-	atkLabel.text = GameData.icon.ATK + str(PlayerData.attack_power)
-	magLabel.text = GameData.icon.MAG + str(PlayerData.magic_power)
-	
-func _on_Player_hp_changed(value):
-	updateHP(value)
 
-func _on_Player_ap_changed(value):
-	updateAP(value)
+func _on_Player_stat_changed(stat, value):
+	updateLabels(stat, value)
+
 	
-func updateHP(value):
-	hpLabel.text = str(value)
-	HPbar.value = value
-	
-func updateAP(value):
-	apLabel.text = GameData.icon.AP + str(value)
+func updateLabels(stat, value):
+	match stat:
+		"hp":
+			hpLabel.text = str(value)
+			HPbar.value = value
+		"ap":
+			apLabel.text = GameData.icon.AP + str(value)
+		"atk":
+			atkLabel.text = GameData.icon.ATK + str(value)
+		"mag":
+			magLabel.text = GameData.icon.MAG + str(value)
+
 
 func _on_Player_update_player_face(type):
 	var anim_begin = "hurt"
 	var anim_end = "stand"
 	
 	match type:
+		"normal":
+			anim_begin = "stand"
 		"weak":
 			anim_end = "tired"
 		"die":
