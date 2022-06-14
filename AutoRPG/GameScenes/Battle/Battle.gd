@@ -16,7 +16,7 @@ var last_object = 0
 var dont_jump_next_object = false
 
 var enemies = []
-var player_attacking = true
+var player_attacking = false
 
 
 func _ready():
@@ -26,7 +26,7 @@ func _ready():
 func init_stage():
 	enemies = StagesData.data[current_stage].enemies
 	
-	player_attacking = true
+	player_attacking = false
 	
 	current_gold = 0
 	current_object = 0
@@ -55,6 +55,7 @@ func create_new_object():
 	elif current_object == last_object - 1:
 		instance.boss_setup()
 	
+	player_passive_skills()
 	yield(get_tree().create_timer(0.5), "timeout")
 	battle_turn()
 
@@ -211,3 +212,25 @@ func _on_NextStageButton_pressed():
 	current_stage += 1
 	yield(fade_next_screen(), "completed")
 	init_stage()
+
+
+func player_passive_skills():
+	var player = BattleUnits.Player
+	
+	match PlayerData.passive_skill:
+		"Attack First":
+			player_attacking = true
+			
+		"Attack +1":
+			player.atk += 1
+			
+		"Magic +1":
+			player.mag += 1
+			
+		"Auto Heal":
+			player.hp += 3
+			
+		"AP Gain":
+			player.ap += 3
+	
+	
