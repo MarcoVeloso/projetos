@@ -61,9 +61,8 @@ func battle_turn():
 		yield(player.attack(enemy),"completed")
 		
 		if enemy.is_dead():
-			current_gold += enemy.gold
 			continue_battle = false
-			next_battle()
+			
 	else:
 		player.ap += 1
 		
@@ -76,13 +75,15 @@ func battle_turn():
 		elif enemy.name == "TRAP":
 			continue_battle = false
 			yield(enemy.die_and_free(),"completed")
-			next_battle()
 	
 	updateActionButtons(player.ap)
 	
 	if continue_battle:
 		player_attacking = !player_attacking
 		turnTimer.start()
+	else:
+		current_gold += enemy.gold
+		next_battle()
 
 
 func next_battle():

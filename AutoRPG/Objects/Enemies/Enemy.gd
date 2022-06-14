@@ -60,9 +60,9 @@ func die_and_free():
 	var dead_text = "+" + str(gold) + " $"
 	
 	if self.name == "CHEST":
-		lifeBar.show()
 		dead_text = "Treasure!\n+" + str(gold) + " $"
-		
+	elif self.name == "TRAP":
+		dead_text = "Trap!\n" + str(gold) + " $"
 	elif hp < max_hp * -0.2:
 		gold = ceil(gold * 1.2)
 		dead_text = "OVERKILL Bonus!\n+" + str(gold) + " $"
@@ -88,5 +88,7 @@ func boss_setup():
 	lifeBar.setMaxHP(hp)
 	
 func non_enemy_setup(chest_base_gold):
-	gold = chest_base_gold * gold 
+	if self.name == "CHEST": 
+		gold = chest_base_gold * gold
+		
 	lifeBar.hide()

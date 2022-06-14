@@ -4,6 +4,14 @@
 [ext_resource path="res://Objects/Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Enemies/LifeBar.tscn" type="PackedScene" id=3]
 
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 70, 40 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 350, 0, 70, 40 )
+
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 70, 40 )
@@ -28,21 +36,8 @@ region = Rect2( 280, 0, 70, 40 )
 atlas = ExtResource( 1 )
 region = Rect2( 350, 0, 70, 40 )
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 70, 40 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 1 )
-region = Rect2( 350, 0, 70, 40 )
-
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": false,
-"name": "attack",
-"speed": 15.0
-}, {
 "frames": [ SubResource( 13 ) ],
 "loop": false,
 "name": "stand",
@@ -52,6 +47,11 @@ animations = [ {
 "loop": true,
 "name": "die",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": false,
+"name": "attack",
+"speed": 15.0
 } ]
 
 [sub_resource type="Animation" id=14]
@@ -73,7 +73,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 hp = 0
 damage = 2
-gold = 0
+gold = -5
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1, -3 )

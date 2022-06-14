@@ -13,10 +13,11 @@ func setHP(hp):
 	bar.value = hp
 
 func dead(gold_text):
+	self.show()
 	bar.hide()
 
 	label.text = gold_text
-		
+
 	animationPlayer.play("Dead")
 
 func setBossHPBar():
