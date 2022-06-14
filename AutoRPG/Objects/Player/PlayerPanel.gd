@@ -18,8 +18,8 @@ func _on_Player_init_player():
 	
 	updateHP(PlayerData.max_hp)
 	updateAP(PlayerData.start_ap)
-	atkLabel.text = GameData.icon.ATK + "1"
-	magLabel.text = GameData.icon.MAG + "1"
+	atkLabel.text = GameData.icon.ATK + str(PlayerData.attack_power)
+	magLabel.text = GameData.icon.MAG + str(PlayerData.magic_power)
 	
 func _on_Player_hp_changed(value):
 	updateHP(value)

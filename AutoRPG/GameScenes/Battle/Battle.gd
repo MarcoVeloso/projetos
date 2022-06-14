@@ -38,13 +38,27 @@ func init_stage():
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.Player.ap)
 	
-	create_new_object(enemies[current_object])
+	create_new_object()
 
 
-func _on_TurnTimer_timeout():
+func create_new_object():
+	var object_name = enemies[current_object]
+	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)
+	var instance = object.instance()
+	
+	enemyPosition.add_child(instance)
+
+	if (object_name[0] != "E"):
+		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)
+		selectFirstSkill()
+		
+	elif current_object == last_object - 1:
+		instance.boss_setup()
+	
+	yield(get_tree().create_timer(0.5), "timeout")
 	battle_turn()
-	
-	
+
+
 func battle_turn():
 	var player = BattleUnits.Player
 	var enemy = BattleUnits.Enemy
@@ -86,6 +100,10 @@ func battle_turn():
 		next_battle()
 
 
+func _on_TurnTimer_timeout():
+	battle_turn()
+
+
 func next_battle():
 	dont_jump_next_object = false
 	current_object += 1
@@ -106,12 +124,12 @@ func next_battle():
 			current_object -= 1
 			
 		updateTopInfos()
-		create_new_object(enemies[current_object])
+		create_new_object()
 		
 	elif current_object == last_object:
 		yield(fade_next_screen(), "completed")
 		
-		create_new_object(enemies[current_object])
+		create_new_object()
 	else:
 		postBattleContainer.show_stage_results(current_gold)
 
@@ -171,29 +189,12 @@ func updateTopInfos():
 		room.text = "FINAL"
 
 
-func create_new_object(object_name):
-	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)
-	var instance = object.instance()
-	
-	enemyPosition.add_child(instance)
-
-	if (object_name[0] != "E"):
-		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)
-		selectFirstSkill()
-		
-	elif current_object == last_object - 1:
-		instance.boss_setup()
-	
-	yield(get_tree().create_timer(0.5), "timeout")
-	battle_turn()
-	
-	
 func selectFirstSkill():
 	var fisrt_button = battleActionButtons.get_node("0")
 	fisrt_button.pressed = true
 	fisrt_button.emit_signal("toggled",true)
-	
-	
+
+
 func _on_SecretButton_toggled(selected):
 	if selected:
 		dont_jump_next_object = true
