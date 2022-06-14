@@ -40,16 +40,21 @@ func init_stage():
 
 
 func _on_TurnTimer_timeout():
+	battle_turn()
+	
+func battle_turn():
 	var player = BattleUnits.Player
 	var enemy = BattleUnits.Enemy
 	
 	var continue_battle = true
 	
+	if enemy.name == "CHEST":
+		player_attacking = true
+		selectFirstSkill()
+	elif enemy.name == "TRAP":
+		player_attacking = false
+	
 	if player_attacking:
-		
-		if enemy.name == "CHEST":
-			selectFirstSkill()
-		
 		yield(player.attack(enemy),"completed")
 		
 		if enemy.is_dead():
@@ -67,6 +72,10 @@ func _on_TurnTimer_timeout():
 			yield(postBattleContainer.show_game_over(),"completed")
 			yield(fade_next_screen(), "completed")
 			init_stage()
+		elif enemy.name == "TRAP":
+			continue_battle = false
+			enemy.queue_free()
+			next_battle()
 	
 	updateActionButtons(player.ap)
 	
@@ -161,7 +170,7 @@ func updateTopInfos():
 	elif object_count == 0:
 		room.text = "BOSS"
 	else:
-		room.text = "CHEST"
+		room.text = "FINAL"
 
 
 func create_new_object(object_name):
@@ -170,14 +179,15 @@ func create_new_object(object_name):
 	
 	enemyPosition.add_child(instance)
 
-	if instance.name == "CHEST": 
-		instance.chest_setup(StagesData.data[current_stage].chest_base_gold)
+	if (object_name[0] != "E"):
+		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)
 		selectFirstSkill()
 		
 	elif current_object == last_object - 1:
 		instance.boss_setup()
-			
-	turnTimer.start()
+	
+	yield(get_tree().create_timer(0.5), "timeout")
+	battle_turn()
 	
 	
 func _on_SecretButton_toggled(selected):
@@ -185,6 +195,7 @@ func _on_SecretButton_toggled(selected):
 		dont_jump_next_object = true
 	else:
 		dont_jump_next_object = false
+		
 		
 func selectFirstSkill():
 	var fisrt_button = battleActionButtons.get_node("0")

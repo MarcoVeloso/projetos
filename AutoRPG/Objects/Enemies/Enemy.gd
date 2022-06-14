@@ -84,6 +84,6 @@ func boss_setup():
 	gold *= 2
 	lifeBar.setMaxHP(hp)
 	
-func chest_setup(chest_base_gold):
+func non_enemy_setup(chest_base_gold):
 	gold = chest_base_gold * gold 
 	lifeBar.hide()
