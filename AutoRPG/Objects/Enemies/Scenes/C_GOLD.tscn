@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Enemies/Images/chests.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Enemies/LifeBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Enemies/Anims/Fadeout.tres" type="Animation" id=5]
 [ext_resource path="res://Objects/Enemies/Anims/Shake.tres" type="Animation" id=6]
-[ext_resource path="res://Objects/Enemies/Anims/Stand.tres" type="Animation" id=7]
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -41,9 +40,7 @@ animation = "stand"
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Stand"
 anims/Fadeout = ExtResource( 5 )
 anims/Shake = ExtResource( 6 )
-anims/Stand = ExtResource( 7 )
 
 [node name="LifeBar" parent="." instance=ExtResource( 3 )]
