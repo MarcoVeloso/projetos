@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -14,24 +14,6 @@
 [ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=15]
 [ext_resource path="res://Objects/Player/Images/defend.png" type="Texture" id=16]
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0, 0, 0, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 16 )
@@ -60,6 +42,14 @@ region = Rect2( 130, 0, 26, 26 )
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 16 )
 region = Rect2( 156, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 10 )
@@ -91,14 +81,6 @@ region = Rect2( 180, 0, 30, 26 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 0, 26, 26 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=21]
@@ -136,6 +118,16 @@ animations = [ {
 "name": "defend",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
+"loop": false,
+"name": "smile",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": false,
 "name": "hurt",
@@ -144,16 +136,6 @@ animations = [ {
 "frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "tired",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "stand",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
-"loop": false,
-"name": "smile",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
@@ -166,6 +148,24 @@ animations = [ {
 "name": "angry",
 "speed": 5.0
 } ]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.721569, 0.690196, 0.690196, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -187,6 +187,34 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "FadeoutPassiveLabel"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI/Passive:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("UI/Passive:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 58 ), Vector2( 1, 52 ) ]
 }
 
 [node name="Battle" type="Node"]
@@ -293,12 +321,31 @@ margin_bottom = 16.0
 rect_scale = Vector2( 0.7, 0.7 )
 text = "999"
 
+[node name="Passive" type="Label" parent="UI"]
+margin_left = 1.0
+margin_top = 58.0
+margin_right = 111.0
+margin_bottom = 74.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 3
+text = "Attack First"
+align = 1
+valign = 2
+
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 3.0
 margin_top = 62.0
 margin_right = 87.0
 margin_bottom = 83.0
 script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="UI/PlayerPanel"]
+position = Vector2( 13, 9.5 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 7 )
+animation = "defend"
+frame = 6
+playing = true
 
 [node name="HPBar" type="ProgressBar" parent="UI/PlayerPanel"]
 margin_left = 26.0
@@ -330,9 +377,9 @@ size_flags_horizontal = 3
 text = "AP: 99"
 
 [node name="ATK" type="Label" parent="UI/PlayerPanel"]
-margin_left = 43.0
+margin_left = 42.0
 margin_top = 8.0
-margin_right = 67.0
+margin_right = 66.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "AP: 99"
@@ -346,14 +393,6 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 text = "AP: 99"
 align = 2
-
-[node name="Sprite" type="AnimatedSprite" parent="UI/PlayerPanel"]
-position = Vector2( 13, 9.5 )
-scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 7 )
-animation = "defend"
-frame = 6
-playing = true
 
 [node name="TextboxPanel" type="Panel" parent="UI"]
 margin_top = 135.0
@@ -505,6 +544,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeToNextScreen = SubResource( 1 )
+anims/FadeoutPassiveLabel = SubResource( 35 )
 
 [node name="TurnTimer" type="Timer" parent="."]
 wait_time = 1.5
