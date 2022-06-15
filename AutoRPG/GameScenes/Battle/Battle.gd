@@ -39,7 +39,6 @@ func init_stage():
 	assignSkillsButtons()
 	updateActionButtons(BattleUnits.Player.ap)
 	
-	player_passive_skills()
 	create_new_object()
 
 
@@ -57,6 +56,7 @@ func create_new_object():
 	elif current_object == last_object - 1:
 		instance.boss_setup()
 	
+	player_passive_skills()
 	yield(get_tree().create_timer(0.5), "timeout")
 	battle_turn()
 
@@ -222,13 +222,13 @@ func player_passive_skills():
 		"Attack First":
 			player_attacking = true
 			
-		"Attack +1":
-			player.atk += 1
+		"Attack Boost":
+			player.atk = PlayerData.attack_power + 1
 			
-		"Magic +1":
-			player.mag += 1
+		"Magic Boost":
+			player.mag = PlayerData.magic_power + 1
 			
-		"AP Boost":
+		"AP Gain Boost":
 			ap_gain += 1
 	
 	
