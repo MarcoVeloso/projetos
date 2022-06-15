@@ -35,27 +35,11 @@ Setup Player (SCENE 4)
 	GOTO: Stage Select
 
 ---------------------------------------------
-Pre Battle (SCENE 5)
-	Num Enemies to defeat
-		Show boss
-	Counter (5 seconds) to begin next battle
-	Show collected coins
-	Show player base stats
-	Show player passive skills
+Post Battle (SCENE 5)
 
-	Stage Skills Buttons (consume AP)
-		Run
-		Heal
-		Attack next enemy
-
-	Stage Actions Buttons
-		Turn left
-		Turn right
-	GOTO: Battle
 
 ---------------------------------------------
 Battle (SCENE 6)
-	Load next stages logic (complete)
 	Status and boosts logic and anim
 		Status ailments
 			Poison
@@ -68,13 +52,10 @@ Battle (SCENE 6)
 			Stronger
 			SpeedUp
 			(AP half costs use)
-	Enemy levels
 	Enemy boss modifications
 		Fix Aura
 	Enemy special attacks
-	Passive skills logic
 
-	Weak Strike Skill (50% att recover 1 AP)
 	Player attributes
 		Attack
 		Magic

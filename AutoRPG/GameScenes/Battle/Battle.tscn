@@ -221,38 +221,38 @@ alignment = 1
 script = ExtResource( 14 )
 
 [node name="Label" type="Label" parent="UI/PostBattleContainer"]
-margin_top = 1.0
+margin_top = 6.0
 margin_right = 90.0
-margin_bottom = 17.0
+margin_bottom = 22.0
 custom_constants/line_spacing = 0
 align = 1
 
 [node name="RestartButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 18.0
+margin_top = 23.0
 margin_right = 80.0
-margin_bottom = 31.0
-rect_min_size = Vector2( 70, 13 )
+margin_bottom = 34.0
+rect_min_size = Vector2( 70, 11 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Restart stage"
 
 [node name="NextStageButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 32.0
+margin_top = 34.0
 margin_right = 80.0
 margin_bottom = 45.0
-rect_min_size = Vector2( 70, 13 )
+rect_min_size = Vector2( 70, 11 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Go to next stage"
 
 [node name="SecretButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0
-margin_top = 46.0
+margin_top = 45.0
 margin_right = 80.0
-margin_bottom = 59.0
-rect_min_size = Vector2( 70, 13 )
+margin_bottom = 56.0
+rect_min_size = Vector2( 70, 11 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
