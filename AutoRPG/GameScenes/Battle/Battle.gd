@@ -46,17 +46,19 @@ func create_new_object():
 	var object_name = enemies[current_object]
 	var object = load("res://Objects/Enemies/Scenes/%s.tscn" % object_name)
 	var instance = object.instance()
+	var passive = PlayerData.passive_skill
 	
 	enemyPosition.add_child(instance)
 
 	if (object_name[0] != "E"):
 		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)
 		selectFirstSkill()
+		passive = null
 		
 	elif current_object == last_object - 1:
 		instance.boss_setup()
 	
-	player_passive_skills()
+	player_passive_skill(passive)
 	yield(get_tree().create_timer(0.5), "timeout")
 	battle_turn()
 
@@ -215,20 +217,25 @@ func _on_NextStageButton_pressed():
 	init_stage()
 
 
-func player_passive_skills():
+func player_passive_skill(passive):
+	var label = $UI/Passive
 	var player = BattleUnits.Player
 	
-	match PlayerData.passive_skill:
-		"Attack First":
-			player_attacking = true
-			
-		"Attack Boost":
-			player.atk = PlayerData.attack_power + 1
-			
-		"Magic Boost":
-			player.mag = PlayerData.magic_power + 1
-			
-		"AP Gain Boost":
-			ap_gain += 1
+	if passive:
+		label.text = "PASSIVE: " + passive
+		animationPlayer.play("FadeoutPassiveLabel")
+		
+		match passive:
+			"Attack First":
+				player_attacking = true
+				
+			"Attack Boost":
+				player.atk = PlayerData.attack_power + 1
+				
+			"Magic Boost":
+				player.mag = PlayerData.magic_power + 1
+				
+			"AP Gain Boost":
+				ap_gain += 1
 	
 	
