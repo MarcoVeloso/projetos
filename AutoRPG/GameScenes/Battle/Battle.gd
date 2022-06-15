@@ -65,7 +65,7 @@ func battle_turn():
 	var player = BattleUnits.Player
 	var enemy = BattleUnits.Enemy
 	
-	var continue_battle = true
+	var battle_status = "CONTINUE"
 	
 	if enemy.name == "CHEST":
 		player_attacking = true
@@ -77,7 +77,7 @@ func battle_turn():
 		yield(player.attack(enemy),"completed")
 		
 		if enemy.is_dead():
-			continue_battle = false
+			battle_status = "END"
 			
 	else:
 		player.ap += ap_gain
@@ -85,19 +85,19 @@ func battle_turn():
 		yield(enemy.attack(player),"completed")
 		
 		if player.is_dead():
-			continue_battle = false
+			battle_status = "GAMEOVER"
 			enemy.queue_free()
 			postBattleContainer.show_game_over()
 		elif enemy.name == "TRAP":
-			continue_battle = false
+			battle_status = "END"
 			yield(enemy.die_and_free(),"completed")
 	
 	updateActionButtons(player.ap)
 	
-	if continue_battle:
+	if battle_status == "CONTINUE":
 		player_attacking = !player_attacking
 		turnTimer.start()
-	else:
+	elif battle_status == "END":
 		current_gold += enemy.gold
 		next_battle()
 
