@@ -10,4 +10,5 @@ const icon = {
 	"LOCK":"⚠",
 	"SKULL":"☆",
 	"FINAL":"☀",
+	"PLAY":"❈☀",
 }
