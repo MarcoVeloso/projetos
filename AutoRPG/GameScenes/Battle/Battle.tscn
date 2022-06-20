@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://GameScenes/Battle/Battle.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/PlayerPanel.gd" type="Script" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=9]
 [ext_resource path="res://Objects/Player/Images/hurt.png" type="Texture" id=10]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
-[ext_resource path="res://GameScenes/Battle/PanelBattle.tres" type="StyleBox" id=12]
 [ext_resource path="res://GameScenes/Battle/PostBattleContainer.gd" type="Script" id=14]
 [ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=15]
 [ext_resource path="res://Objects/Player/Images/defend.png" type="Texture" id=16]
@@ -338,7 +337,6 @@ margin_left = 3.0
 margin_top = 62.0
 margin_right = 87.0
 margin_bottom = 83.0
-custom_styles/panel = ExtResource( 12 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="UI/PlayerPanel"]
@@ -400,7 +398,6 @@ align = 2
 margin_top = 135.0
 margin_right = 90.0
 margin_bottom = 160.0
-custom_styles/panel = ExtResource( 12 )
 
 [node name="Title" type="Label" parent="UI/TextboxPanel"]
 margin_left = 3.0
