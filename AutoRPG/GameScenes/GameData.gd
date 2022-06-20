@@ -1,14 +1,14 @@
 extends Node
 
 const icon = {
-	"HP":"❤✃",
+	"HP":"❤",
 	"AP":"✄",
-	"ATK":"⚔✇",
-	"MAG":"❈✌",
-	"WALLET":"✉⛒",
-	"GOLD":"✷✁",
-	"LOCK":"⚠✈",
+	"ATK":"✇",
+	"MAG":"✌",
+	"WALLET":"⛒",
+	"GOLD":"✁",
+	"LOCK":"✈",
 	"SKULL":"✆",
-	"FINAL":"✂☀",
-	"PLAY":"❈☀✂",
+	"FINAL":"✍",
+	"PLAY":"✂",
 }
