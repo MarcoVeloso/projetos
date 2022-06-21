@@ -7,7 +7,12 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
-var max_unlocked_stage = 14
+var stages_unlocked = {
+	"11":{"name":"Tutorial","best_gold":30},
+	"12":{"name":"Green Fields 1","best_gold":60},
+	"13":{"name":"Green Fields 2","best_gold":90},
+	"14":{"name":"Green Fields 3","best_gold":0},
+}
 
 var passive_skill = "Attack First"
 #var passive_skill = "Attack Boost"

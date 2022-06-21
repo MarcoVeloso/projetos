@@ -2,14 +2,11 @@ extends Button
 
 func _on_World_pressed():
 	var stageList = get_tree().current_scene.find_node("StageList")
-
-	for stage in stageList.get_children():
-		var id_stage = int(self.name + stage.name)
+	var stages = PlayerData.stages_unlocked
+	
+	for stage in stages:
+		var stage_id = stage[-1]
+		var stage_panel = stageList.get_node(stage[1])
 		
-		if id_stage < PlayerData.max_unlocked_stage:
-			stage.unlockStage(true)
-		elif id_stage == PlayerData.max_unlocked_stage:
-			stage.unlockStage(false)
-		
-		stage.changeColorPanel(self.modulate)
+		stage_panel.unlockStage(self.modulate, stages[stage].name, stages[stage].best_gold)
 
