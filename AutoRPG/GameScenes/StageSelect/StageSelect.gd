@@ -1,14 +1,12 @@
 extends Node
 
+onready var worldList = $UI/WorldList
+
 func _ready():
-	pass
-#	var stageList = get_tree().current_scene.find_node("StageList")
-#	print(stageList)
-#	updateStageList()
-#
-#
-#func updateStageList():
-#	for stage in stageList.get_children():
-#		print(stage)
+	var max_world = str(PlayerData.max_unlocked_stage)[0]
+	var world = worldList.get_node(max_world)
+
+	world.emit_signal("pressed")
+
 
 

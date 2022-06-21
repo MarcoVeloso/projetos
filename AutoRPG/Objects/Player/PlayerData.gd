@@ -7,6 +7,8 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
+var max_unlocked_stage = 11
+
 var passive_skill = "Attack First"
 #var passive_skill = "Attack Boost"
 #var passive_skill = "Magic Boost"
