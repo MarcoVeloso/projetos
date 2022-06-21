@@ -6,8 +6,10 @@ func _on_World_pressed():
 	for stage in stageList.get_children():
 		var id_stage = int(self.name + stage.name)
 		
-		if id_stage <= PlayerData.max_unlocked_stage:
-			stage.unlockStage()
+		if id_stage < PlayerData.max_unlocked_stage:
+			stage.unlockStage(true)
+		elif id_stage == PlayerData.max_unlocked_stage:
+			stage.unlockStage(false)
 		
 		stage.changeColorPanel(self.modulate)
 

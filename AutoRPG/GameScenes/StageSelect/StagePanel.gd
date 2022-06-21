@@ -5,11 +5,12 @@ func changeColorPanel(color):
 	
 	panel.modulate = color
 	
-func unlockStage():
-	var normalButton = $Normal
-	var hardButton = $Hard
-	
+func unlockStage(played):
 	self.visible = true
-	normalButton.disabled = false
-	normalButton.text = GameData.icon.PLAY
+	
+	if played:
+		var hardButton = $Hard
+		
+		hardButton.disabled = false
+		hardButton.text = GameData.icon.SKULL
 
