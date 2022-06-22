@@ -138,10 +138,9 @@ func next_battle():
 		postBattleContainer.show_stage_results(current_gold)
 
 
-func fade_next_screen():
+func fade_next_screen(scene = null):
 	postBattleContainer.hide()
-	animationPlayer.play("FadeToNextScreen")
-	yield(animationPlayer, "animation_finished")
+	yield(SceneTransition.transition_dissolve(scene),"completed")
 
 
 func updateActionButtons(current_ap):
@@ -221,8 +220,7 @@ func _on_NextStageButton_pressed():
 		"best_gold":0,
 	}
 	
-	yield(fade_next_screen(), "completed")
-	get_tree().change_scene("res://GameScenes/StageSelect/StageSelect.tscn")
+	yield(fade_next_screen("res://GameScenes/StageSelect/StageSelect.tscn"), "completed")
 
 
 func player_passive_skill(passive):

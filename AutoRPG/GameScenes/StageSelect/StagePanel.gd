@@ -22,7 +22,7 @@ func unlockStage(color, stage_id, stage_name, best_gold):
 
 func _on_Normal_pressed():
 	PlayerData.current_stage = global_stage_id
-	get_tree().change_scene("res://GameScenes/Battle/Battle.tscn")
+	SceneTransition.transition_dissolve("res://GameScenes/Battle/Battle.tscn")
 	
 func _on_Hard_pressed():
 	print('H' + global_stage_id)
