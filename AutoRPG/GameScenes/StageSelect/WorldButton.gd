@@ -9,7 +9,12 @@ func _on_World_pressed():
 		
 		if stages.has(stage_id):
 			stage.visible = true
-			stage.unlockStage(self.modulate, stages[stage_id].name, stages[stage_id].best_gold)
+			stage.unlockStage(
+				self.modulate, 
+				stage_id, 
+				stages[stage_id].name, 
+				stages[stage_id].best_gold
+			)
 		else:
 			stage.visible = false
 

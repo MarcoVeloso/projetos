@@ -50,3 +50,6 @@ margin_bottom = 18.0
 rect_pivot_offset = Vector2( 23, 29 )
 text = "Best $: 9999"
 align = 1
+
+[connection signal="pressed" from="Normal" to="." method="_on_Normal_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_Hard_pressed"]
