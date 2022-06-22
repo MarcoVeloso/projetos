@@ -28,9 +28,9 @@ config/icon="res://icon.png"
 
 SceneTransition="*res://UI/scene_transition.tscn"
 GameData="*res://GameScenes/GameData.gd"
-PlayerData="*res://Objects/Player/PlayerData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
 StagesData="*res://GameScenes/StagesData.gd"
+PlayerData="*res://Objects/Player/PlayerData.gd"
 
 [display]
 
