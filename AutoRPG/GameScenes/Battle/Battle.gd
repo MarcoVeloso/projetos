@@ -13,14 +13,19 @@ var current_stage = PlayerData.current_stage
 var current_gold = 0
 var current_object = 0
 var last_object = 0
-var dont_jump_next_object = false
 
-var enemies = []
+var dont_jump_next_object = false
 var player_attacking = false
 var ap_gain = 1
+var hard_mode = false
 
+var enemies = []
 
 func _ready():
+	if current_stage[-1] == "H":
+		hard_mode = true
+		current_stage = current_stage.replace("H","")
+
 	init_stage()
 	
 
@@ -49,6 +54,9 @@ func create_new_object():
 	var passive = PlayerData.passive_skill
 	
 	enemyPosition.add_child(instance)
+	
+	if hard_mode:
+		instance.hardmode_setup()
 
 	if (object_name[0] != "E"):
 		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)

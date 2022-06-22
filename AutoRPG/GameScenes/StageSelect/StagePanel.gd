@@ -25,4 +25,5 @@ func _on_Normal_pressed():
 	SceneTransition.transition_dissolve("res://GameScenes/Battle/Battle.tscn")
 	
 func _on_Hard_pressed():
-	print('H' + global_stage_id)
+	PlayerData.current_stage = global_stage_id + "H"
+	SceneTransition.transition_dissolve("res://GameScenes/Battle/Battle.tscn")
