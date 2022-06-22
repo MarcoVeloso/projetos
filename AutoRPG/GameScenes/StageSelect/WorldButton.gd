@@ -4,9 +4,12 @@ func _on_World_pressed():
 	var stageList = get_tree().current_scene.find_node("StageList")
 	var stages = PlayerData.stages_unlocked
 	
-	for stage in stages:
-		var stage_id = stage[-1]
-		var stage_panel = stageList.get_node(stage[1])
+	for stage in stageList.get_children():
+		var stage_id = self.name + stage.name
 		
-		stage_panel.unlockStage(self.modulate, stages[stage].name, stages[stage].best_gold)
+		if stages.has(stage_id):
+			stage.visible = true
+			stage.unlockStage(self.modulate, stages[stage_id].name, stages[stage_id].best_gold)
+		else:
+			stage.visible = false
 

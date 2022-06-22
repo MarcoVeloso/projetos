@@ -157,59 +157,52 @@ size_flags_vertical = 2
 custom_constants/separation = 2
 
 [node name="1" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 90.0
 margin_bottom = 14.0
 
 [node name="2" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 16.0
 margin_right = 90.0
-margin_bottom = 32.0
+margin_bottom = 30.0
 
 [node name="3" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 32.0
 margin_right = 90.0
-margin_bottom = 48.0
+margin_bottom = 46.0
 
 [node name="4" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 48.0
 margin_right = 90.0
-margin_bottom = 64.0
+margin_bottom = 62.0
 
 [node name="5" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 64.0
 margin_right = 90.0
-margin_bottom = 80.0
+margin_bottom = 78.0
 
 [node name="6" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 80.0
 margin_right = 90.0
-margin_bottom = 96.0
+margin_bottom = 94.0
 
 [node name="7" parent="UI/StageList" instance=ExtResource( 1 )]
-visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 96.0
 margin_right = 90.0
-margin_bottom = 112.0
+margin_bottom = 110.0
 
 [node name="Shop" type="Button" parent="UI"]
 margin_left = 2.0
