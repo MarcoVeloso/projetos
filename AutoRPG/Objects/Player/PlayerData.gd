@@ -7,6 +7,8 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
+var current_stage = "11"
+
 var stages_unlocked = {
 	"11":{"name":"Tutorial","best_gold":30},
 	"12":{"name":"Green Fields 1","best_gold":60},
@@ -21,3 +23,5 @@ var passive_skill = "Attack First"
 
 var selected_skills = ["SLASH", "HEAL", "DEFEND", "SWIFT", "CROSS", "CRESCENT", "EXPLOSION", "ULTIMA"]
 #var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
+
+

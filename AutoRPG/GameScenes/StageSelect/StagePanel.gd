@@ -21,7 +21,8 @@ func unlockStage(color, stage_id, stage_name, best_gold):
 		hardButton.text = GameData.icon.SKULL
 
 func _on_Normal_pressed():
-	print(global_stage_id)
+	PlayerData.current_stage = global_stage_id
+	get_tree().change_scene("res://GameScenes/Battle/Battle.tscn")
 	
 func _on_Hard_pressed():
 	print('H' + global_stage_id)

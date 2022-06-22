@@ -9,7 +9,7 @@ onready var topInfosContainer = $UI/TopInfosContainer
 onready var enemyPosition = $EnemyPosition
 onready var turnTimer = $TurnTimer
 
-var current_stage = 0
+var current_stage = PlayerData.current_stage
 var current_gold = 0
 var current_object = 0
 var last_object = 0
@@ -212,7 +212,7 @@ func _on_RestartButton_pressed():
 
 
 func _on_NextStageButton_pressed():
-	current_stage += 1
+#	current_stage += 1
 	yield(fade_next_screen(), "completed")
 	init_stage()
 
