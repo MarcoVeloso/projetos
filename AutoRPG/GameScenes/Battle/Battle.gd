@@ -212,9 +212,17 @@ func _on_RestartButton_pressed():
 
 
 func _on_NextStageButton_pressed():
-#	current_stage += 1
+	var next_stage = str(int(current_stage) + 1)
+	
+	PlayerData.stages_unlocked[current_stage].best_gold = current_gold
+	
+	PlayerData.stages_unlocked[next_stage] = {
+		"name":StagesData.data[next_stage].name,
+		"best_gold":0,
+	}
+	
 	yield(fade_next_screen(), "completed")
-	init_stage()
+	get_tree().change_scene("res://GameScenes/StageSelect/StageSelect.tscn")
 
 
 func player_passive_skill(passive):

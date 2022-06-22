@@ -10,10 +10,10 @@ var magic_power = 1
 var current_stage = "11"
 
 var stages_unlocked = {
-	"11":{"name":"Tutorial","best_gold":30},
-	"12":{"name":"Green Fields 1","best_gold":60},
-	"13":{"name":"Green Fields 2","best_gold":90},
-	"14":{"name":"Green Fields 3","best_gold":0},
+	"11":{"name":"Tutorial","best_gold":0},
+#	"12":{"name":"Green Fields 1","best_gold":60},
+#	"13":{"name":"Green Fields 2","best_gold":90},
+#	"14":{"name":"Green Fields 3","best_gold":0},
 }
 
 var passive_skill = "Attack First"
