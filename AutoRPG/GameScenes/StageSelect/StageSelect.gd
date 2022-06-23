@@ -18,12 +18,9 @@ func loadWorlds():
 		world.disabled = false
 		world.text = world_num
 	
-	loadStages(world)
-	
-func loadStages(world):
-#	var world = worldList.get_node(max_world)
 	world.pressed = true
 	world.emit_signal("pressed")
+
 
 
 
