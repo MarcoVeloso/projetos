@@ -192,6 +192,9 @@ func updateTopInfos():
 	stage.text = StagesData.data[current_stage].name
 	gold.text = GameData.icon.GOLD + ' ' + str(current_gold)
 	
+	if hard_mode:
+		stage.text += GameData.icon.SKULL
+	
 	if object_count > 0:
 		room.text = GameData.icon.FINAL + ' ' + str(object_count)
 	elif object_count == 0:
@@ -220,12 +223,16 @@ func _on_RestartButton_pressed():
 
 func _on_NextStageButton_pressed():
 	var next_stage = str(int(current_stage) + 1)
+	var final_gold = str(current_gold)
 	
-	PlayerData.stages_unlocked[current_stage].best_gold = current_gold
+	if hard_mode:
+		final_gold += GameData.icon.SKULL
+	
+	PlayerData.stages_unlocked[current_stage].best_gold = final_gold
 	
 	PlayerData.stages_unlocked[next_stage] = {
 		"name":StagesData.data[next_stage].name,
-		"best_gold":0,
+		"best_gold":null,
 	}
 	
 	yield(fade_next_screen("res://GameScenes/StageSelect/StageSelect.tscn"), "completed")

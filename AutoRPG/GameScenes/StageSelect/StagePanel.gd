@@ -11,12 +11,12 @@ func unlockStage(color, stage_id, stage_name, best_gold):
 	global_stage_id = stage_id
 	
 	label_name.text = stage_name
-	label_best.text = "Best $: " + str(best_gold)
 	self.visible = true
 	
-	if best_gold > 0:
+	if best_gold:
 		var hardButton = $Hard
 
+		label_best.text = "Best $: " + best_gold
 		hardButton.disabled = false
 		hardButton.text = GameData.icon.SKULL
 
