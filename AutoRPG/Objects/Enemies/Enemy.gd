@@ -84,7 +84,7 @@ func boss_setup():
 	
 	hp = floor(hp * 1.5)
 	damage = floor(damage * 1.5)
-	gold *= 2
+	gold = ceil(gold * 2)
 	
 	lifeBar.setMaxHP(hp)
 	
@@ -99,6 +99,6 @@ func non_enemy_setup(chest_base_gold):
 func hardmode_setup():
 	hp = floor(hp * 2.5)
 	damage = floor(damage * 2.5)
-	gold *= 2.5
+	gold = ceil(gold * 2.5)
 	
 	lifeBar.setMaxHP(hp)

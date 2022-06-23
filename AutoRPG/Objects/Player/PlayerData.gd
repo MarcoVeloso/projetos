@@ -7,7 +7,7 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
-var gold = 0
+var gold = 0 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {
@@ -23,3 +23,5 @@ var selected_skills = ["SLASH", "HEAL", "DEFEND", "SWIFT", "CROSS", "CRESCENT", 
 #var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 
 
+func set_gold(new_gold):
+	gold = clamp(new_gold, 0, PlayerData.max_gold)
