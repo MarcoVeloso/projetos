@@ -1,8 +1,10 @@
 extends Node
 
 onready var worldList = $UI/WorldList
+onready var goldLabel = $UI/PlayerPanel/Gold
 
 func _ready():
+	goldLabel.text = GameData.icon.WALLET + "\n" + str(PlayerData.gold)
 	loadWorlds()
 	
 func loadWorlds():

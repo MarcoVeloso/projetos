@@ -5,7 +5,7 @@ const icon = {
 	"AP":"✄",
 	"ATK":"✇",
 	"MAG":"✌",
-	"WALLET":"⛒",
+	"WALLET":"✉",
 	"GOLD":"✁",
 	"LOCK":"✈",
 	"SKULL":"✆",

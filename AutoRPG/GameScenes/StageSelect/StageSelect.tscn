@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameScenes/StageSelect/StagePanel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Objects/Player/Images/smile.png" type="Texture" id=2]
-[ext_resource path="res://Objects/Player/Images/angry.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=2]
 [ext_resource path="res://GameScenes/StageSelect/StageSelect.gd" type="Script" id=4]
 [ext_resource path="res://GameScenes/StageSelect/WorldButton.gd" type="Script" id=5]
 [ext_resource path="res://UI/Images/Dungeon.png" type="Texture" id=8]
@@ -26,6 +25,41 @@ theme = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PlayerPanel" type="Panel" parent="UI"]
+margin_left = 2.0
+margin_top = 141.0
+margin_right = 88.0
+margin_bottom = 158.0
+
+[node name="Sprite" type="Sprite" parent="UI/PlayerPanel"]
+position = Vector2( 9, 8 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="Gold" type="Label" parent="UI/PlayerPanel"]
+margin_left = 16.0
+margin_top = -1.0
+margin_right = 39.0
+margin_bottom = 22.0
+custom_constants/line_spacing = -1
+text = "✉
+99999"
+align = 1
+
+[node name="Shop" type="Button" parent="UI/PlayerPanel"]
+margin_left = 38.0
+margin_top = 2.0
+margin_right = 60.0
+margin_bottom = 15.0
+text = "Shop"
+
+[node name="Setup" type="Button" parent="UI/PlayerPanel"]
+margin_left = 62.0
+margin_top = 2.0
+margin_right = 84.0
+margin_bottom = 15.0
+text = " Setup"
 
 [node name="StageSelect" type="Label" parent="UI"]
 margin_left = 14.0
@@ -182,52 +216,6 @@ anchor_bottom = 0.0
 margin_top = 96.0
 margin_right = 90.0
 margin_bottom = 110.0
-
-[node name="Shop" type="Button" parent="UI"]
-margin_left = 2.0
-margin_top = 144.0
-margin_right = 44.0
-margin_bottom = 158.0
-
-[node name="Name" type="Label" parent="UI/Shop"]
-margin_left = 24.0
-margin_top = 9.0
-margin_right = 44.0
-margin_bottom = 36.0
-rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 23, 29 )
-text = "Shop
-"
-align = 1
-valign = 1
-
-[node name="Sprite" type="Sprite" parent="UI/Shop"]
-position = Vector2( 9, 6.5 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="Setup" type="Button" parent="UI"]
-margin_left = 46.0
-margin_top = 144.0
-margin_right = 88.0
-margin_bottom = 158.0
-
-[node name="Name" type="Label" parent="UI/Setup"]
-margin_left = 22.0
-margin_top = 9.0
-margin_right = 45.0
-margin_bottom = 36.0
-rect_scale = Vector2( 1.5, 1.5 )
-rect_pivot_offset = Vector2( 23, 29 )
-text = "Setup
-"
-align = 1
-valign = 1
-
-[node name="Sprite" type="Sprite" parent="UI/Setup"]
-position = Vector2( 9, 6.5 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
 
 [connection signal="pressed" from="UI/WorldList/1" to="UI/WorldList/1" method="_on_World_pressed"]
 [connection signal="pressed" from="UI/WorldList/2" to="UI/WorldList/2" method="_on_World_pressed"]
