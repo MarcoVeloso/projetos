@@ -10,7 +10,7 @@ var magic_power = 1
 var current_stage = "11"
 
 var stages_unlocked = {
-	"11":{"name":StagesData.data["11"].name,"best_gold":null},
+	"11":{"name":StagesData.data["11"].name,"best_gold":""},
 }
 
 var passive_skill = "Attack First"

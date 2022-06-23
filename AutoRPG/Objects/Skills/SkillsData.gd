@@ -68,7 +68,7 @@ var data = {
 	"ULTIMA": {
 		"target":"other",
 		"type":"magic",
-		"effect":10,
+		"effect":99,
 		"ap":20,
 		"desc_name":"Ultima Explosion",
 		"desc_effect":"Deal %sxMAG damage",
