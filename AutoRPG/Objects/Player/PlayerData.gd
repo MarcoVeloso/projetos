@@ -7,6 +7,7 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
+var gold = 0
 var current_stage = "11"
 
 var stages_unlocked = {

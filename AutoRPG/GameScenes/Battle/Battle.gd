@@ -143,6 +143,20 @@ func next_battle():
 		
 		create_new_object()
 	else:
+		var next_stage = str(int(current_stage) + 1)
+		var final_gold = str(current_gold)
+		
+		if hard_mode:
+			final_gold += GameData.icon.SKULL
+		
+		PlayerData.stages_unlocked[current_stage].best_gold = final_gold
+		PlayerData.gold += current_gold
+		
+		PlayerData.stages_unlocked[next_stage] = {
+			"name":StagesData.data[next_stage].name,
+			"best_gold":null,
+		}
+		
 		postBattleContainer.show_stage_results(current_gold)
 
 
@@ -222,19 +236,6 @@ func _on_RestartButton_pressed():
 
 
 func _on_NextStageButton_pressed():
-	var next_stage = str(int(current_stage) + 1)
-	var final_gold = str(current_gold)
-	
-	if hard_mode:
-		final_gold += GameData.icon.SKULL
-	
-	PlayerData.stages_unlocked[current_stage].best_gold = final_gold
-	
-	PlayerData.stages_unlocked[next_stage] = {
-		"name":StagesData.data[next_stage].name,
-		"best_gold":null,
-	}
-	
 	yield(fade_next_screen("res://GameScenes/StageSelect/StageSelect.tscn"), "completed")
 
 
