@@ -261,7 +261,7 @@ margin_bottom = 45.0
 rect_min_size = Vector2( 70, 11 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Select stage screen"
+text = "Stage select"
 
 [node name="SecretButton" type="Button" parent="UI/PostBattleContainer"]
 margin_left = 10.0

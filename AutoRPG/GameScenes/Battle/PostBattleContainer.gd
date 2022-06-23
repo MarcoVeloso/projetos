@@ -31,7 +31,7 @@ func show_prepare_next_battle(show_secret_button):
 
 func show_game_over():
 	restartButton.show()
-	nextStageButton.hide()
+	nextStageButton.show()
 	secretButton.hide()
 	
 	label.text = "You lose..."
