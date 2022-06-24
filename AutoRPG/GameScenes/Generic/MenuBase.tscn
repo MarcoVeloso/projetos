@@ -16,9 +16,9 @@ texture = ExtResource( 3 )
 offset = Vector2( 22, 60 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 15.0
+margin_left = 13.0
 margin_top = 6.0
-margin_right = 58.0
+margin_right = 56.0
 margin_bottom = 22.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "SHOP"
