@@ -18,3 +18,248 @@ mouse_filter = 2
 theme = ExtResource( 11 )
 
 [node name="PlayerStatsPanel" parent="UI" instance=ExtResource( 2 )]
+
+[node name="HP2" type="Button" parent="UI"]
+margin_left = 2.0
+margin_top = 55.0
+margin_right = 44.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/HP2"]
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 25.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✃+HP"
+
+[node name="Price" type="Label" parent="UI/HP2"]
+margin_left = 17.0
+margin_top = -3.0
+margin_right = 44.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 2
+
+[node name="HP3" type="Button" parent="UI"]
+margin_left = 46.0
+margin_top = 55.0
+margin_right = 88.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/HP3"]
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 25.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✄+AP"
+
+[node name="Price" type="Label" parent="UI/HP3"]
+margin_left = 17.0
+margin_top = -3.0
+margin_right = 44.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 2
+
+[node name="HP4" type="Button" parent="UI"]
+margin_left = 2.0
+margin_top = 66.0
+margin_right = 44.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/HP4"]
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 25.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✇+ATK"
+
+[node name="Price" type="Label" parent="UI/HP4"]
+margin_left = 17.0
+margin_top = -3.0
+margin_right = 44.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 2
+
+[node name="HP5" type="Button" parent="UI"]
+margin_left = 46.0
+margin_top = 66.0
+margin_right = 88.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/HP5"]
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 25.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✌+MAG"
+
+[node name="Price" type="Label" parent="UI/HP5"]
+margin_left = 17.0
+margin_top = -3.0
+margin_right = 44.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 2
+
+[node name="HP6" type="Button" parent="UI"]
+margin_left = 21.0
+margin_top = 77.0
+margin_right = 70.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/HP6"]
+margin_left = -2.0
+margin_top = -3.0
+margin_right = 25.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✉+MAX$"
+
+[node name="Price" type="Label" parent="UI/HP6"]
+margin_left = 24.0
+margin_top = -3.0
+margin_right = 51.0
+margin_bottom = 13.0
+rect_clip_content = true
+custom_constants/line_spacing = -1
+text = "99999$"
+align = 2
+
+[node name="Stats" type="Control" parent="UI"]
+margin_top = 19.0
+margin_right = 90.0
+margin_bottom = 51.0
+
+[node name="HP" type="Button" parent="UI/Stats"]
+margin_left = 3.0
+margin_right = 28.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/Stats/HP"]
+margin_left = -1.0
+margin_top = -3.0
+margin_right = 26.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✃ +HP"
+align = 1
+
+[node name="Price" type="Label" parent="UI/Stats/HP"]
+margin_top = 2.0
+margin_right = 27.0
+margin_bottom = 18.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 1
+
+[node name="AP" type="Button" parent="UI/Stats"]
+margin_left = 33.0
+margin_right = 58.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/Stats/AP"]
+margin_left = -1.0
+margin_top = -3.0
+margin_right = 26.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✄ +AP"
+align = 1
+
+[node name="Price" type="Label" parent="UI/Stats/AP"]
+margin_top = 2.0
+margin_right = 27.0
+margin_bottom = 18.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 1
+
+[node name="ATK" type="Button" parent="UI/Stats"]
+margin_left = 63.0
+margin_right = 88.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/Stats/ATK"]
+margin_left = -1.0
+margin_top = -3.0
+margin_right = 26.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✇ +ATK"
+align = 1
+
+[node name="Price" type="Label" parent="UI/Stats/ATK"]
+margin_top = 2.0
+margin_right = 27.0
+margin_bottom = 18.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 1
+
+[node name="MAG" type="Button" parent="UI/Stats"]
+margin_left = 13.0
+margin_top = 17.0
+margin_right = 43.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/Stats/MAG"]
+margin_left = 1.0
+margin_top = -3.0
+margin_right = 31.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✌ +MAG"
+align = 1
+
+[node name="Price" type="Label" parent="UI/Stats/MAG"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 29.0
+margin_bottom = 18.0
+custom_constants/line_spacing = -1
+text = "9999$"
+align = 1
+
+[node name="WALLET" type="Button" parent="UI/Stats"]
+margin_left = 48.0
+margin_top = 17.0
+margin_right = 78.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 51, 28 )
+
+[node name="Stat" type="Label" parent="UI/Stats/WALLET"]
+margin_left = -1.0
+margin_top = -3.0
+margin_right = 32.0
+margin_bottom = 13.0
+custom_constants/line_spacing = -1
+text = "✉ +MAX$"
+align = 1
+
+[node name="Price" type="Label" parent="UI/Stats/WALLET"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 30.0
+margin_bottom = 18.0
+custom_constants/line_spacing = -1
+text = "99999$"
+align = 1
