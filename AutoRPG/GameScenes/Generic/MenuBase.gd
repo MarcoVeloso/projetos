@@ -10,6 +10,7 @@ func _ready():
 	var menu = get_parent().name
 	
 	title.text = GameData.menus[menu].name
+	gold.text = GameData.icon.GOLD + " " + str(PlayerData.gold)
 	
 	buttonLeft.text = "← " + GameData.menus[menu].left
 	buttonRight.text = GameData.menus[menu].right + " →"
