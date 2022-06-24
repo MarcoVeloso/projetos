@@ -9,8 +9,6 @@ onready var buttonRight = $ButtonRight
 func _ready():
 	var menu = GameData.current_menu
 	
-	goto_menu(menu)
-	
 	title.text = menu.to_upper()
 	
 	buttonLeft.text = "← " + GameData.menus[menu].left

@@ -16,10 +16,10 @@ texture = ExtResource( 2 )
 offset = Vector2( 22, 60 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 14.0
-margin_top = -6.0
-margin_right = 57.0
-margin_bottom = 10.0
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 58.0
+margin_bottom = 21.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "SHOP"
 align = 1
@@ -27,34 +27,34 @@ align = 1
 [node name="TopPanel" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.372549 )
 margin_left = 2.0
-margin_top = 12.0
+margin_top = 1.0
 margin_right = 88.0
-margin_bottom = 23.0
+margin_bottom = 12.0
 
 [node name="Gold" type="Label" parent="."]
 modulate = Color( 0.956863, 0.878431, 0.027451, 1 )
 margin_left = 29.0
-margin_top = 10.0
+margin_top = -1.0
 margin_right = 64.0
-margin_bottom = 26.0
+margin_bottom = 15.0
 custom_constants/line_spacing = -1
 text = "✁ 99999"
 align = 1
 
 [node name="ButtonLeft" type="Button" parent="."]
 margin_left = 2.0
-margin_top = 13.0
+margin_top = 2.0
 margin_right = 26.0
-margin_bottom = 22.0
+margin_bottom = 11.0
 text = "Setup"
 flat = true
 align = 0
 
 [node name="ButtonRight" type="Button" parent="."]
 margin_left = 64.0
-margin_top = 13.0
+margin_top = 2.0
 margin_right = 87.0
-margin_bottom = 22.0
+margin_bottom = 11.0
 text = "Shop"
 flat = true
 align = 2

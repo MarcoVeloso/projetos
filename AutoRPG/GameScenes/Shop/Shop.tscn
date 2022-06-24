@@ -3,48 +3,25 @@
 [ext_resource path="res://GameScenes/Shop/Shop.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=2]
 [ext_resource path="res://GameScenes/Shop/PlayerPanel.gd" type="Script" id=3]
-[ext_resource path="res://UI/Images/Dungeon.png" type="Texture" id=8]
+[ext_resource path="res://GameScenes/Shop/MenuBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 
 [node name="Shop" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Dungeon" type="Sprite" parent="."]
-position = Vector2( 45, 80 )
-texture = ExtResource( 8 )
+[node name="MenuBase" parent="." instance=ExtResource( 4 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 23.0
 mouse_filter = 2
 theme = ExtResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Shop" type="Label" parent="UI"]
-margin_left = 14.0
-margin_top = -5.0
-margin_right = 57.0
-margin_bottom = 11.0
-rect_scale = Vector2( 1.5, 1.5 )
-text = "SHOP"
-align = 1
-
-[node name="Gold" type="Label" parent="UI"]
-margin_left = 58.0
-margin_top = 27.0
-margin_right = 92.0
-margin_bottom = 43.0
-custom_constants/line_spacing = -1
-text = "✉ 99999"
-align = 1
 
 [node name="PlayerPanel" type="Panel" parent="UI"]
 margin_left = 2.0
-margin_top = 13.0
 margin_right = 88.0
-margin_bottom = 29.0
+margin_bottom = 16.0
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="UI/PlayerPanel"]
