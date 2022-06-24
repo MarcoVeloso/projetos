@@ -58,3 +58,6 @@ margin_bottom = 22.0
 text = "Shop"
 flat = true
 align = 2
+
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="ButtonRight" to="." method="_on_ButtonRight_pressed"]
