@@ -30,5 +30,3 @@ const menus = {
 		"right":"Stages",
 	},
 }
-
-var current_menu = "Shop"

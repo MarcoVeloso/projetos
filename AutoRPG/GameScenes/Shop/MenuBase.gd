@@ -7,7 +7,7 @@ onready var buttonRight = $ButtonRight
 
 
 func _ready():
-	var menu = GameData.current_menu
+	var menu = get_parent().name
 	
 	title.text = menu.to_upper()
 	
