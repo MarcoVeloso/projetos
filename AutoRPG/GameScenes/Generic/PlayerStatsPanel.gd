@@ -1,4 +1,7 @@
-extends Panel
+extends Control
+
+func _ready():
+	updatePanel()
 
 func updatePanel():
 	statText("HP", PlayerData.max_hp)
@@ -8,6 +11,6 @@ func updatePanel():
 	statText("WALLET", PlayerData.max_gold)
 	
 func statText(stat, value):
-	var statLabel = get_node(stat)
+	var statLabel = get_node("Panel/" + stat)
 	
 	statLabel.text = GameData.icon[stat] + "\n" + str(value)

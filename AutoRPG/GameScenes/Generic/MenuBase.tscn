@@ -51,11 +51,10 @@ flat = true
 align = 0
 
 [node name="ButtonRight" type="Button" parent="."]
-margin_left = 64.0
+margin_left = 61.0
 margin_top = 2.0
-margin_right = 87.0
+margin_right = 89.0
 margin_bottom = 11.0
-text = "Shop"
 flat = true
 align = 2
 

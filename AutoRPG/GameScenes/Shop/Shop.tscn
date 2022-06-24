@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GameScenes/Shop/Shop.gd" type="Script" id=1]
-[ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=2]
-[ext_resource path="res://GameScenes/Shop/PlayerPanel.gd" type="Script" id=3]
+[ext_resource path="res://GameScenes/Generic/PlayerStatsPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameScenes/Generic/MenuBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 
@@ -18,63 +17,4 @@ margin_top = 23.0
 mouse_filter = 2
 theme = ExtResource( 11 )
 
-[node name="PlayerPanel" type="Panel" parent="UI"]
-margin_left = 2.0
-margin_right = 88.0
-margin_bottom = 16.0
-script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="UI/PlayerPanel"]
-position = Vector2( 9, 7 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
-
-[node name="HP" type="Label" parent="UI/PlayerPanel"]
-margin_left = 15.0
-margin_top = -2.0
-margin_right = 32.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
-text = "✃
-999"
-align = 1
-
-[node name="AP" type="Label" parent="UI/PlayerPanel"]
-margin_left = 29.0
-margin_top = -2.0
-margin_right = 46.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
-text = "✄
-999"
-align = 1
-
-[node name="ATK" type="Label" parent="UI/PlayerPanel"]
-margin_left = 42.0
-margin_top = -2.0
-margin_right = 59.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
-text = "✇
-99"
-align = 1
-
-[node name="MAG" type="Label" parent="UI/PlayerPanel"]
-margin_left = 55.0
-margin_top = -2.0
-margin_right = 72.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
-text = "✌
-99"
-align = 1
-
-[node name="WALLET" type="Label" parent="UI/PlayerPanel"]
-margin_left = 65.0
-margin_top = -2.0
-margin_right = 88.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
-text = "✉
-99999"
-align = 1
+[node name="PlayerStatsPanel" parent="UI" instance=ExtResource( 2 )]
