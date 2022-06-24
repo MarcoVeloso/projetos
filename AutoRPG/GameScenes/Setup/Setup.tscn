@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://GameScenes/Shop/Shop.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Player/Images/stand.png" type="Texture" id=2]
 [ext_resource path="res://GameScenes/Shop/PlayerPanel.gd" type="Script" id=3]
 [ext_resource path="res://GameScenes/Generic/MenuBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 
-[node name="Shop" type="Node"]
-script = ExtResource( 1 )
+[node name="Setup" type="Node"]
 
 [node name="MenuBase" parent="." instance=ExtResource( 4 )]
 

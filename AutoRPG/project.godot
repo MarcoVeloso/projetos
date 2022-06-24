@@ -26,7 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceneTransition="*res://UI/Scenes/scene_transition.tscn"
+SceneTransition="*res://GameScenes/Generic/scene_transition.tscn"
 GameData="*res://GameScenes/GameData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
 StagesData="*res://GameScenes/StagesData.gd"
