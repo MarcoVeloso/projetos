@@ -1,7 +1,7 @@
 extends Node
 
 const icon = {
-	"HP":"❤",
+	"HP":"✃",
 	"AP":"✄",
 	"ATK":"✇",
 	"MAG":"✌",
