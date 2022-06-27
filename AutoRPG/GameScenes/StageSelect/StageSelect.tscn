@@ -26,9 +26,9 @@ __meta__ = {
 
 [node name="WorldList" type="HBoxContainer" parent="UI"]
 margin_left = 1.0
-margin_top = 1.0
+margin_top = 2.0
 margin_right = 90.0
-margin_bottom = 11.0
+margin_bottom = 12.0
 custom_constants/separation = 2
 alignment = 1
 
@@ -114,62 +114,68 @@ group = SubResource( 36 )
 text = "✈"
 script = ExtResource( 5 )
 
-[node name="StageList" type="VBoxContainer" parent="UI"]
+[node name="StageList" type="Control" parent="UI"]
 margin_left = 4.0
 margin_top = 15.0
 margin_right = 94.0
-margin_bottom = 125.0
+margin_bottom = 134.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-custom_constants/separation = 2
 
 [node name="1" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 90.0
-margin_bottom = 14.0
+margin_bottom = 15.0
 
 [node name="2" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 16.0
+margin_top = 15.0
 margin_right = 90.0
-margin_bottom = 30.0
+margin_bottom = 31.0
 
 [node name="3" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 32.0
+margin_top = 30.0
 margin_right = 90.0
 margin_bottom = 46.0
 
 [node name="4" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 48.0
+margin_top = 45.0
 margin_right = 90.0
-margin_bottom = 62.0
+margin_bottom = 61.0
 
 [node name="5" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
+margin_top = 60.0
 margin_right = 90.0
-margin_bottom = 78.0
+margin_bottom = 76.0
 
 [node name="6" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 80.0
+margin_top = 75.0
 margin_right = 90.0
-margin_bottom = 94.0
+margin_bottom = 91.0
 
 [node name="7" parent="UI/StageList" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 96.0
+margin_top = 90.0
 margin_right = 90.0
-margin_bottom = 110.0
+margin_bottom = 106.0
+
+[node name="8" parent="UI/StageList" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 105.0
+margin_right = 90.0
+margin_bottom = 121.0
 
 [connection signal="pressed" from="UI/WorldList/1" to="UI/WorldList/1" method="_on_World_pressed"]
 [connection signal="pressed" from="UI/WorldList/2" to="UI/WorldList/2" method="_on_World_pressed"]

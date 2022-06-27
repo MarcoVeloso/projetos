@@ -31,4 +31,9 @@ const data = {
 		"chest_base_gold":35,
 		"enemies":["E_SkeltonKNIFE", "E_SkeltonBOW", "E_SkeltonSPEAR", "T_SPIKES", "E_SkeltonSWORD", "E_SkeltonSPEAR", "C_WOOD", "E_SkeltonSWORD", "E_SkeltonSWORD", "E_SkeltonSWORD", "C_RED"],
 	},
+	"17":{
+		"name":"Green Fields 7",
+		"chest_base_gold":45,
+		"enemies":["E_SkeltonSPEAR", "C_WOOD", "E_SkeltonSPEAR", "T_SPIKES", "E_SkeltonSWORD", "T_SPIKES", "E_SkeltonSWORD", "E_SkeltonSWORD", "C_WOOD", "E_SkeltonSWORD", "E_SkeltonSWORD", "E_SkeltonSWORD", "C_RED"],
+	},
 }

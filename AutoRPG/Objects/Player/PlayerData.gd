@@ -3,7 +3,7 @@ extends Node
 var max_hp = 10
 var max_ap = 99
 var start_ap = 100
-var max_gold = 100
+var max_gold = 99999
 var attack_power = 1
 var magic_power = 1
 
