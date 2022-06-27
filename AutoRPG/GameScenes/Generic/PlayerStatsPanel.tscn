@@ -22,52 +22,62 @@ position = Vector2( 9, 7 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
-[node name="HP" type="Label" parent="Panel"]
+[node name="HP" type="RichTextLabel" parent="Panel"]
 margin_left = 15.0
-margin_top = -2.0
+margin_top = -1.0
 margin_right = 32.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "✃
+999"
 text = "✃
 999"
-align = 1
+scroll_active = false
 
-[node name="AP" type="Label" parent="Panel"]
+[node name="AP" type="RichTextLabel" parent="Panel"]
 margin_left = 29.0
-margin_top = -2.0
+margin_top = -1.0
 margin_right = 46.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "✄
+999"
 text = "✄
 999"
-align = 1
+scroll_active = false
 
-[node name="ATK" type="Label" parent="Panel"]
+[node name="ATK" type="RichTextLabel" parent="Panel"]
 margin_left = 42.0
-margin_top = -2.0
+margin_top = -1.0
 margin_right = 59.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "✇
+99"
 text = "✇
 99"
-align = 1
+scroll_active = false
 
-[node name="MAG" type="Label" parent="Panel"]
+[node name="MAG" type="RichTextLabel" parent="Panel"]
 margin_left = 55.0
-margin_top = -2.0
+margin_top = -1.0
 margin_right = 72.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "✌
+99"
 text = "✌
 99"
-align = 1
+scroll_active = false
 
-[node name="WALLET" type="Label" parent="Panel"]
+[node name="WALLET" type="RichTextLabel" parent="Panel"]
 margin_left = 65.0
-margin_top = -2.0
+margin_top = -1.0
 margin_right = 88.0
-margin_bottom = 21.0
-custom_constants/line_spacing = -1
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "✉
+99999"
 text = "✉
 99999"
-align = 1
+scroll_active = false

@@ -1,12 +1,12 @@
 extends Node
 
 const icon = {
-	"HP":"✃",
-	"AP":"✄",
-	"ATK":"✇",
-	"MAG":"✌",
-	"WALLET":"✉",
-	"GOLD":"✁",
+	"HP":"[color=red]✃[/color]",
+	"AP":"[color=lime]✄[/color]",
+	"ATK":"[color=silver]✇[/color]",
+	"MAG":"[color=aqua]✌[/color]",
+	"WALLET":"[color=yellow]✉[/color]",
+	"GOLD":"[color=yellow]✁[/color]",
 	"LOCK":"✈",
 	"SKULL":"✆",
 	"FINAL":"✍",
@@ -33,3 +33,6 @@ const menus = {
 		"right":"Stages",
 	},
 }
+
+func centerRichText(text):
+	return "[center]" + text + "[/center]"

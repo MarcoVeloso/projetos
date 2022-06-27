@@ -12,5 +12,6 @@ func updatePanel():
 	
 func statText(stat, value):
 	var statLabel = get_node("Panel/" + stat)
+	var text = GameData.icon[stat] + "\n" + str(value)
 	
-	statLabel.text = GameData.icon[stat] + "\n" + str(value)
+	statLabel.bbcode_text = GameData.centerRichText(text)

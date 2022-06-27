@@ -7,7 +7,7 @@ var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
-var gold = 0 setget set_gold
+var gold = 6578 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {
