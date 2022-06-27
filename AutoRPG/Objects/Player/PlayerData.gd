@@ -1,13 +1,13 @@
 extends Node
 
 var max_hp = 10
-var max_ap = 100
+var max_ap = 99
 var start_ap = 100
 var max_gold = 100
 var attack_power = 1
 var magic_power = 1
 
-var gold = 6578 setget set_gold
+var gold = 0 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {

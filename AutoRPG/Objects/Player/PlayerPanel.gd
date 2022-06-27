@@ -18,11 +18,11 @@ func updateLabels(stat, value):
 			hpLabel.text = str(value)
 			HPbar.value = value
 		"ap":
-			apLabel.text = GameData.icon.AP + str(value)
+			apLabel.bbcode_text = GameData.centerRichText(GameData.icon.AP + str(value))
 		"atk":
-			atkLabel.text = GameData.icon.ATK + str(value)
+			atkLabel.bbcode_text = GameData.centerRichText(GameData.icon.ATK + str(value))
 		"mag":
-			magLabel.text = GameData.icon.MAG + str(value)
+			magLabel.bbcode_text = GameData.centerRichText(GameData.icon.MAG + str(value))
 
 
 func _on_Player_update_player_face(type):
