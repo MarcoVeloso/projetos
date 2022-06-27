@@ -8,10 +8,9 @@ onready var buttonRight = $ButtonRight
 
 func _ready():
 	var menu = get_parent().name
-	var gold_text = GameData.icon.GOLD + " " + str(PlayerData.gold)
 	
 	title.text = GameData.menus[menu].name
-	gold.bbcode_text = GameData.centerRichText(gold_text)
+	gold.text = GameData.icon.GOLD + " " + str(PlayerData.gold)
 	
 	buttonLeft.text = "← " + GameData.menus[menu].left
 	buttonRight.text = GameData.menus[menu].right + " →"

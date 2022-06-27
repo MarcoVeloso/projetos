@@ -6,7 +6,7 @@ const icon = {
 	"ATK":"[color=silver]✇[/color]",
 	"MAG":"[color=aqua]✌[/color]",
 	"WALLET":"[color=yellow]✉[/color]",
-	"GOLD":"[color=yellow]✁[/color]",
+	"GOLD":"✁",
 	"LOCK":"✈",
 	"SKULL":"✆",
 	"FINAL":"✍",
