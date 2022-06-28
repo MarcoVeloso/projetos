@@ -25,6 +25,8 @@ func drawSkill():
 
 
 func _on_Button_pressed():
-	pass
-#	if skill.increment:
-		
+	if skill.increment:
+		PlayerData[self.name] += skill.increment
+
+	PlayerData.gold -= skill.cost
+	get_tree().reload_current_scene()

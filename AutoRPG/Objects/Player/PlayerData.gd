@@ -3,12 +3,12 @@ extends Node
 const stats = ["HP", "AP", "ATK", "MAG", "WALLET"]
 
 var HP = 10
-var AP = 99
-var WALLET = 99999
+var AP = 5
+var WALLET = 100
 var ATK = 1
 var MAG = 1
 
-var start_ap = 100
+var start_ap = 1
 var gold = 0 setget set_gold
 var current_stage = "11"
 
