@@ -1,6 +1,16 @@
 extends Node
 
-const data = {
+const worlds = {
+	"1":"Green Fields",
+	"2":"Deep Forest",
+	"3":"High Seas",
+	"4":"Desert",
+	"5":"Canyons",
+	"6":"Snow Peaks",
+	"7":"Dark Castle",
+}
+
+const stages = {
 	"11":{
 		"name":"Green Fields 1",
 		"chest_base_gold":10,

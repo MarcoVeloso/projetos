@@ -11,7 +11,7 @@ var gold = 0 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {
-	"11":{"name":StagesData.data["11"].name,"best_gold":""},
+	"11":{"best_gold":""},
 }
 
 var passive_skill = "Attack First"

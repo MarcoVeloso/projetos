@@ -30,7 +30,7 @@ func _ready():
 	
 
 func init_stage():
-	enemies = StagesData.data[current_stage].enemies
+	enemies = StagesData.stages[current_stage].enemies
 	
 	player_attacking = false
 	
@@ -59,7 +59,7 @@ func create_new_object():
 		instance.hardmode_setup()
 
 	if (object_name[0] != "E"):
-		instance.non_enemy_setup(StagesData.data[current_stage].chest_base_gold)
+		instance.non_enemy_setup(StagesData.stages[current_stage].chest_base_gold)
 		selectFirstSkill()
 		passive = null
 		
@@ -152,10 +152,7 @@ func next_battle():
 		PlayerData.stages_unlocked[current_stage].best_gold = final_gold
 		PlayerData.gold += current_gold
 		
-		PlayerData.stages_unlocked[next_stage] = {
-			"name":StagesData.data[next_stage].name,
-			"best_gold":null,
-		}
+		PlayerData.stages_unlocked[next_stage] = {"best_gold":null}
 		
 		postBattleContainer.show_stage_results(current_gold)
 
@@ -203,7 +200,7 @@ func updateTopInfos():
 	var room = $UI/TopInfosContainer/Room
 	var object_count = (last_object - current_object) - 1
 	
-	stage.text = StagesData.data[current_stage].name
+	stage.text = StagesData.stages[current_stage].name
 	gold.text = GameData.icon.GOLD + ' ' + str(current_gold)
 	
 	if hard_mode:
