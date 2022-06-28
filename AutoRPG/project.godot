@@ -29,7 +29,7 @@ config/icon="res://icon.png"
 SceneTransition="*res://GameScenes/Generic/SceneTransition.tscn"
 GameData="*res://GameScenes/GameData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
-StagesData="*res://GameScenes/StagesData.gd"
+StagesData="*res://GameScenes/StageSelect/StagesData.gd"
 PlayerData="*res://Objects/Player/PlayerData.gd"
 
 [display]
