@@ -24,8 +24,6 @@ Shop (SCENE 3)
 		Base Stats
 		Passive skills
 		Skills
-		Stage skills
-		GOTO: Stage Select
 
 ---------------------------------------------
 Setup Player (SCENE 4)
