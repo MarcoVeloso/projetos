@@ -10,58 +10,52 @@ rect_pivot_offset = Vector2( 6, 18 )
 theme = ExtResource( 3 )
 
 [node name="Panel" type="Control" parent="."]
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 89.0
-margin_bottom = 20.0
+margin_right = 99.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.9, 0.9 )
 
 [node name="Title" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
 margin_top = -2.0
-margin_right = 65.0
+margin_right = 71.0
 margin_bottom = 9.0
-rect_scale = Vector2( 0.9, 0.9 )
 bbcode_enabled = true
-bbcode_text = "Increase +✃"
-text = "Increase +✃"
+bbcode_text = "✃+"
+text = "✃+"
 scroll_active = false
 
 [node name="Req" type="RichTextLabel" parent="Panel"]
-margin_left = 58.0
+margin_left = 63.5556
 margin_top = -2.0
-margin_right = 96.0
+margin_right = 101.556
 margin_bottom = 9.0
-rect_scale = Vector2( 0.9, 0.9 )
 bbcode_enabled = true
-bbcode_text = "[right]Req: ✃99[/right]"
-text = "Req: ✃99"
+bbcode_text = "[right]Req:✃99[/right]"
+text = "Req:✃99"
 scroll_active = false
 
 [node name="Description" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
-margin_top = 4.0
-margin_right = 86.0
-margin_bottom = 20.0
-rect_scale = Vector2( 0.9, 0.9 )
+margin_top = 5.11111
+margin_right = 98.0
+margin_bottom = 21.1111
 custom_constants/line_separation = -2
 bbcode_enabled = true
-bbcode_text = "Increase HP
-Increase Health"
-text = "Increase HP
-Increase Health"
+bbcode_text = "Increase maximum Health Points"
+text = "Increase maximum Health Points"
 scroll_active = false
 
 [node name="Button" type="Button" parent="Panel"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 19.0
-margin_bottom = 17.0
+margin_bottom = 19.0
 
 [node name="Text" type="Label" parent="Panel/Button"]
 margin_left = -1.0
-margin_top = -3.0
+margin_top = -2.0
 margin_right = 19.0
-margin_bottom = 19.0
+margin_bottom = 20.0
 custom_constants/line_spacing = -2
 text = "$
 9999"
