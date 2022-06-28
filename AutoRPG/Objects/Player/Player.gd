@@ -103,7 +103,7 @@ func is_dead():
 	
 func init():
 	set_hp(PlayerData.HP)
-	set_ap(PlayerData.AP)
+	set_ap(1)
 	set_atk(PlayerData.ATK)
 	set_mag(PlayerData.MAG)
 	
