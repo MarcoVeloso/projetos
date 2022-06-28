@@ -3,16 +3,26 @@ extends Control
 onready var title = $Panel/Title
 onready var req = $Panel/Req
 onready var desc = $Panel/Description
+onready var button = $Panel/Button
 onready var buttonText = $Panel/Button/Text
 
+var skill = null
 
 func _ready():
-	var stat = self.name
+	skill = ShopData.data[self.name]
 	
-	drawStats(stat, ShopData.data[stat])
+	drawSkill()
 
 
-func drawStats(stat, shop_data):
-	title.bbcode_text = shop_data.title + str(shop_data.increment)
-	desc.bbcode_text = shop_data.desc
-	buttonText.text = "$\n" + str(shop_data.cost)
+func drawSkill():
+	title.bbcode_text = skill.title + str(skill.increment)
+	desc.bbcode_text = skill.desc
+	buttonText.text = "$\n" + str(skill.cost)
+
+	if skill.cost > PlayerData.gold:
+		button.disabled = true
+		buttonText.modulate = Color(0.5,0.5,0.5,1)
+
+
+func _on_Button_pressed():
+	print("pode comprar")

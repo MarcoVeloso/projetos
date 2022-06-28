@@ -52,3 +52,5 @@ custom_constants/line_spacing = -2
 text = "$
 9999"
 align = 1
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
