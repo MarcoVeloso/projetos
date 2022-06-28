@@ -13,7 +13,7 @@ onready var lifeBar = $LifeBar
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 
-var max_hp = 999
+var HP = 999
 
 func set_hp(new_hp):
 	hp = new_hp
@@ -22,8 +22,8 @@ func set_hp(new_hp):
 		lifeBar.setHP(hp)
 
 func _ready():
-	max_hp = hp
-	lifeBar.setMaxHP(max_hp)
+	HP = hp
+	lifeBar.setMaxHP(HP)
 
 	BattleUnits.Enemy = self
 
@@ -63,7 +63,7 @@ func die_and_free():
 		dead_text = "Treasure!\n+" + str(gold) + " $"
 	elif self.name == "TRAP":
 		dead_text = "Trap!\n" + str(gold) + " $"
-	elif hp < max_hp * -0.2:
+	elif hp < HP * -0.2:
 		gold = ceil(gold * 1.2)
 		dead_text = "OVERKILL Bonus!\n+" + str(gold) + " $"
 			

@@ -35,13 +35,11 @@ var data = {
 
 
 func _ready():
-	var stats = ["HP", "AP", "ATK", "MAG", "WALLET"]
-	
 	for skill in data:
 		var title = data[skill].title
 		var desc = data[skill].desc
 		
-		for stat in stats:
+		for stat in PlayerData.stats:
 			if stat in title:
 				data[skill].title = title.replace(stat, GameData.icon[stat])
 				

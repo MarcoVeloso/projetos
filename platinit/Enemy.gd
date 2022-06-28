@@ -2,7 +2,7 @@ extends Area2D
 
 export var total_hp = 8
 export var current_hp = 8
-export var attack_power = 2
+export var ATK = 2
 
 #func _ready():
 #	pass

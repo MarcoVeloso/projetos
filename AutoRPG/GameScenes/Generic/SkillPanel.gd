@@ -25,4 +25,6 @@ func drawSkill():
 
 
 func _on_Button_pressed():
-	print("pode comprar")
+	pass
+#	if skill.increment:
+		

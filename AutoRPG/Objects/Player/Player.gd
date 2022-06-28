@@ -15,11 +15,11 @@ signal stat_changed(stat, value)
 signal update_player_face(type)
 
 func set_hp(new_hp):
-	hp = clamp(new_hp, 0, PlayerData.max_hp)
+	hp = clamp(new_hp, 0, PlayerData.HP)
 	emit_signal("stat_changed", "hp", hp)
 	
 func set_ap(new_ap):
-	ap = clamp(new_ap, 0, PlayerData.max_ap)
+	ap = clamp(new_ap, 0, PlayerData.AP)
 	emit_signal("stat_changed", "ap", ap)
 	
 func set_atk(new_atk):
@@ -89,7 +89,7 @@ func take_damage(damage):
 	
 	damage_mod = 0
 	
-	if hp <= (PlayerData.max_hp * 0.5):
+	if hp <= (PlayerData.HP * 0.5):
 		emit_signal("update_player_face", "weak")
 	else:
 		emit_signal("update_player_face", "damage")
@@ -102,10 +102,10 @@ func is_dead():
 		return false
 	
 func init():
-	set_hp(PlayerData.max_hp)
-	set_ap(PlayerData.max_ap)
-	set_atk(PlayerData.attack_power)
-	set_mag(PlayerData.magic_power)
+	set_hp(PlayerData.HP)
+	set_ap(PlayerData.AP)
+	set_atk(PlayerData.ATK)
+	set_mag(PlayerData.MAG)
 	
 	active_skill = "SLASH"
 

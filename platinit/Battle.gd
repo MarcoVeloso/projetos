@@ -48,7 +48,7 @@ func attack(attacker, attacked):
 	var continue_battle = true
 	
 	attacker.get_node("Sprite").play("attack")
-	attacked.current_hp -= attacker.attack_power
+	attacked.current_hp -= attacker.ATK
 	
 	yield(get_tree().create_timer(0.3),"timeout")
 	update_HPBars(attacker, attacked)

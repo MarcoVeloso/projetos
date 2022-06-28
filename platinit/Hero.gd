@@ -4,7 +4,7 @@ const gravity = 800
 
 export var total_hp = 10
 export var current_hp = 10
-export var attack_power = 2
+export var ATK = 2
 
 export var speed = 100
 export var jumpForce = 500

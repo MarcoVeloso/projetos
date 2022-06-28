@@ -249,10 +249,10 @@ func player_passive_skill(passive):
 				player_attacking = true
 				
 			"Attack Boost":
-				player.atk = PlayerData.attack_power + 1
+				player.atk = PlayerData.ATK + 1
 				
 			"Magic Boost":
-				player.mag = PlayerData.magic_power + 1
+				player.mag = PlayerData.MAG + 1
 				
 			"AP Gain Boost":
 				ap_gain += 1
