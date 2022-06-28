@@ -31,6 +31,7 @@ GameData="*res://GameScenes/GameData.gd"
 SkillsData="*res://Objects/Skills/SkillsData.gd"
 StagesData="*res://GameScenes/StageSelect/StagesData.gd"
 PlayerData="*res://Objects/Player/PlayerData.gd"
+ShopData="*res://GameScenes/Shop/ShopData.gd"
 
 [display]
 

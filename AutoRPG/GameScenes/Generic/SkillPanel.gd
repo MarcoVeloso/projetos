@@ -5,19 +5,14 @@ onready var req = $Panel/Req
 onready var desc = $Panel/Description
 onready var buttonText = $Panel/Button/Text
 
-var stats = {
-	"HP":"Increase Health Points",
-	"AP":"Increase Action Points",
-	"ATK":"Increase Attack Power",
-	"MAG":"Increase Magic Power",
-	"WALLET":"Increase maximum $",
-}
 
 func _ready():
-	drawStats(self.name, 20, 9758)
+	var stat = self.name
+	
+	drawStats(stat, ShopData.stats[stat])
 
 
-func drawStats(stat, increment, cost):
-	title.bbcode_text = GameData.icon[stat] + "+" + str(increment)
-	desc.bbcode_text = stats[stat]
-	buttonText.text = "$\n" + str(cost)
+func drawStats(stat, shop_data):
+	title.bbcode_text = GameData.icon[stat] + "+" + str(shop_data.increment)
+	desc.bbcode_text = shop_data.desc
+	buttonText.text = "$\n" + str(shop_data.cost)
