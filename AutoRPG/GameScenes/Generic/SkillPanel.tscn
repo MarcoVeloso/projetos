@@ -28,26 +28,26 @@ scroll_active = false
 
 [node name="Description" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
-margin_top = 5.11111
+margin_top = 4.0
 margin_right = 98.0
-margin_bottom = 21.1111
-custom_constants/line_separation = -2
+margin_bottom = 20.0
+custom_constants/line_separation = -1
 bbcode_enabled = true
-bbcode_text = "Increase maximum Health Points"
-text = "Increase maximum Health Points"
+bbcode_text = "Increase Health Points"
+text = "Increase Health Points"
 scroll_active = false
 
 [node name="Button" type="Button" parent="Panel"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 19.0
-margin_bottom = 19.0
+margin_bottom = 17.0
 
 [node name="Text" type="Label" parent="Panel/Button"]
 margin_left = -1.0
-margin_top = -2.0
+margin_top = -3.11111
 margin_right = 19.0
-margin_bottom = 20.0
+margin_bottom = 18.8889
 custom_constants/line_spacing = -2
 text = "$
 9999"
