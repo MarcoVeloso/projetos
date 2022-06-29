@@ -2,34 +2,39 @@ extends Node
 
 var data = {
 	"HP":{
+		"type":"stat",
 		"title":"HP+",
-		"desc":"Increase Health Points",
-		"increment":10,
-		"cost":50,
+		"desc":"Increase Health Points to ",
+		"values":[10,20,30,40,50],
+		"costs":[0,50,200,500,1200],
 	},
 	"AP":{
+		"type":"stat",
 		"title":"AP+",
-		"desc":"Increase maximum Action Points",
-		"increment":5,
-		"cost":50,
+		"desc":"Increase maximum Action Points to ",
+		"values":[5,10,20,30,40],
+		"costs":[0,50,200,500,1200],
 	},
 	"ATK":{
+		"type":"stat",
 		"title":"ATK+",
-		"desc":"Increase Attack Power",
-		"increment":1,
-		"cost":50,
+		"desc":"Increase Attack Power to ",
+		"values":[1,2,3,4,5],
+		"costs":[0,50,200,500,1200],
 	},
 	"MAG":{
+		"type":"stat",
 		"title":"MAG+",
-		"desc":"Increase Magic Power",
-		"increment":1,
-		"cost":50,
+		"desc":"Increase Magic Power to ",
+		"values":[1,2,3,4,5],
+		"costs":[0,50,200,500,1200],
 	},
 	"WALLET":{
+		"type":"stat",
 		"title":"WALLET+",
-		"desc":"Increase maximum $ stored",
-		"increment":400,
-		"cost":100,
+		"desc":"Increase maximum $ carried to ",
+		"values":[100, 200, 500, 1000, 2000, 5000, 10000],
+		"costs":[0, 100, 200, 500, 1000, 2000, 5000],
 	},
 }
 
@@ -45,6 +50,3 @@ func _ready():
 				
 			if stat in desc:
 				data[skill].desc = desc.replace(stat, GameData.icon[stat])
-
-
-

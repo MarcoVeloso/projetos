@@ -7,26 +7,38 @@ onready var button = $Panel/Button
 onready var buttonText = $Panel/Button/Text
 
 var skill = null
+var skill_name = null
+var index_next = 0
 
 func _ready():
-	skill = ShopData.data[self.name]
+	skill_name = self.name
+	skill = ShopData.data[skill_name]
 	
 	drawSkill()
 
 
 func drawSkill():
-	title.bbcode_text = skill.title + str(skill.increment)
-	desc.bbcode_text = skill.desc
-	buttonText.text = "$\n" + str(skill.cost)
+	var desc_text = skill.desc
+	var cost = skill.costs[0]
+	
+	if skill.type == "stat":
+		index_next = skill.values.find(PlayerData[skill_name]) + 1
+		
+		desc_text += str(skill.values[index_next])
+		cost = skill.costs[index_next]
+		
+	title.bbcode_text = skill.title
+	desc.bbcode_text = desc_text
+	buttonText.text = "$\n" + str(cost)
 
-	if skill.cost > PlayerData.gold:
+	if cost > PlayerData.gold:
 		button.disabled = true
 		buttonText.modulate = Color(0.5,0.5,0.5,1)
 
 
 func _on_Button_pressed():
-	if skill.increment:
-		PlayerData[self.name] += skill.increment
+	if skill.type == "stat":
+		PlayerData[skill_name] = skill.values[index_next]
 
-	PlayerData.gold -= skill.cost
+	PlayerData.gold -= skill.costs[index_next]
 	get_tree().reload_current_scene()
