@@ -17,9 +17,9 @@ offset = Vector2( 22, 60 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 13.0
-margin_top = 6.0
+margin_top = 5.0
 margin_right = 56.0
-margin_bottom = 22.0
+margin_bottom = 21.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "SHOP"
 align = 1

@@ -29,13 +29,13 @@ scroll_active = false
 
 [node name="Description" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
-margin_top = 4.0
+margin_top = 2.75
 margin_right = 112.0
-margin_bottom = 20.0
+margin_bottom = 18.75
 custom_constants/line_separation = -1
 bbcode_enabled = true
-bbcode_text = "Increase Health Points"
-text = "Increase Health Points"
+bbcode_text = "Increase Health Points of you great Hero"
+text = "Increase Health Points of you great Hero"
 scroll_active = false
 
 [node name="Button" type="Button" parent="Panel"]

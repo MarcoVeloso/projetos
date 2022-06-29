@@ -16,3 +16,5 @@ mouse_filter = 2
 theme = ExtResource( 11 )
 
 [node name="PlayerStatsPanel" parent="UI" instance=ExtResource( 1 )]
+margin_top = -1.0
+margin_bottom = -138.0
