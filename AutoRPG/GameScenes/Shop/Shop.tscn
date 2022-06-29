@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameScenes/Shop/Shop.gd" type="Script" id=1]
 [ext_resource path="res://GameScenes/Generic/PlayerStatsPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameScenes/Generic/SkillPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScenes/Generic/MenuBase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/Images/Panel9Slice.png" type="Texture" id=5]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1, 1 )
 
 [node name="Shop" type="Node"]
 script = ExtResource( 1 )
@@ -20,42 +25,84 @@ theme = ExtResource( 11 )
 
 [node name="PlayerStatsPanel" parent="UI" instance=ExtResource( 2 )]
 
+[node name="SkillsBackPanel" type="Control" parent="UI"]
+margin_top = 18.0
+margin_right = 40.0
+margin_bottom = 58.0
+
+[node name="MainPanel" type="Panel" parent="UI/SkillsBackPanel"]
+modulate = Color( 0.647059, 0.607843, 0.607843, 1 )
+margin_left = 2.0
+margin_top = 3.0
+margin_right = 88.0
+margin_bottom = 105.0
+
+[node name="LabelPanel" type="Panel" parent="UI/SkillsBackPanel"]
+modulate = Color( 0.462745, 0.478431, 0.486275, 1 )
+margin_left = 21.0
+margin_right = 69.0
+margin_bottom = 8.0
+
+[node name="Title" type="Label" parent="UI/SkillsBackPanel"]
+margin_left = 25.0
+margin_right = 67.0
+margin_bottom = 8.0
+custom_styles/normal = SubResource( 1 )
+text = "Attributes"
+align = 1
+
 [node name="Stats" type="VBoxContainer" parent="UI"]
-margin_top = 16.0
-margin_right = 90.0
-margin_bottom = 91.0
-custom_constants/separation = 13
+margin_left = 3.0
+margin_top = 25.0
+margin_right = 93.0
+margin_bottom = 123.0
+alignment = 1
 
 [node name="HP" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_top = 6.0
 margin_right = 90.0
-margin_bottom = 0.0
+margin_bottom = 20.0
 
 [node name="AP" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 13.0
+margin_top = 24.0
 margin_right = 90.0
-margin_bottom = 13.0
+margin_bottom = 38.0
 
 [node name="ATK" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 26.0
+margin_top = 42.0
 margin_right = 90.0
-margin_bottom = 26.0
+margin_bottom = 56.0
 
 [node name="MAG" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 39.0
+margin_top = 60.0
 margin_right = 90.0
-margin_bottom = 39.0
+margin_bottom = 74.0
 
 [node name="WALLET" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 52.0
+margin_top = 78.0
 margin_right = 90.0
-margin_bottom = 52.0
+margin_bottom = 92.0
+
+[node name="Button" type="Button" parent="UI"]
+margin_left = 2.0
+margin_top = 125.0
+margin_right = 41.0
+margin_bottom = 135.0
+text = "Skills"
+
+[node name="Button2" type="Button" parent="UI"]
+margin_left = 49.0
+margin_top = 125.0
+margin_right = 88.0
+margin_bottom = 135.0
+text = "Passives"
