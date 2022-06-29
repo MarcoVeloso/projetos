@@ -8,6 +8,10 @@ onready var magLabel = $MAG
 onready var playerSprite = $Sprite
 
 
+func _ready():
+	HPbar.max_value = PlayerData.HP
+	
+
 func _on_Player_stat_changed(stat, value):
 	updateLabels(stat, value)
 
