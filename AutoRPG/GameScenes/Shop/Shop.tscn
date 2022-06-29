@@ -24,7 +24,7 @@ theme = ExtResource( 11 )
 margin_top = 16.0
 margin_right = 90.0
 margin_bottom = 91.0
-custom_constants/separation = 15
+custom_constants/separation = 13
 
 [node name="HP" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
@@ -35,27 +35,27 @@ margin_bottom = 0.0
 [node name="AP" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 15.0
+margin_top = 13.0
 margin_right = 90.0
-margin_bottom = 15.0
+margin_bottom = 13.0
 
 [node name="ATK" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 30.0
+margin_top = 26.0
 margin_right = 90.0
-margin_bottom = 30.0
+margin_bottom = 26.0
 
 [node name="MAG" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 45.0
+margin_top = 39.0
 margin_right = 90.0
-margin_bottom = 45.0
+margin_bottom = 39.0
 
 [node name="WALLET" parent="UI/Stats" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 60.0
+margin_top = 52.0
 margin_right = 90.0
-margin_bottom = 60.0
+margin_bottom = 52.0

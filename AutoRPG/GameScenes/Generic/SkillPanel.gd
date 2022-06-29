@@ -18,17 +18,17 @@ func _ready():
 
 
 func drawSkill():
-	var desc_text = skill.desc
+	var title_text = skill.title
 	var cost = skill.costs[0]
 	
 	if skill.type == "stat":
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
 		
-		desc_text += str(skill.values[index_next])
+		title_text += " (" + str(skill.values[index_next]) + ")"
 		cost = skill.costs[index_next]
 		
-	title.bbcode_text = skill.title
-	desc.bbcode_text = desc_text
+	title.bbcode_text = title_text
+	desc.bbcode_text = skill.desc
 	buttonText.text = "$\n" + str(cost)
 
 	if cost > PlayerData.gold:

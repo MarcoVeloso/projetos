@@ -14,12 +14,12 @@ script = ExtResource( 1 )
 [node name="Panel" type="Control" parent="."]
 margin_right = 99.0
 margin_bottom = 21.0
-rect_scale = Vector2( 0.9, 0.9 )
+rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Title" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
 margin_top = -2.0
-margin_right = 99.0
+margin_right = 112.0
 margin_bottom = 9.0
 bbcode_enabled = true
 bbcode_text = "✃+"
@@ -29,9 +29,9 @@ scroll_active = false
 [node name="Description" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
 margin_top = 4.0
-margin_right = 98.0
+margin_right = 112.0
 margin_bottom = 20.0
-custom_constants/line_separation = -2
+custom_constants/line_separation = -1
 bbcode_enabled = true
 bbcode_text = "Increase Health Points"
 text = "Increase Health Points"
