@@ -41,7 +41,7 @@ func attack(enemy) -> void:
 	
 	if enemy != null:
 		var skill = Skills.instance().init(skill_name)
-		var skill_data = SkillsData.data[skill_name]
+		var skill_data = SkillsData.skills[skill_name]
 		
 		var player_position = Vector2(16,71.5)
 		

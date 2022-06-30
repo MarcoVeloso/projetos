@@ -1,6 +1,6 @@
 extends Node
 
-var data = {
+var skills = {
 	"SLASH": {
 		"target":"other",
 		"type":"attack",
@@ -78,8 +78,8 @@ var data = {
 var description = {}
 
 func _ready():
-	for skill in data:
-		var s = data[skill]
+	for skill in skills:
+		var s = skills[skill]
 		var desc = s["desc_effect"] % s["effect"]
 		
 		if "MAG" in desc:

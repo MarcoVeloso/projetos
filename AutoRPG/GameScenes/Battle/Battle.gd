@@ -166,7 +166,7 @@ func updateActionButtons(current_ap):
 	for button in battleActionButtons.get_children():
 		
 		if button.text != GameData.icon.LOCK:
-			var skill_data = SkillsData.data[button.text]
+			var skill_data = SkillsData.skills[button.text]
 			
 			if (current_ap < skill_data["ap"]):
 				button.disabled = true
