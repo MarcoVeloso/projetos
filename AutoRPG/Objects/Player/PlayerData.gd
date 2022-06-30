@@ -15,10 +15,7 @@ var stages_unlocked = {
 	"11":{"best_gold":""},
 }
 
-var passive_skill = "Attack First"
-#var passive_skill = "Attack Boost"
-#var passive_skill = "Magic Boost"
-#var passive_skill = "AP Gain Boost"
+var passive_skill = "ATTACK_BOOST"
 
 var selected_skills = ["SLASH", "HEAL", "DEFEND", "SWIFT", "CROSS", "CRESCENT", "EXPLOSION", "ULTIMA"]
 #var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]

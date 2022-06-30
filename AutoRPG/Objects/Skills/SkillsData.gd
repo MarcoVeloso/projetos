@@ -75,6 +75,25 @@ var skills = {
 	},
 }
 
+var passives = {
+	"ATTACK_FIRST": {
+		"title":"Attack First",
+		"desc":"Deal the first attack on battles",
+	},
+	"ATTACK_BOOST": {
+		"title":"Attack Boost",
+		"desc":"Increase ✇ by 25%",
+	},
+	"MAGIC_BOOST": {
+		"title":"Magic Boost",
+		"desc":"Increase ✌ by 25%",
+	},
+	"AP_GAIN_BOOST": {
+		"title":"AP Gain Boost",
+		"desc":"Gain 2✄ per turn",
+	},
+}
+
 var description = {}
 
 func _ready():

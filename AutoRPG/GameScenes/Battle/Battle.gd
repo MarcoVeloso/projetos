@@ -241,20 +241,20 @@ func player_passive_skill(passive):
 	var player = BattleUnits.Player
 	
 	if passive:
-		label.text = "PASSIVE: " + passive
+		label.text = "PASSIVE: " + SkillsData.passives[passive].title
 		animationPlayer.play("FadeoutPassiveLabel")
 		
 		match passive:
-			"Attack First":
+			"ATTACK_FIRST":
 				player_attacking = true
 				
-			"Attack Boost":
-				player.atk = PlayerData.ATK + 1
+			"ATTACK_BOOST":
+				player.atk = ceil(PlayerData.ATK * 1.25)
 				
-			"Magic Boost":
-				player.mag = PlayerData.MAG + 1
+			"MAGIC_BOOST":
+				player.mag = ceil(PlayerData.MAG * 1.25)
 				
-			"AP Gain Boost":
+			"AP_GAIN_BOOST":
 				ap_gain += 1
 	
 	
