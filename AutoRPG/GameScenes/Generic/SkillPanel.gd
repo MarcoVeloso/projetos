@@ -12,8 +12,9 @@ var index_next = 0
 
 
 func drawSkill(type, data):
-	skill_name = data.name
 	skill = data
+	skill_name = data.name
+	index_next = 0
 
 	var title_text = skill.title
 	var cost = skill.costs[0]
