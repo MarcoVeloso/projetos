@@ -6,72 +6,72 @@ var skills = {
 		"type":"attack",
 		"effect":1,
 		"ap":0,
-		"desc_name":"Slash",
-		"desc_effect":"Deal %sxATK damage",
+		"title":"Slash",
+		"desc":"Deal %sxATK damage",
 	},
 	"SWIFT": {
 		"target":"other",
 		"type":"APgain",
 		"effect":1,
 		"ap":0,
-		"desc_name":"Swift Attack",
-		"desc_effect":"Deal %s damage and grant 1 AP to user",
+		"title":"Swift Attack",
+		"desc":"Deal %s damage and grant 1 AP to user",
 	},
 	"DEFEND": {
 		"target":"self",
 		"type":"shield",
 		"effect":2,
 		"ap":1,
-		"desc_name":"Defend",
-		"desc_effect":"Block %s damage next turn using a shield",
+		"title":"Defend",
+		"desc":"Block %s damage next turn using a shield",
 	},
 	"HEAL": {
 		"target":"self",
 		"type":"heal",
 		"effect":2,
 		"ap":5,
-		"desc_name":"Heal",
-		"desc_effect":"Restore %sxMAG HP",
+		"title":"Heal",
+		"desc":"Restore %sxMAG HP",
 	},
 	"CROSS": {
 		"target":"other",
 		"type":"attack",
 		"effect":2,
 		"ap":3,
-		"desc_name":"Cross Slash",
-		"desc_effect":"Deal %sxATK damage",
+		"title":"Cross Slash",
+		"desc":"Deal %sxATK damage",
 	},
 	"CRESCENT": {
 		"target":"other",
 		"type":"attack",
 		"effect":3,
 		"ap":5,
-		"desc_name":"Crescent Slash",
-		"desc_effect":"Deal %sxATK damage",
+		"title":"Crescent Slash",
+		"desc":"Deal %sxATK damage",
 	},
 	"EXPLOSION": {
 		"target":"other",
 		"type":"magic",
 		"effect":5,
 		"ap":10,
-		"desc_name":"Explosion",
-		"desc_effect":"Deal %sxMAG damage",
+		"title":"Explosion",
+		"desc":"Deal %sxMAG damage",
 	},
 	"FIREBALLS": {
 		"target":"other",
 		"type":"magic",
 		"effect":7,
 		"ap":12,
-		"desc_name":"Fireballs",
-		"desc_effect":"Deal %sxMAG damage",
+		"title":"Fireballs",
+		"desc":"Deal %sxMAG damage",
 	},
 	"ULTIMA": {
 		"target":"other",
 		"type":"magic",
 		"effect":99,
 		"ap":20,
-		"desc_name":"Ultima Explosion",
-		"desc_effect":"Deal %sxMAG damage",
+		"title":"Ultima Explosion",
+		"desc":"Deal %sxMAG damage",
 	},
 }
 
@@ -82,32 +82,40 @@ var passives = {
 	},
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
-		"desc":"Increase ✇ by 25%",
+		"desc":"Increase ATK by 25%",
 	},
 	"MAGIC_BOOST": {
 		"title":"Magic Boost",
-		"desc":"Increase ✌ by 25%",
+		"desc":"Increase MAG by 25%",
 	},
 	"AP_GAIN_BOOST": {
 		"title":"AP Gain Boost",
-		"desc":"Gain 2✄ per turn",
+		"desc":"Gain 2 AP per turn",
 	},
 }
 
-var description = {}
 
 func _ready():
+	skillsDescription()
+	replaceStats(passives)
+
+
+func skillsDescription():
 	for skill in skills:
-		var s = skills[skill]
-		var desc = s["desc_effect"] % s["effect"]
+		skills[skill].title += " - %s AP" % skills[skill].ap
+		skills[skill].desc = skills[skill].desc % skills[skill].effect
 		
-		if "MAG" in desc:
-			desc = desc.replace("MAG",GameData.icon.MAG)
-		elif "ATK" in desc:
-			desc = desc.replace("ATK",GameData.icon.ATK)
+	replaceStats(skills)
+
+
+func replaceStats(data):
+	for skill in data:
+		var title = data[skill].title
+		var desc = data[skill].desc
 		
-		description[skill] = {
-			"title": "%s - %s %s" % [s["desc_name"], s["ap"], GameData.icon.AP],
-			"desc": desc
-		}
-	
+		for stat in PlayerData.stats:
+			if stat in title:
+				data[skill].title = title.replace(stat, GameData.icon[stat])
+				
+			if stat in desc:
+				data[skill].desc = desc.replace(stat, GameData.icon[stat])

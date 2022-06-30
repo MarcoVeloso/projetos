@@ -9,5 +9,5 @@ func _on_toggled(selected):
 		var title = get_tree().current_scene.find_node("Title")
 		var desc = get_tree().current_scene.find_node("Description")
 		
-		title.bbcode_text = SkillsData.description[text]["title"]
-		desc.bbcode_text = SkillsData.description[text]["desc"]
+		title.bbcode_text = SkillsData.skills[text].title
+		desc.bbcode_text = SkillsData.skills[text].desc
