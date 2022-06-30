@@ -4,11 +4,11 @@ const stats = ["HP", "AP", "ATK", "MAG", "WALLET"]
 
 var HP = 10
 var AP = 5
-var WALLET = 100
+var WALLET = 1000
 var ATK = 1
 var MAG = 1
 
-var gold = 0 setget set_gold
+var gold = 1000 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {

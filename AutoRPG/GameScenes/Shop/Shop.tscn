@@ -53,56 +53,71 @@ custom_styles/normal = SubResource( 1 )
 text = "Attributes"
 align = 1
 
-[node name="Stats" type="VBoxContainer" parent="UI"]
+[node name="Skills" type="VBoxContainer" parent="UI"]
 margin_left = 3.0
 margin_top = 21.0
 margin_right = 93.0
 margin_bottom = 123.0
+custom_constants/separation = 0
 alignment = 1
 
-[node name="HP" parent="UI/Stats" instance=ExtResource( 3 )]
+[node name="0" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 8.0
+margin_top = 2.0
 margin_right = 90.0
-margin_bottom = 22.0
+margin_bottom = 16.0
 
-[node name="AP" parent="UI/Stats" instance=ExtResource( 3 )]
+[node name="1" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 26.0
+margin_top = 16.0
 margin_right = 90.0
-margin_bottom = 40.0
+margin_bottom = 30.0
 
-[node name="ATK" parent="UI/Stats" instance=ExtResource( 3 )]
+[node name="2" parent="UI/Skills" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 30.0
+margin_right = 90.0
+margin_bottom = 44.0
+
+[node name="3" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 44.0
 margin_right = 90.0
 margin_bottom = 58.0
 
-[node name="MAG" parent="UI/Stats" instance=ExtResource( 3 )]
+[node name="4" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 62.0
+margin_top = 58.0
 margin_right = 90.0
-margin_bottom = 76.0
+margin_bottom = 72.0
 
-[node name="WALLET" parent="UI/Stats" instance=ExtResource( 3 )]
+[node name="5" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 80.0
+margin_top = 72.0
 margin_right = 90.0
-margin_bottom = 94.0
+margin_bottom = 86.0
 
-[node name="Button" type="Button" parent="UI"]
+[node name="6" parent="UI/Skills" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 86.0
+margin_right = 90.0
+margin_bottom = 100.0
+
+[node name="ButtonLeft" type="Button" parent="UI"]
 margin_left = 2.0
 margin_top = 125.0
 margin_right = 41.0
 margin_bottom = 135.0
 text = "Skills"
 
-[node name="Button2" type="Button" parent="UI"]
+[node name="ButtonRight" type="Button" parent="UI"]
 margin_left = 49.0
 margin_top = 125.0
 margin_right = 88.0
