@@ -38,6 +38,25 @@ var attributes = [
 	},
 ]
 
+var skills = [
+	{
+		"name":"Skill test",
+		"title":"Skill test",
+		"desc":"Skill test",
+		"values":[0],
+		"costs":[100],
+	},
+]
+
+var passives = [
+	{
+		"name":"Passives test",
+		"title":"Passives test",
+		"desc":"Passives test",
+		"values":[0],
+		"costs":[100],
+	},
+]
 
 func _ready():
 	replaceStats(attributes)

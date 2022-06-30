@@ -11,17 +11,18 @@ var skill_name = ""
 var index_next = 0
 
 
-func drawSkill(data):
+func drawSkill(type, data):
 	skill_name = data.name
 	skill = data
 
 	var title_text = skill.title
 	var cost = skill.costs[0]
 	
-	index_next = skill.values.find(PlayerData[skill_name]) + 1
-	
-	title_text += " (" + str(skill.values[index_next]) + ")"
-	cost = skill.costs[index_next]
+	if type == "attributes":
+		index_next = skill.values.find(PlayerData[skill_name]) + 1
+		
+		title_text += " (" + str(skill.values[index_next]) + ")"
+		cost = skill.costs[index_next]
 		
 	title.bbcode_text = title_text
 	desc.bbcode_text = skill.desc
@@ -33,7 +34,8 @@ func drawSkill(data):
 
 
 func _on_Button_pressed():
-	PlayerData[skill_name] = skill.values[index_next]
+	if index_next > 0:
+		PlayerData[skill_name] = skill.values[index_next]
 
 	PlayerData.gold -= skill.costs[index_next]
 	get_tree().reload_current_scene()
