@@ -20,6 +20,7 @@ var passive_skill = "ATTACK_BOOST"
 var selected_skills = ["SLASH", "HEAL", "DEFEND", "SWIFT", "CROSS", "CRESCENT", "EXPLOSION", "ULTIMA"]
 #var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 
+var shop_data = {}
 
 func set_gold(new_gold):
 	gold = clamp(new_gold, 0, PlayerData.WALLET)

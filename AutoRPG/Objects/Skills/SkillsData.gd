@@ -10,6 +10,24 @@ var skills = {
 		"title":"Slash",
 		"desc":"Deal %sxATK damage",
 	},
+	"HEAL": {
+		"target":"self",
+		"type":"heal",
+		"effect":2,
+		"ap":5,
+		"costs":[0],
+		"title":"Heal",
+		"desc":"Restore %sxMAG health",
+	},
+	"CROSS": {
+		"target":"other",
+		"type":"attack",
+		"effect":2,
+		"ap":3,
+		"costs":[35],
+		"title":"Cross Slash",
+		"desc":"Deal %sxATK damage",
+	},
 	"SWIFT": {
 		"target":"other",
 		"type":"APgain",
@@ -28,30 +46,12 @@ var skills = {
 		"title":"Defend",
 		"desc":"Block %s damage next turn using a shield",
 	},
-	"HEAL": {
-		"target":"self",
-		"type":"heal",
-		"effect":2,
-		"ap":5,
-		"costs":[0],
-		"title":"Heal",
-		"desc":"Restore %sxMAG HP",
-	},
-	"CROSS": {
-		"target":"other",
-		"type":"attack",
-		"effect":2,
-		"ap":3,
-		"costs":[40],
-		"title":"Cross Slash",
-		"desc":"Deal %sxATK damage",
-	},
 	"CRESCENT": {
 		"target":"other",
 		"type":"attack",
 		"effect":3,
 		"ap":5,
-		"costs":[300],
+		"costs":[800],
 		"title":"Crescent Slash",
 		"desc":"Deal %sxATK damage",
 	},
@@ -90,6 +90,11 @@ var passives = {
 		"desc":"Deal the first attack on battles",
 		"costs":[0],
 	},
+	"REGENARATION": {
+		"title":"Regeneration",
+		"desc":"Restore 20% health at start of battle",
+		"costs":[800],
+	},
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
@@ -101,7 +106,7 @@ var passives = {
 		"costs":[1500],
 	},
 	"AP_GAIN_BOOST": {
-		"title":"AP Gain Boost",
+		"title":"Action Gain Boost",
 		"desc":"Gain 2 AP per turn",
 		"costs":[2000],
 	},
@@ -139,8 +144,6 @@ var attributes = {
 		"costs":[0, 100, 200, 500, 1000, 2000, 5000],
 	},
 }
-
-var shop = {}
 
 func _ready():
 	skillsDescription()
@@ -190,4 +193,4 @@ func prepareShopData():
 				"costs": skill.costs,
 			})
 			
-		shop[type] = prepared_data
+		PlayerData.shop_data[type] = prepared_data

@@ -12,7 +12,7 @@ func _ready():
 
 func loadSkills():
 	var type = skill_type.text.to_lower()
-	var skills = SkillsData.shop[type]
+	var skills = PlayerData.shop_data[type]
 	var max_index = skills.size() - 1
 	
 	for skill in skills_panel.get_children():
