@@ -22,7 +22,7 @@ func loadSkills():
 		else:
 			skill.visible = false
 	
-	skills_panel.add_constant_override("separation", (6 - max_index) * 2)
+	skills_panel.add_constant_override("separation", clamp((6 - max_index) * 2, 0, 7))
 
 
 func _on_ButtonLeft_pressed():

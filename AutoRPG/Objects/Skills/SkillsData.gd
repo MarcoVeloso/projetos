@@ -15,7 +15,7 @@ var skills = {
 		"type":"APgain",
 		"effect":1,
 		"ap":0,
-		"costs":[0],
+		"costs":[200],
 		"title":"Swift Attack",
 		"desc":"Deal %s damage and grant 1 AP to user",
 	},
@@ -24,7 +24,7 @@ var skills = {
 		"type":"shield",
 		"effect":2,
 		"ap":1,
-		"costs":[0],
+		"costs":[400],
 		"title":"Defend",
 		"desc":"Block %s damage next turn using a shield",
 	},
@@ -93,17 +93,17 @@ var passives = {
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
-		"costs":[0],
+		"costs":[1000],
 	},
 	"MAGIC_BOOST": {
 		"title":"Magic Boost",
 		"desc":"Increase MAG by 25%",
-		"costs":[0],
+		"costs":[1500],
 	},
 	"AP_GAIN_BOOST": {
 		"title":"AP Gain Boost",
 		"desc":"Gain 2 AP per turn",
-		"costs":[0],
+		"costs":[2000],
 	},
 }
 
@@ -151,7 +151,7 @@ func _ready():
 
 func skillsDescription():
 	for skill in skills:
-		skills[skill].title += " - %s AP" % skills[skill].ap
+		skills[skill].title += " - %sAP" % skills[skill].ap
 		skills[skill].desc = skills[skill].desc % skills[skill].effect
 		
 	replaceStats(skills)
