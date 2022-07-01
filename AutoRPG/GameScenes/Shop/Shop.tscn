@@ -55,10 +55,9 @@ align = 1
 
 [node name="Skills" type="VBoxContainer" parent="UI"]
 margin_left = 3.0
-margin_top = 21.0
+margin_top = 20.0
 margin_right = 93.0
-margin_bottom = 123.0
-custom_constants/separation = 0
+margin_bottom = 122.0
 alignment = 1
 
 [node name="0" parent="UI/Skills" instance=ExtResource( 3 )]
@@ -66,47 +65,40 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 2.0
 margin_right = 90.0
-margin_bottom = 16.0
+margin_bottom = 15.0
 
 [node name="1" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 16.0
+margin_top = 19.0
 margin_right = 90.0
-margin_bottom = 30.0
+margin_bottom = 32.0
 
 [node name="2" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 30.0
+margin_top = 36.0
 margin_right = 90.0
-margin_bottom = 44.0
+margin_bottom = 49.0
 
 [node name="3" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 44.0
+margin_top = 53.0
 margin_right = 90.0
-margin_bottom = 58.0
+margin_bottom = 66.0
 
 [node name="4" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 58.0
+margin_top = 70.0
 margin_right = 90.0
-margin_bottom = 72.0
+margin_bottom = 83.0
 
 [node name="5" parent="UI/Skills" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 72.0
-margin_right = 90.0
-margin_bottom = 86.0
-
-[node name="6" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 86.0
+margin_top = 87.0
 margin_right = 90.0
 margin_bottom = 100.0
 
