@@ -19,9 +19,9 @@ rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Title" type="RichTextLabel" parent="Panel"]
 margin_left = 17.0
-margin_top = -2.0
+margin_top = -3.25
 margin_right = 112.0
-margin_bottom = 9.0
+margin_bottom = 7.75
 bbcode_enabled = true
 bbcode_text = "✃+"
 text = "✃+"

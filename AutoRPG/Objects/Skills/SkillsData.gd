@@ -6,7 +6,6 @@ var skills = {
 		"type":"attack",
 		"effect":1,
 		"ap":0,
-		"costs":[0],
 		"title":"Slash",
 		"desc":"Deal %sxATK damage",
 	},
@@ -15,7 +14,6 @@ var skills = {
 		"type":"heal",
 		"effect":2,
 		"ap":5,
-		"costs":[0],
 		"title":"Heal",
 		"desc":"Restore %sxMAG health",
 	},
@@ -88,7 +86,6 @@ var passives = {
 	"ATTACK_FIRST": {
 		"title":"Attack First",
 		"desc":"Deal the first attack on battles",
-		"costs":[0],
 	},
 	"REGENARATION": {
 		"title":"Regeneration",
@@ -184,7 +181,10 @@ func prepareShopData():
 			
 			if !skill.has("values"):
 				skill.values = null
-			
+
+			if !skill.has("costs"):
+				continue
+
 			prepared_data.append({
 				"name": data,
 				"title": skill.title,
@@ -192,5 +192,5 @@ func prepareShopData():
 				"values": skill.values,
 				"costs": skill.costs,
 			})
-			
+
 		PlayerData.shop_data[type] = prepared_data
