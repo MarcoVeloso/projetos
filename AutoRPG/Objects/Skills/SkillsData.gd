@@ -6,6 +6,7 @@ var skills = {
 		"type":"attack",
 		"effect":1,
 		"ap":0,
+		"costs":[0],
 		"title":"Slash",
 		"desc":"Deal %sxATK damage",
 	},
@@ -14,6 +15,7 @@ var skills = {
 		"type":"APgain",
 		"effect":1,
 		"ap":0,
+		"costs":[0],
 		"title":"Swift Attack",
 		"desc":"Deal %s damage and grant 1 AP to user",
 	},
@@ -22,6 +24,7 @@ var skills = {
 		"type":"shield",
 		"effect":2,
 		"ap":1,
+		"costs":[0],
 		"title":"Defend",
 		"desc":"Block %s damage next turn using a shield",
 	},
@@ -30,6 +33,7 @@ var skills = {
 		"type":"heal",
 		"effect":2,
 		"ap":5,
+		"costs":[0],
 		"title":"Heal",
 		"desc":"Restore %sxMAG HP",
 	},
@@ -38,6 +42,7 @@ var skills = {
 		"type":"attack",
 		"effect":2,
 		"ap":3,
+		"costs":[40],
 		"title":"Cross Slash",
 		"desc":"Deal %sxATK damage",
 	},
@@ -46,6 +51,7 @@ var skills = {
 		"type":"attack",
 		"effect":3,
 		"ap":5,
+		"costs":[300],
 		"title":"Crescent Slash",
 		"desc":"Deal %sxATK damage",
 	},
@@ -54,6 +60,7 @@ var skills = {
 		"type":"magic",
 		"effect":5,
 		"ap":10,
+		"costs":[1000],
 		"title":"Explosion",
 		"desc":"Deal %sxMAG damage",
 	},
@@ -62,6 +69,7 @@ var skills = {
 		"type":"magic",
 		"effect":7,
 		"ap":12,
+		"costs":[2000],
 		"title":"Fireballs",
 		"desc":"Deal %sxMAG damage",
 	},
@@ -70,6 +78,7 @@ var skills = {
 		"type":"magic",
 		"effect":99,
 		"ap":20,
+		"costs":[9000],
 		"title":"Ultima Explosion",
 		"desc":"Deal %sxMAG damage",
 	},
@@ -79,18 +88,22 @@ var passives = {
 	"ATTACK_FIRST": {
 		"title":"Attack First",
 		"desc":"Deal the first attack on battles",
+		"costs":[0],
 	},
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
+		"costs":[0],
 	},
 	"MAGIC_BOOST": {
 		"title":"Magic Boost",
 		"desc":"Increase MAG by 25%",
+		"costs":[0],
 	},
 	"AP_GAIN_BOOST": {
 		"title":"AP Gain Boost",
 		"desc":"Gain 2 AP per turn",
+		"costs":[0],
 	},
 }
 
@@ -127,11 +140,13 @@ var attributes = {
 	},
 }
 
+var shop = {}
 
 func _ready():
 	skillsDescription()
 	replaceStats(passives)
 	replaceStats(attributes)
+	prepareShopData()
 
 
 func skillsDescription():
@@ -153,3 +168,26 @@ func replaceStats(data):
 				
 			if stat in desc:
 				data[skill].desc = desc.replace(stat, GameData.icon[stat])
+
+
+func prepareShopData():
+	var types = ["skills", "passives", "attributes"]
+	
+	for type in types:
+		var prepared_data = []
+		
+		for data in self[type]:
+			var skill = self[type][data]
+			
+			if !skill.has("values"):
+				skill.values = null
+			
+			prepared_data.append({
+				"name": data,
+				"title": skill.title,
+				"desc": skill.desc,
+				"values": skill.values,
+				"costs": skill.costs,
+			})
+			
+		shop[type] = prepared_data

@@ -10,7 +10,7 @@ func _ready():
 	
 func loadSkills():
 	var type = skill_type.text.to_lower()
-	var skills = ShopData[type]
+	var skills = SkillsData.shop[type]
 	var max_index = skills.size() - 1
 	
 	for skill in skills_panel.get_children():
@@ -18,7 +18,7 @@ func loadSkills():
 
 		if index <= max_index:
 			skill.visible = true
-			skill.drawSkill(type, skills[index])
+			skill.drawSkill(skills[index])
 		else:
 			skill.visible = false
 	

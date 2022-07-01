@@ -11,7 +11,7 @@ var skill_name = ""
 var index_next = 0
 
 
-func drawSkill(type, data):
+func drawSkill(data):
 	skill = data
 	skill_name = data.name
 	index_next = 0
@@ -19,7 +19,7 @@ func drawSkill(type, data):
 	var title_text = skill.title
 	var cost = skill.costs[0]
 	
-	if type == "attributes":
+	if skill.values:
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
 		
 		title_text += " (" + str(skill.values[index_next]) + ")"
