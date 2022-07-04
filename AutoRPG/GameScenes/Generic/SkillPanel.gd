@@ -37,6 +37,8 @@ func drawSkill(data):
 func _on_Button_pressed():
 	if index_next > 0:
 		PlayerData[skill_name] = skill.values[index_next]
-
+	else:
+		PlayerData.shop_data[skill.type].erase(skill)
+		
 	PlayerData.gold -= skill.costs[index_next]
 	get_tree().reload_current_scene()

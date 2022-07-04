@@ -186,6 +186,7 @@ func prepareShopData():
 				continue
 
 			prepared_data.append({
+				"type": type,
 				"name": data,
 				"title": skill.title,
 				"desc": skill.desc,
