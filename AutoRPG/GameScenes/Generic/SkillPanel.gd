@@ -29,6 +29,9 @@ func drawSkill(data):
 	desc.bbcode_text = skill.desc
 	buttonText.text = "$\n" + str(cost)
 
+	button.disabled = false
+	buttonText.modulate = Color(1,1,1,1)
+	
 	if cost > PlayerData.gold:
 		button.disabled = true
 		buttonText.modulate = Color(0.5,0.5,0.5,1)
