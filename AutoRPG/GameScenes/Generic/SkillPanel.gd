@@ -17,17 +17,21 @@ func drawSkill(data):
 	index_next = 0
 
 	var title_text = skill.title
-	var cost = skill.costs[0]
+	var cost_text = "$"
+	var cost = 0
 	
 	if skill.values:
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
-		
 		title_text += " (" + str(skill.values[index_next]) + ")"
-		cost = skill.costs[index_next]
+	else:
+		cost_text += "\n8✌"
 		
+	cost = skill.costs[index_next]
+	cost_text = str(cost) + cost_text
+	
 	title.bbcode_text = title_text
 	desc.bbcode_text = skill.desc
-	buttonText.text = "$\n" + str(cost)
+	buttonText.text = cost_text
 
 	button.disabled = false
 	buttonText.modulate = Color(1,1,1,1)

@@ -18,9 +18,9 @@ margin_bottom = 20.0
 rect_scale = Vector2( 0.8, 0.8 )
 
 [node name="Title" type="RichTextLabel" parent="Panel"]
-margin_left = 17.0
+margin_left = 19.5
 margin_top = -3.25
-margin_right = 112.0
+margin_right = 114.5
 margin_bottom = 7.75
 bbcode_enabled = true
 bbcode_text = "✃+"
@@ -28,9 +28,9 @@ text = "✃+"
 scroll_active = false
 
 [node name="Description" type="RichTextLabel" parent="Panel"]
-margin_left = 17.0
+margin_left = 19.5
 margin_top = 2.75
-margin_right = 112.0
+margin_right = 114.5
 margin_bottom = 18.75
 custom_constants/line_separation = -1
 bbcode_enabled = true
@@ -41,17 +41,18 @@ scroll_active = false
 [node name="Button" type="Button" parent="Panel"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 19.0
+margin_right = 22.0
 margin_bottom = 17.0
 
 [node name="Text" type="Label" parent="Panel/Button"]
 margin_left = -1.0
-margin_top = -3.11111
-margin_right = 19.0
-margin_bottom = 18.8889
-custom_constants/line_spacing = -2
+margin_top = -4.25
+margin_right = 22.0
+margin_bottom = 18.75
+custom_constants/line_spacing = 0
 text = "$
 9999"
 align = 1
+valign = 1
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
