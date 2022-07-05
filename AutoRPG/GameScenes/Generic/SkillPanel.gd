@@ -23,8 +23,9 @@ func drawSkill(data):
 	if skill.values:
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
 		title_text += " (" + str(skill.values[index_next]) + ")"
-	else:
-		cost_text += "\n8✌"
+
+	if skill.req:
+		cost_text += "\n" + skill.req
 		
 	cost = skill.costs[index_next]
 	cost_text = str(cost) + cost_text
