@@ -61,7 +61,7 @@ func attack(enemy) -> void:
 						set_ap(ap + 1)
 					
 				skill.global_position = enemy.global_position
-				yield(enemy.take_damage(damage),"completed")
+				yield(enemy.take_damage(ceil(damage)),"completed")
 				
 				if enemy.name == "CHEST":
 					emit_signal("update_player_face", "stayhappy")

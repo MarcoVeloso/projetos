@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Flaremoon Projects: AutoRPG"
-run/main_scene="res://GameScenes/Shop/Shop.tscn"
+run/main_scene="res://GameScenes/StageSelect/StageSelect.tscn"
 config/icon="res://icon.png"
 
 [autoload]
