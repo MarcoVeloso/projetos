@@ -189,21 +189,18 @@ func skillsDescription():
 	for skill in skills:
 		skills[skill].title += " - %sAP" % skills[skill].ap
 		skills[skill].desc = skills[skill].desc % skills[skill].effect
-		
+
 	replaceStats(skills)
 
 
 func replaceStats(data):
 	for skill in data:
-		var title = data[skill].title
-		var desc = data[skill].desc
-		
 		for stat in PlayerData.stats:
-			if stat in title:
-				data[skill].title = title.replace(stat, GameData.icon[stat])
-				
-			if stat in desc:
-				data[skill].desc = desc.replace(stat, GameData.icon[stat])
+			if stat in data[skill].title:
+				data[skill].title = data[skill].title.replace(stat, GameData.icon[stat])
+
+			if stat in data[skill].desc:
+				data[skill].desc = data[skill].desc.replace(stat, GameData.icon[stat])
 
 
 func prepareShopData():
