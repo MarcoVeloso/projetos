@@ -19,14 +19,23 @@ func drawSkill(data):
 	var title_text = skill.title
 	var cost_text = "$"
 	var cost = 0
+	var req_ok = false
 	
 	if skill.values:
+		req_ok = true
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
 		title_text += " (" + str(skill.values[index_next]) + ")"
 
 	if skill.req:
-		cost_text += "\n" + skill.req
-		
+		var req = skill.req.split(" ")
+
+		if int(req[0]) <= PlayerData[req[1]]:
+			req_ok = true
+			
+		for stat in PlayerData.stats:
+			if stat in skill.req:
+				cost_text += "\n" + skill.req.replace(" " + stat, GameData.stats_icon[stat])
+
 	cost = skill.costs[index_next]
 	cost_text = str(cost) + cost_text
 	
@@ -37,7 +46,7 @@ func drawSkill(data):
 	button.disabled = false
 	buttonText.modulate = Color(1,1,1,1)
 	
-	if cost > PlayerData.gold:
+	if cost > PlayerData.gold or !req_ok:
 		button.disabled = true
 		buttonText.modulate = Color(0.5,0.5,0.5,1)
 

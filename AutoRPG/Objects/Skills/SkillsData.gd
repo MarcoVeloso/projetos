@@ -30,7 +30,7 @@ var skills = {
 		"type":"attack",
 		"effect":2,
 		"ap":3,
-		"req":"9ATK",
+		"req":"4 ATK",
 		"values":null,
 		"costs":[35],
 	},
@@ -41,7 +41,7 @@ var skills = {
 		"type":"APgain",
 		"effect":1,
 		"ap":0,
-		"req":"9ATK",
+		"req":"3 ATK",
 		"values":null,
 		"costs":[200],
 	},
@@ -52,7 +52,7 @@ var skills = {
 		"type":"shield",
 		"effect":2,
 		"ap":1,
-		"req":"9ATK",
+		"req":"3 ATK",
 		"values":null,
 		"costs":[400],
 	},
@@ -63,7 +63,7 @@ var skills = {
 		"type":"attack",
 		"effect":3,
 		"ap":5,
-		"req":"9ATK",
+		"req":"2 ATK",
 		"values":null,
 		"costs":[800],
 	},
@@ -74,7 +74,7 @@ var skills = {
 		"type":"magic",
 		"effect":5,
 		"ap":10,
-		"req":"5MAG",
+		"req":"3 MAG",
 		"values":null,
 		"costs":[1000],
 	},
@@ -85,7 +85,7 @@ var skills = {
 		"type":"magic",
 		"effect":7,
 		"ap":12,
-		"req":"5MAG",
+		"req":"5 MAG",
 		"values":null,
 		"costs":[2000],
 	},
@@ -96,7 +96,7 @@ var skills = {
 		"type":"magic",
 		"effect":99,
 		"ap":20,
-		"req":"5MAG",
+		"req":"7 MAG",
 		"values":null,
 		"costs":[9000],
 	},
@@ -113,28 +113,28 @@ var passives = {
 	"REGENARATION": {
 		"title":"Regeneration",
 		"desc":"Restore 20% health at start of battle",
-		"req":"5MAG",
+		"req":"4 MAG",
 		"values":null,
 		"costs":[800],
 	},
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
-		"req":"9ATK",
+		"req":"5 ATK",
 		"values":null,
 		"costs":[1000],
 	},
 	"MAGIC_BOOST": {
 		"title":"Magic Boost",
 		"desc":"Increase MAG by 25%",
-		"req":"5MAG",
+		"req":"5 MAG",
 		"values":null,
 		"costs":[1500],
 	},
 	"AP_GAIN_BOOST": {
 		"title":"Action Gain Boost",
 		"desc":"Gain 2 AP per turn",
-		"req":"5MAG",
+		"req":"6 MAG",
 		"values":null,
 		"costs":[2000],
 	},
@@ -197,7 +197,6 @@ func replaceStats(data):
 	for skill in data:
 		var title = data[skill].title
 		var desc = data[skill].desc
-		var req = str(data[skill].req)
 		
 		for stat in PlayerData.stats:
 			if stat in title:
@@ -205,9 +204,6 @@ func replaceStats(data):
 				
 			if stat in desc:
 				data[skill].desc = desc.replace(stat, GameData.icon[stat])
-				
-			if stat in req:
-				data[skill].req = req.replace(stat, GameData.stats_icon[stat])
 
 
 func prepareShopData():
