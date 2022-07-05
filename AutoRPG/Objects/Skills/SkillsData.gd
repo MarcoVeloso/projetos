@@ -32,7 +32,7 @@ var skills = {
 		"ap":3,
 		"req":"2 ATK",
 		"values":null,
-		"costs":[90],
+		"costs":[40],
 	},
 	"SWIFT": {
 		"title":"Swift Attack",
@@ -160,7 +160,7 @@ var attributes = {
 		"desc":"Increase Attack Power",
 		"req":null,
 		"values":[1,2,3,4,5],
-		"costs":[0,50,200,500,1200],
+		"costs":[0,35,200,500,1200],
 	},
 	"MAG": {
 		"title":"MAG↑",

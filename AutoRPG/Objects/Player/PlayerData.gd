@@ -17,8 +17,8 @@ var stages_unlocked = {
 
 var passive_skill = "ATTACK_FIRST"
 
-var selected_skills = ["SLASH", "HEAL", "CRESCENT", "SWIFT", "CROSS", "DEFEND", "EXPLOSION", "ULTIMA"]
-#var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
+#var selected_skills = ["SLASH", "HEAL", "CRESCENT", "SWIFT", "CROSS", "DEFEND", "EXPLOSION", "ULTIMA"]
+var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 
 var shop_data = {}
 
