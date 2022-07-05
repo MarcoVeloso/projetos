@@ -1,6 +1,6 @@
 extends Node
 
-var skills = {
+const skills = {
 	"SLASH": {
 		"title":"Slash",
 		"desc":"Deal %sxATK damage",
@@ -102,7 +102,7 @@ var skills = {
 	},
 }
 
-var passives = {
+const passives = {
 	"ATTACK_FIRST": {
 		"title":"Attack First",
 		"desc":"Deal the first attack on battles",
@@ -140,7 +140,7 @@ var passives = {
 	},
 }
 
-var attributes = {
+const attributes = {
 	"HP": {
 		"title":"HP↑",
 		"desc":"Increase Health Points",
@@ -204,25 +204,6 @@ func replaceStats(data):
 
 
 func prepareShopData():
-	var types = ["skills", "passives", "attributes"]
-	
-	for type in types:
-		var prepared_data = []
-		
-		for data in self[type]:
-			var skill = self[type][data]
-
-			if !skill.costs:
-				continue
-
-			prepared_data.append({
-				"type": type,
-				"name": data,
-				"title": skill.title,
-				"desc": skill.desc,
-				"values": skill.values,
-				"costs": skill.costs,
-				"req": skill.req,
-			})
-
-		PlayerData.shop_data[type] = prepared_data
+	PlayerData.shop_data["skills"] = skills
+	PlayerData.shop_data["passives"] = passives
+	PlayerData.shop_data["attributes"] = attributes

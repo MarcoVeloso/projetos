@@ -13,16 +13,20 @@ func _ready():
 func loadSkills():
 	var type = skill_type.text.to_lower()
 	var skills = PlayerData.shop_data[type]
-	var max_index = skills.size() - 1
+	var skills_keys = skills.keys()
 	
-	for skill in skills_panel.get_children():
-		var index = int(skill.name)
+	for key in skills.keys():
+		if !skills[key].costs:
+			skills_keys.remove(key)
 
-		if index <= max_index:
-			skill.visible = true
-			skill.drawSkill(skills[index])
-		else:
+	for skill in skills_panel.get_children():
+		if skills_keys.empty():
 			skill.visible = false
+		else:
+			var skillname = skills_keys.pop_front()
+
+			skill.visible = true
+			skill.drawSkill(skillname, skills[skillname])
 
 
 func _on_ButtonLeft_pressed():

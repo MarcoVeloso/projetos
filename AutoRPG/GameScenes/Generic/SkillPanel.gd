@@ -11,9 +11,9 @@ var skill_name = ""
 var index_next = 0
 
 
-func drawSkill(data):
+func drawSkill(skillname, data):
 	skill = data
-	skill_name = data.name
+	skill_name = skillname
 	index_next = 0
 
 	var title_text = skill.title
@@ -52,10 +52,11 @@ func drawSkill(data):
 
 
 func _on_Button_pressed():
+	PlayerData.gold -= skill.costs[index_next]
+	
 	if index_next > 0:
 		PlayerData[skill_name] = skill.values[index_next]
 	else:
-		PlayerData.shop_data[skill.type].erase(skill)
-		
-	PlayerData.gold -= skill.costs[index_next]
+		skill.costs = null
+
 	get_tree().reload_current_scene()
