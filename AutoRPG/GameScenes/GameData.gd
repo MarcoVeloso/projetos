@@ -13,7 +13,7 @@ const icon = {
 	"AP":"[color=lime]" + stats_icon.AP + "[/color]",
 	"ATK":"[color=silver]" + stats_icon.ATK + "[/color]",
 	"MAG":"[color=aqua]" + stats_icon.MAG + "[/color]",
-	"WALLET":"[color=yellow]/" + stats_icon.WALLET + "[/color]",
+	"WALLET":"[color=yellow]" + stats_icon.WALLET + "[/color]",
 	"GOLD":"✁",
 	"LOCK":"✈",
 	"SKULL":"✆",
