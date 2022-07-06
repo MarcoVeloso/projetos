@@ -43,6 +43,7 @@ const menus = {
 }
 
 var current_stage = "11"
+var current_shop_type = "Stats"
 
 func centerRichText(text):
 	return "[center]" + text + "[/center]"
