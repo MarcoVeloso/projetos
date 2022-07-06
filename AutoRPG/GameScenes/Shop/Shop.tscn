@@ -124,24 +124,6 @@ margin_right = 90.0
 margin_bottom = 110.0
 rect_pivot_offset = Vector2( 209, -19 )
 
-[node name="ButtonLeft" type="Button" parent="UI"]
-visible = false
-margin_left = 2.0
-margin_top = 125.0
-margin_right = 42.0
-margin_bottom = 135.0
-text = "Skills"
-
-[node name="ButtonRight" type="Button" parent="UI"]
-visible = false
-margin_left = 48.0
-margin_top = 125.0
-margin_right = 88.0
-margin_bottom = 135.0
-text = "Passives"
-
 [connection signal="pressed" from="UI/SkillsBackPanel/Stats" to="." method="_on_Stats_pressed"]
 [connection signal="pressed" from="UI/SkillsBackPanel/Skills" to="." method="_on_Skills_pressed"]
 [connection signal="pressed" from="UI/SkillsBackPanel/Passives" to="." method="_on_Passives_pressed"]
-[connection signal="pressed" from="UI/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
-[connection signal="pressed" from="UI/ButtonRight" to="." method="_on_ButtonRight_pressed"]
