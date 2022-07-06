@@ -13,6 +13,8 @@ func loadSkills(type):
 	var skills = PlayerData.shop_data[type]
 	var skills_keys = skills.keys()
 	
+	skills_keys.erase("SLASH")
+	
 	for key in skills.keys():
 		if skills[key].costs:
 			skills_keys.erase(key)
@@ -24,7 +26,7 @@ func loadSkills(type):
 			var skillname = skills_keys.pop_front()
 
 			skill.visible = true
-#			skill.drawSkill(skillname, skills[skillname])
+			skill.drawSkill(skillname, skills[skillname])
 
 
 func _on_Skills_pressed():

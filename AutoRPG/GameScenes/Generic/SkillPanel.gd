@@ -16,36 +16,44 @@ func drawSkill(skillname, data):
 	index_next = 0
 
 	var desc_text = skill.title
-	var cost_text = "$"
-	var cost = 0
-	var req_ok = false
-	
-	if skill.values:
-		req_ok = true
-		index_next = skill.values.find(PlayerData[skill_name]) + 1
-		desc_text += " (" + str(skill.values[index_next]) + ")"
+	var button_text = "$"
+	var req_ok = true
 
-	if skill.req:
-		var req = skill.req.split(" ")
+	if skill.costs:
+		var cost = 0
+		
+		if skill.values:
+			index_next = skill.values.find(PlayerData[skill_name]) + 1
+			desc_text += " (" + str(skill.values[index_next]) + ")"
 
-		if int(req[0]) <= PlayerData[req[1]]:
-			req_ok = true
-			
-		for stat in PlayerData.stats:
-			if stat in skill.req:
-				cost_text += "\n" + skill.req.replace(" " + stat, GameData.stats_icon[stat])
+		if skill.req:
+			var req = skill.req.split(" ")
 
-	cost = skill.costs[index_next]
-	cost_text = str(cost) + cost_text
+			if int(req[0]) > PlayerData[req[1]]:
+				req_ok = false
+
+			for stat in PlayerData.stats:
+				if stat in skill.req:
+					button_text += "\n" + skill.req.replace(" " + stat, GameData.stats_icon[stat])
+
+		cost = skill.costs[index_next]
+		button_text = str(cost) + button_text
+		
+		if cost > PlayerData.gold:
+			req_ok = false
+
+	else:
+		button_text = "Setup"
+
 	desc_text += "\n" + skill.desc
-	
-	desc.bbcode_text = desc_text
-	buttonText.text = cost_text
 
-	button.disabled = false
-	buttonText.modulate = Color(1,1,1,1)
-	
-	if cost > PlayerData.gold or !req_ok:
+	desc.bbcode_text = desc_text
+	buttonText.text = button_text
+
+	if req_ok:
+		button.disabled = false
+		buttonText.modulate = Color(1,1,1,1)
+	else:
 		button.disabled = true
 		buttonText.modulate = Color(0.5,0.5,0.5,1)
 
@@ -56,13 +64,13 @@ func _on_Button_pressed():
 	if index_next > 0:
 		PlayerData[skill_name] = skill.values[index_next]
 	else:
-		setPlayerSkill(skill_name,null)
+		setPlayerSkill(skill_name)
 		skill.costs = null
 
 	get_tree().reload_current_scene()
 	
 	
-func setPlayerSkill(skill, index):
+func setPlayerSkill(skill, index=null):
 	if !index:
 		index = PlayerData.selected_skills.find(null)
 		
