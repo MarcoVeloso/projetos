@@ -7,7 +7,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -145.0
-rect_min_size = Vector2( 90, 13 )
+rect_min_size = Vector2( 90, 12 )
 rect_pivot_offset = Vector2( 6, 18 )
 theme = ExtResource( 3 )
 script = ExtResource( 1 )
@@ -16,27 +16,6 @@ script = ExtResource( 1 )
 margin_right = 112.0
 margin_bottom = 20.0
 rect_scale = Vector2( 0.8, 0.8 )
-
-[node name="Title" type="RichTextLabel" parent="Panel"]
-margin_left = 19.5
-margin_top = -3.25
-margin_right = 114.5
-margin_bottom = 7.75
-bbcode_enabled = true
-bbcode_text = "✃+"
-text = "✃+"
-scroll_active = false
-
-[node name="Description" type="RichTextLabel" parent="Panel"]
-margin_left = 19.5
-margin_top = 2.75
-margin_right = 114.5
-margin_bottom = 18.75
-custom_constants/line_separation = -1
-bbcode_enabled = true
-bbcode_text = "Increase Health Points of you great Hero"
-text = "Increase Health Points of you great Hero"
-scroll_active = false
 
 [node name="Button" type="Button" parent="Panel"]
 margin_left = 2.0
@@ -54,5 +33,22 @@ text = "$
 9999"
 align = 1
 valign = 1
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+margin_left = 20.0
+margin_top = -3.0
+margin_right = 112.0
+margin_bottom = 20.0
+alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Panel/VBox"]
+margin_top = 1.0
+margin_right = 92.0
+margin_bottom = 22.0
+bbcode_enabled = true
+bbcode_text = "Increase Health Points of you great Hero"
+text = "Increase Health Points of you great Hero"
+fit_content_height = true
+scroll_active = false
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

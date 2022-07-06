@@ -1,8 +1,7 @@
 extends Control
 
-onready var title = $Panel/Title
 onready var req = $Panel/Req
-onready var desc = $Panel/Description
+onready var desc = $Panel/VBox/Description
 onready var button = $Panel/Button
 onready var buttonText = $Panel/Button/Text
 
@@ -16,7 +15,7 @@ func drawSkill(skillname, data):
 	skill_name = skillname
 	index_next = 0
 
-	var title_text = skill.title
+	var desc_text = skill.title
 	var cost_text = "$"
 	var cost = 0
 	var req_ok = false
@@ -24,7 +23,7 @@ func drawSkill(skillname, data):
 	if skill.values:
 		req_ok = true
 		index_next = skill.values.find(PlayerData[skill_name]) + 1
-		title_text += " (" + str(skill.values[index_next]) + ")"
+		desc_text += " (" + str(skill.values[index_next]) + ")"
 
 	if skill.req:
 		var req = skill.req.split(" ")
@@ -38,9 +37,9 @@ func drawSkill(skillname, data):
 
 	cost = skill.costs[index_next]
 	cost_text = str(cost) + cost_text
+	desc_text += "\n" + skill.desc
 	
-	title.bbcode_text = title_text
-	desc.bbcode_text = skill.desc
+	desc.bbcode_text = desc_text
 	buttonText.text = cost_text
 
 	button.disabled = false
