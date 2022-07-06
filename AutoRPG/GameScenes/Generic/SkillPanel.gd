@@ -57,6 +57,15 @@ func _on_Button_pressed():
 	if index_next > 0:
 		PlayerData[skill_name] = skill.values[index_next]
 	else:
+		setPlayerSkill(skill_name,null)
 		skill.costs = null
 
 	get_tree().reload_current_scene()
+	
+	
+func setPlayerSkill(skill, index):
+	if !index:
+		index = PlayerData.selected_skills.find(null)
+		
+	PlayerData.selected_skills[index] = skill
+	
