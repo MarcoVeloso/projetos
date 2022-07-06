@@ -48,13 +48,13 @@ text = "Skills"
 align = 2
 
 [node name="Passives" type="Button" parent="UI/SkillsBackPanel"]
-margin_left = 48.0
-margin_right = 76.0
+margin_left = 50.0
+margin_right = 75.0
 margin_bottom = 8.0
 rect_pivot_offset = Vector2( -131, 17 )
 toggle_mode = true
 group = SubResource( 1 )
-text = "Passives"
+text = "Passive"
 
 [node name="Skills" type="VBoxContainer" parent="UI"]
 margin_left = 3.0

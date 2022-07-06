@@ -4,16 +4,18 @@ onready var skills_panel = $UI/Skills
 
 
 func _ready():
-	loadSkills("Skills")
+	var node = get_node("UI/SkillsBackPanel/" + GameData.current_setup_type)
+	node.emit_signal("pressed")
+	node.pressed = true
 
 
 func loadSkills(type):
-	var skills = PlayerData.shop_data[type.to_lower()]
+	var skills = PlayerData.shop_data[type]
 	var skills_keys = skills.keys()
-
+	
 	for key in skills.keys():
 		if skills[key].costs:
-			skills_keys.remove(key)
+			skills_keys.erase(key)
 
 	for skill in skills_panel.get_children():
 		if skills_keys.empty():
@@ -22,12 +24,17 @@ func loadSkills(type):
 			var skillname = skills_keys.pop_front()
 
 			skill.visible = true
-			skill.drawSkill(skillname, skills[skillname])
+#			skill.drawSkill(skillname, skills[skillname])
 
 
 func _on_Skills_pressed():
-	loadSkills("Skills")
+	skillType("Skills")
 
 
 func _on_Passives_pressed():
-	loadSkills("Passives")
+	skillType("Passives")
+
+
+func skillType(type):
+	GameData.current_setup_type = type
+	loadSkills(type.to_lower())

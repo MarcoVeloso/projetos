@@ -15,7 +15,7 @@ func loadSkills(type):
 	
 	for key in skills.keys():
 		if !skills[key].costs:
-			skills_keys.remove(key)
+			skills_keys.erase(key)
 
 	for skill in skills_panel.get_children():
 		if skills_keys.empty():
