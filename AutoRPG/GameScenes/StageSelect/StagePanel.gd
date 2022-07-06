@@ -1,6 +1,6 @@
 extends Control
 
-var global_stage_id = "11"
+var global_stage_id = GameData.current_stage
 	
 func unlockStage(color, stage_id, stage_name, best_gold):
 	var panel = $Panel
@@ -21,9 +21,9 @@ func unlockStage(color, stage_id, stage_name, best_gold):
 		hardButton.text = GameData.icon.SKULL
 
 func _on_Normal_pressed():
-	PlayerData.current_stage = global_stage_id
+	GameData.current_stage = global_stage_id
 	SceneTransition.transition_dissolve("res://GameScenes/Battle/Battle.tscn")
 	
 func _on_Hard_pressed():
-	PlayerData.current_stage = global_stage_id + "H"
+	GameData.current_stage = global_stage_id + "H"
 	SceneTransition.transition_dissolve("res://GameScenes/Battle/Battle.tscn")

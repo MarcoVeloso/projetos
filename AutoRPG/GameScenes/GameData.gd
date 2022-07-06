@@ -42,5 +42,7 @@ const menus = {
 	},
 }
 
+var current_stage = "11"
+
 func centerRichText(text):
 	return "[center]" + text + "[/center]"

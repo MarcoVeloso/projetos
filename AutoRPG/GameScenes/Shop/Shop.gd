@@ -1,11 +1,10 @@
 extends Node
 
 onready var skills_panel = $UI/Skills
-onready var skill_type = $UI/SkillsBackPanel/Title
 
 
 func _ready():
-	loadSkills("attributes")
+	loadSkills("stats")
 
 
 func loadSkills(type):
@@ -27,7 +26,7 @@ func loadSkills(type):
 
 
 func _on_Stats_pressed():
-	loadSkills("attributes")
+	loadSkills("stats")
 
 
 func _on_Skills_pressed():

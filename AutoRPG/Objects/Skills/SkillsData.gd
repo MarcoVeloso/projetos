@@ -140,7 +140,7 @@ const passives = {
 	},
 }
 
-const attributes = {
+const stats = {
 	"HP": {
 		"title":"HP↑",
 		"desc":"Increase Health Points",
@@ -181,7 +181,7 @@ const attributes = {
 func _ready():
 	skillsDescription()
 	replaceStats(passives)
-	replaceStats(attributes)
+	replaceStats(stats)
 	prepareShopData()
 
 
@@ -206,4 +206,4 @@ func replaceStats(data):
 func prepareShopData():
 	PlayerData.shop_data["skills"] = skills
 	PlayerData.shop_data["passives"] = passives
-	PlayerData.shop_data["attributes"] = attributes
+	PlayerData.shop_data["stats"] = stats
