@@ -115,28 +115,28 @@ const passives = {
 		"desc":"Restore 20% health at start of battle",
 		"req":"4 MAG",
 		"values":null,
-		"costs":[2000],
+		"costs":[200],
 	},
 	"ATTACK_BOOST": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
 		"req":"5 ATK",
 		"values":null,
-		"costs":[3000],
+		"costs":[300],
 	},
 	"MAGIC_BOOST": {
 		"title":"Magic Boost",
 		"desc":"Increase MAG by 25%",
 		"req":"5 MAG",
 		"values":null,
-		"costs":[3500],
+		"costs":[350],
 	},
 	"AP_GAIN_BOOST": {
 		"title":"Action Gain Boost",
 		"desc":"Gain 2 AP per turn",
 		"req":"6 MAG",
 		"values":null,
-		"costs":[5000],
+		"costs":[500],
 	},
 }
 

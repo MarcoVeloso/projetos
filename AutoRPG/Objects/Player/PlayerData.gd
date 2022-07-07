@@ -5,8 +5,8 @@ const stats = ["HP", "AP", "ATK", "MAG", "WALLET"]
 var HP = 10
 var AP = 5
 var WALLET = 1000
-var ATK = 1
-var MAG = 1
+var ATK = 10
+var MAG = 10
 
 var gold = 1000 setget set_gold
 var current_stage = "11"

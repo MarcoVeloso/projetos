@@ -1,43 +1,18 @@
 extends Node
 
-onready var skills_panel = $UI/Skills
+onready var passive_skillpanel = $UI/PassivePanel/Passive
 
 
 func _ready():
-	pass
-#	var node = get_node("UI/SkillsBackPanel/" + GameData.current_setup_type)
-#	node.emit_signal("pressed")
-#	node.pressed = true
+	loadPassives()
 
 
-func loadSkills(type):
-	var skills = PlayerData.shop_data[type]
-	var skills_keys = skills.keys()
+func loadPassives():
+	var skills = PlayerData.shop_data["passives"]
+	var current_skill = PlayerData.passive_skill
 	
-	skills_keys.erase("SLASH")
+	passive_skillpanel.drawSkill(current_skill, skills[current_skill])
 	
 	for key in skills.keys():
-		if skills[key].costs:
-			skills_keys.erase(key)
-
-	for skill in skills_panel.get_children():
-		if skills_keys.empty():
-			skill.visible = false
-		else:
-			var skillname = skills_keys.pop_front()
-
-			skill.visible = true
-			skill.drawSkill(skillname, skills[skillname])
-
-
-func _on_Skills_pressed():
-	skillType("Skills")
-
-
-func _on_Passives_pressed():
-	skillType("Passives")
-
-
-func skillType(type):
-	GameData.current_setup_type = type
-	loadSkills(type.to_lower())
+		if !skills[key].costs:
+			passive_skillpanel.loadItem(key)

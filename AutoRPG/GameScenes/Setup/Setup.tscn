@@ -97,7 +97,6 @@ rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
 text = "✈ SLASH ✈"
-script = ExtResource( 5 )
 
 [node name="1" type="Button" parent="UI/ActivesPanel/SkillButtons"]
 margin_left = 42.0
@@ -169,7 +168,6 @@ disabled = true
 text = "SLASH"
 script = ExtResource( 5 )
 
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/0" to="UI/ActivesPanel/SkillButtons/0" method="_on_toggled"]
 [connection signal="toggled" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_toggled"]
 [connection signal="toggled" from="UI/ActivesPanel/SkillButtons/2" to="UI/ActivesPanel/SkillButtons/2" method="_on_toggled"]
 [connection signal="toggled" from="UI/ActivesPanel/SkillButtons/3" to="UI/ActivesPanel/SkillButtons/3" method="_on_toggled"]
