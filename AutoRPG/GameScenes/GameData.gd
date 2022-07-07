@@ -19,6 +19,7 @@ const icon = {
 	"SKULL":"✆",
 	"FINAL":"✍",
 	"PLAY":"✂",
+	"LIST":"✎",
 }
 
 const menus = {

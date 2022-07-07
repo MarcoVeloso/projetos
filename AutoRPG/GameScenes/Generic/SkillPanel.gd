@@ -47,7 +47,7 @@ func drawSkill(skillname, data):
 			req_ok = false
 
 	else:
-		button_text = "Setup"
+		button_text = GameData.icon.LIST
 
 	desc_text += "\n" + skill.desc
 
