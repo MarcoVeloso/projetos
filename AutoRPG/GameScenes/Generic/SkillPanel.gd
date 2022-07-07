@@ -10,8 +10,9 @@ var skill_name = ""
 var index_next = 0
 
 
-func loadItem(item):
-	button.get_popup().add_item(item)
+func loadItems(items):
+	for item in items:
+		button.get_popup().add_item(item)
 
 
 func drawSkill(skillname, data):

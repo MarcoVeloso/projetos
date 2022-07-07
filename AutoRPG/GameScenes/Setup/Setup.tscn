@@ -104,7 +104,8 @@ margin_right = 82.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
-text = "CROSS"
+disabled = true
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="2" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -113,7 +114,8 @@ margin_right = 40.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
-text = "TRIPLE"
+disabled = true
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="3" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -123,7 +125,8 @@ margin_right = 82.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
-text = "EXPLOSION"
+disabled = true
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="4" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -133,7 +136,7 @@ margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
-text = "SLASH"
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="5" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -144,7 +147,7 @@ margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
-text = "SLASH"
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="6" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -154,7 +157,7 @@ margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
-text = "SLASH"
+text = "✈"
 script = ExtResource( 5 )
 
 [node name="7" type="Button" parent="UI/ActivesPanel/SkillButtons"]
@@ -165,7 +168,7 @@ margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
-text = "SLASH"
+text = "✈"
 script = ExtResource( 5 )
 
 [connection signal="toggled" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_toggled"]
