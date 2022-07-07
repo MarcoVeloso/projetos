@@ -35,7 +35,7 @@ const menus = {
 		"right":"Setup",
 	},
 	"Setup":{
-		"name":"SETUP SKILLS",
+		"name":"SETUP",
 		"scene":"res://GameScenes/Setup/Setup.tscn",
 		"left":"Shop",
 		"right":"Stages",

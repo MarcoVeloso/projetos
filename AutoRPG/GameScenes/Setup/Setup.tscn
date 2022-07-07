@@ -4,10 +4,8 @@
 [ext_resource path="res://GameScenes/Setup/Setup.gd" type="Script" id=2]
 [ext_resource path="res://GameScenes/Generic/SkillPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScenes/Generic/MenuBase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Skills/SkillButton.gd" type="Script" id=5]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
-
-[sub_resource type="ButtonGroup" id=1]
-resource_name = "shop"
 
 [node name="Setup" type="Node"]
 script = ExtResource( 2 )
@@ -25,94 +23,157 @@ theme = ExtResource( 11 )
 margin_top = -2.0
 margin_bottom = -139.0
 
-[node name="SkillsBackPanel" type="Control" parent="UI"]
-margin_top = 15.0
-margin_right = 40.0
-margin_bottom = 55.0
-
-[node name="MainPanel" type="Panel" parent="UI/SkillsBackPanel"]
-modulate = Color( 0.647059, 0.607843, 0.607843, 1 )
+[node name="PassivePanel" type="Panel" parent="UI"]
+self_modulate = Color( 0.64, 0.6, 0.6, 1 )
 margin_left = 2.0
-margin_top = 3.0
+margin_top = 21.0
 margin_right = 88.0
-margin_bottom = 121.0
+margin_bottom = 45.0
 
-[node name="Skills" type="Button" parent="UI/SkillsBackPanel"]
-margin_left = 14.0
-margin_right = 37.0
-margin_bottom = 8.0
-toggle_mode = true
-pressed = true
-group = SubResource( 1 )
-text = "Skills"
-align = 2
+[node name="TitlePanel" type="Panel" parent="UI/PassivePanel"]
+self_modulate = Color( 0.494118, 0.458824, 0.458824, 1 )
+margin_left = 21.0
+margin_top = -3.0
+margin_right = 65.0
+margin_bottom = 5.0
 
-[node name="Passives" type="Button" parent="UI/SkillsBackPanel"]
-margin_left = 50.0
-margin_right = 75.0
-margin_bottom = 8.0
-rect_pivot_offset = Vector2( -131, 17 )
-toggle_mode = true
-group = SubResource( 1 )
-text = "Passive"
+[node name="Title" type="Label" parent="UI/PassivePanel/TitlePanel"]
+margin_left = -1.0
+margin_top = -4.0
+margin_right = 46.0
+margin_bottom = 12.0
+text = "Passive Skill"
 
-[node name="Skills" type="VBoxContainer" parent="UI"]
-margin_left = 3.0
-margin_top = 22.0
-margin_right = 93.0
-margin_bottom = 135.0
-alignment = 1
-
-[node name="0" parent="UI/Skills" instance=ExtResource( 3 )]
+[node name="Passive" parent="UI/PassivePanel" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 2.0
-margin_right = 90.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 6.0
+margin_right = 91.0
+margin_bottom = 18.0
 
-[node name="1" parent="UI/Skills" instance=ExtResource( 3 )]
+[node name="ActivesPanel" type="Panel" parent="UI"]
+self_modulate = Color( 0.64, 0.6, 0.6, 1 )
+margin_left = 2.0
+margin_top = 56.0
+margin_right = 88.0
+margin_bottom = 130.0
+
+[node name="TitlePanel" type="Panel" parent="UI/ActivesPanel"]
+self_modulate = Color( 0.494118, 0.458824, 0.458824, 1 )
+margin_left = 21.0
+margin_top = -3.0
+margin_right = 65.0
+margin_bottom = 5.0
+
+[node name="Title" type="Label" parent="UI/ActivesPanel/TitlePanel"]
+margin_left = -1.0
+margin_top = -4.0
+margin_right = 46.0
+margin_bottom = 12.0
+text = "Active Skills"
+
+[node name="Skill" parent="UI/ActivesPanel" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
-margin_right = 90.0
-margin_bottom = 30.0
+margin_left = 1.0
+margin_top = 6.0
+margin_right = 91.0
+margin_bottom = 18.0
 
-[node name="2" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 34.0
-margin_right = 90.0
+[node name="SkillButtons" type="GridContainer" parent="UI/ActivesPanel"]
+margin_left = 2.0
+margin_top = 25.0
+margin_right = 88.0
+margin_bottom = 72.0
+custom_constants/vseparation = 2
+custom_constants/hseparation = 2
+columns = 2
+
+[node name="0" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_right = 40.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+disabled = true
+text = "✈ SLASH ✈"
+script = ExtResource( 5 )
+
+[node name="1" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_left = 42.0
+margin_right = 82.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+text = "CROSS"
+script = ExtResource( 5 )
+
+[node name="2" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_top = 12.0
+margin_right = 40.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+text = "TRIPLE"
+script = ExtResource( 5 )
+
+[node name="3" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_left = 42.0
+margin_top = 12.0
+margin_right = 82.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+text = "EXPLOSION"
+script = ExtResource( 5 )
+
+[node name="4" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+disabled = true
+text = "SLASH"
+script = ExtResource( 5 )
+
+[node name="5" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_left = 42.0
+margin_top = 24.0
+margin_right = 82.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+disabled = true
+text = "SLASH"
+script = ExtResource( 5 )
+
+[node name="6" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_top = 36.0
+margin_right = 40.0
 margin_bottom = 46.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+disabled = true
+text = "SLASH"
+script = ExtResource( 5 )
 
-[node name="3" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 50.0
-margin_right = 90.0
-margin_bottom = 62.0
+[node name="7" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+margin_left = 42.0
+margin_top = 36.0
+margin_right = 82.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 40, 10 )
+rect_pivot_offset = Vector2( -99, 55 )
+disabled = true
+text = "SLASH"
+script = ExtResource( 5 )
 
-[node name="4" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 66.0
-margin_right = 90.0
-margin_bottom = 78.0
-
-[node name="5" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 82.0
-margin_right = 90.0
-margin_bottom = 94.0
-rect_pivot_offset = Vector2( 209, -19 )
-
-[node name="6" parent="UI/Skills" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 98.0
-margin_right = 90.0
-margin_bottom = 110.0
-rect_pivot_offset = Vector2( 209, -19 )
-
-[connection signal="pressed" from="UI/SkillsBackPanel/Skills" to="." method="_on_Skills_pressed"]
-[connection signal="pressed" from="UI/SkillsBackPanel/Passives" to="." method="_on_Passives_pressed"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/0" to="UI/ActivesPanel/SkillButtons/0" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/2" to="UI/ActivesPanel/SkillButtons/2" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/3" to="UI/ActivesPanel/SkillButtons/3" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/4" to="UI/ActivesPanel/SkillButtons/4" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/5" to="UI/ActivesPanel/SkillButtons/5" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/6" to="UI/ActivesPanel/SkillButtons/6" method="_on_toggled"]
+[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/7" to="UI/ActivesPanel/SkillButtons/7" method="_on_toggled"]

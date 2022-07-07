@@ -59,15 +59,18 @@ func drawSkill(skillname, data):
 
 
 func _on_Button_pressed():
-	PlayerData.gold -= skill.costs[index_next]
-	
-	if index_next > 0:
-		PlayerData[skill_name] = skill.values[index_next]
-	else:
-		setPlayerSkill(skill_name)
-		skill.costs = null
+	if skill.costs:
+		PlayerData.gold -= skill.costs[index_next]
+		
+		if index_next > 0:
+			PlayerData[skill_name] = skill.values[index_next]
+		else:
+			setPlayerSkill(skill_name)
+			skill.costs = null
 
-	get_tree().reload_current_scene()
+		get_tree().reload_current_scene()
+	else:
+		print("eh setup")
 	
 	
 func setPlayerSkill(skill, index=null):

@@ -4,9 +4,10 @@ onready var skills_panel = $UI/Skills
 
 
 func _ready():
-	var node = get_node("UI/SkillsBackPanel/" + GameData.current_setup_type)
-	node.emit_signal("pressed")
-	node.pressed = true
+	pass
+#	var node = get_node("UI/SkillsBackPanel/" + GameData.current_setup_type)
+#	node.emit_signal("pressed")
+#	node.pressed = true
 
 
 func loadSkills(type):

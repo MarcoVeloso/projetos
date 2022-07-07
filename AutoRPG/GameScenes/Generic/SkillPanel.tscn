@@ -22,6 +22,7 @@ margin_left = 2.0
 margin_top = 2.0
 margin_right = 22.0
 margin_bottom = 17.0
+toggle_mode = false
 flat = false
 
 [node name="Text" type="Label" parent="Panel/Button"]
