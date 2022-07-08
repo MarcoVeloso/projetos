@@ -4,7 +4,6 @@ onready var passive_skillpanel = $UI/PassivePanel/Passive
 onready var active_skillpanel = $UI/ActivesPanel/Skill
 onready var skill_buttons = $UI/ActivesPanel/SkillButtons
 
-
 var skills_list = []
 
 
@@ -47,3 +46,4 @@ func loadSkills():
 		if index <= last_index:
 			button.text = PlayerData.selected_skills[index]
 			button.disabled = false
+			button.loadItems(skills_list)

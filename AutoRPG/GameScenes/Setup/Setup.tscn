@@ -4,7 +4,7 @@
 [ext_resource path="res://GameScenes/Setup/Setup.gd" type="Script" id=2]
 [ext_resource path="res://GameScenes/Generic/SkillPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameScenes/Generic/MenuBase.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Skills/SkillButton.gd" type="Script" id=5]
+[ext_resource path="res://GameScenes/Setup/SetupSkillButton.gd" type="Script" id=5]
 [ext_resource path="res://UI/DefaultTheme.tres" type="Theme" id=11]
 
 [node name="Setup" type="Node"]
@@ -90,35 +90,41 @@ custom_constants/vseparation = 2
 custom_constants/hseparation = 2
 columns = 2
 
-[node name="0" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="0" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_right = 40.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈ SLASH ✈"
+flat = false
 
-[node name="1" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="1" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_left = 42.0
 margin_right = 82.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="2" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="2" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_top = 12.0
 margin_right = 40.0
 margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="3" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="3" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_left = 42.0
 margin_top = 12.0
 margin_right = 82.0
@@ -126,20 +132,24 @@ margin_bottom = 22.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="4" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="4" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_top = 24.0
 margin_right = 40.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="5" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="5" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_left = 42.0
 margin_top = 24.0
 margin_right = 82.0
@@ -147,20 +157,24 @@ margin_bottom = 34.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="6" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="6" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_top = 36.0
 margin_right = 40.0
 margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[node name="7" type="Button" parent="UI/ActivesPanel/SkillButtons"]
+[node name="7" type="MenuButton" parent="UI/ActivesPanel/SkillButtons"]
 margin_left = 42.0
 margin_top = 36.0
 margin_right = 82.0
@@ -168,13 +182,15 @@ margin_bottom = 46.0
 rect_min_size = Vector2( 40, 10 )
 rect_pivot_offset = Vector2( -99, 55 )
 disabled = true
+toggle_mode = false
 text = "✈"
+flat = false
 script = ExtResource( 5 )
 
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/2" to="UI/ActivesPanel/SkillButtons/2" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/3" to="UI/ActivesPanel/SkillButtons/3" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/4" to="UI/ActivesPanel/SkillButtons/4" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/5" to="UI/ActivesPanel/SkillButtons/5" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/6" to="UI/ActivesPanel/SkillButtons/6" method="_on_toggled"]
-[connection signal="toggled" from="UI/ActivesPanel/SkillButtons/7" to="UI/ActivesPanel/SkillButtons/7" method="_on_toggled"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/2" to="UI/ActivesPanel/SkillButtons/2" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/3" to="UI/ActivesPanel/SkillButtons/3" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/4" to="UI/ActivesPanel/SkillButtons/4" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/5" to="UI/ActivesPanel/SkillButtons/5" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/6" to="UI/ActivesPanel/SkillButtons/6" method="_on_pressed"]
+[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/7" to="UI/ActivesPanel/SkillButtons/7" method="_on_pressed"]
