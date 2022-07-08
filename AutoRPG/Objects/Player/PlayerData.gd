@@ -22,5 +22,13 @@ var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 
 var shop_data = {}
 
+
 func set_gold(new_gold):
 	gold = clamp(new_gold, 0, PlayerData.WALLET)
+
+
+func setPlayerSkill(skill, index=null):
+	if !index:
+		index = selected_skills.find(null)
+
+	selected_skills[index] = skill

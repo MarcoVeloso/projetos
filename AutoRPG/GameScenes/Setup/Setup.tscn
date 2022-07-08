@@ -55,9 +55,9 @@ margin_bottom = 18.0
 [node name="ActivesPanel" type="Panel" parent="UI"]
 self_modulate = Color( 0.64, 0.6, 0.6, 1 )
 margin_left = 2.0
-margin_top = 56.0
+margin_top = 55.0
 margin_right = 88.0
-margin_bottom = 130.0
+margin_bottom = 129.0
 
 [node name="TitlePanel" type="Panel" parent="UI/ActivesPanel"]
 self_modulate = Color( 0.494118, 0.458824, 0.458824, 1 )
