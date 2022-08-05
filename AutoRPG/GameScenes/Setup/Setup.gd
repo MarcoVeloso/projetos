@@ -32,18 +32,18 @@ func loadSkills():
 	skills_list.erase("SLASH")
 	
 	var first_skill = PlayerData.selected_skills[1]
-	var last_index = skills_list.size()
 	
 	active_skillpanel.loadItems(skills_list)
 	active_skillpanel.drawSkill(first_skill, skills[first_skill])
 	
 	for button in skill_buttons.get_children():
 		var index = int(button.name)
+		var skillname = PlayerData.selected_skills[index]
 
 		if index == 0:
 			continue
 
-		if index <= last_index:
-			button.text = PlayerData.selected_skills[index]
+		if skillname:
+			button.text = skillname
 			button.disabled = false
 			button.loadItems(skills_list)
