@@ -11,8 +11,7 @@ var index_next = 0
 
 
 func loadItems(items):
-	for item in items:
-		button.get_popup().add_item(item)
+	button.loadItems(items)
 
 
 func drawSkill(skillname, data):
