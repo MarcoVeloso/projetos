@@ -17,7 +17,6 @@ var stages_unlocked = {
 
 var passive_skill = "ATTACK_FIRST"
 
-#var selected_skills = ["SLASH", "HEAL", "CRESCENT", "SWIFT", "CROSS", "DEFEND", "EXPLOSION", "ULTIMA"]
 var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 
 var shop_data = {}
@@ -29,9 +28,13 @@ func set_gold(new_gold):
 
 func setPlayerSkill(skill, index=null):
 	if index:
-		selected_skills[index] = skill
+		selected_skills[int(index)] = skill
 	else:
 		var null_index = selected_skills.find(null)
 		
 		if null_index > 1 and skill in shop_data["skills"]:
 			selected_skills[null_index] = skill
+
+
+func setPlayerPassive(passive):
+	passive_skill = passive

@@ -20,7 +20,7 @@ func loadPassives():
 	
 	for key in skills.keys():
 		if !skills[key].costs:
-			passive_skillpanel.loadItems([skills[key].title])
+			passive_skillpanel.loadItems([key])
 
 func loadSkills():
 	var skills = PlayerData.shop_data["skills"]

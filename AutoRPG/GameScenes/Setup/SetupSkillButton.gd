@@ -11,6 +11,13 @@ func loadItems(items):
 		popup.add_item(item)
 
 func _on_index_pressed(index):
-	print(popup.get_item_text(index), " pressed")
+	var skill = popup.get_item_text(index)
+	
+	if "ActivesPanel" in str(get_path()):
+		PlayerData.setPlayerSkill(skill, self.name)
+	else:
+		PlayerData.setPlayerPassive(skill)
+		
+	get_tree().reload_current_scene()
 
 
