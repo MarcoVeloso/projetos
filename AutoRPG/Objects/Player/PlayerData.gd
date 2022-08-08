@@ -28,7 +28,14 @@ func set_gold(new_gold):
 
 func setPlayerSkill(skill, index=null):
 	if index:
-		selected_skills[int(index)] = skill
+		var idx = int(index)
+		
+		var old_idx = selected_skills.find(skill)
+		
+		if old_idx >= 0:
+			selected_skills[old_idx] = selected_skills[idx]
+		
+		selected_skills[idx] = skill
 	else:
 		var null_index = selected_skills.find(null)
 		
