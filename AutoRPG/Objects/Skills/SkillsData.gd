@@ -103,35 +103,35 @@ const skills = {
 }
 
 const passives = {
-	"ATTACK_FIRST": {
+	"Attack First": {
 		"title":"Attack First",
 		"desc":"Deal the first attack on battles",
 		"req":null,
 		"values":null,
 		"costs":null
 	},
-	"REGENARATION": {
+	"Regeneration": {
 		"title":"Regeneration",
 		"desc":"Restore 20% health at start of battle",
 		"req":"4 MAG",
 		"values":null,
 		"costs":[200],
 	},
-	"ATTACK_BOOST": {
+	"Attack Boost": {
 		"title":"Attack Boost",
 		"desc":"Increase ATK by 25%",
 		"req":"5 ATK",
 		"values":null,
 		"costs":[300],
 	},
-	"MAGIC_BOOST": {
+	"Magic Boost": {
 		"title":"Magic Boost",
 		"desc":"Increase MAG by 25%",
 		"req":"5 MAG",
 		"values":null,
 		"costs":[350],
 	},
-	"AP_GAIN_BOOST": {
+	"Action Gain Boost": {
 		"title":"Action Gain Boost",
 		"desc":"Gain 2 AP per turn",
 		"req":"6 MAG",

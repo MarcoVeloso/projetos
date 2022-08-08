@@ -15,7 +15,7 @@ var stages_unlocked = {
 	"11":{"best_gold":""},
 }
 
-var passive_skill = "ATTACK_FIRST"
+var passive_skill = "Attack First"
 
 var selected_skills = ["SLASH", "HEAL", null, null, null, null, null, null]
 

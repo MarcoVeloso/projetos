@@ -245,16 +245,16 @@ func player_passive_skill(passive):
 		animationPlayer.play("FadeoutPassiveLabel")
 		
 		match passive:
-			"ATTACK_FIRST":
+			"Attack First":
 				player_attacking = true
 				
-			"ATTACK_BOOST":
+			"Attack Boost":
 				player.atk = ceil(PlayerData.ATK * 1.25)
 				
-			"MAGIC_BOOST":
+			"Magic Boost":
 				player.mag = ceil(PlayerData.MAG * 1.25)
 				
-			"AP_GAIN_BOOST":
+			"Action Gain Boost":
 				ap_gain += 1
 	
 	
