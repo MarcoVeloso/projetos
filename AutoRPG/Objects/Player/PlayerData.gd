@@ -4,11 +4,11 @@ const stats = ["HP", "AP", "ATK", "MAG", "WALLET"]
 
 var HP = 10
 var AP = 5
-var WALLET = 1000
+var WALLET = 9999
 var ATK = 10
 var MAG = 10
 
-var gold = 1000 setget set_gold
+var gold = 9999 setget set_gold
 var current_stage = "11"
 
 var stages_unlocked = {
@@ -28,7 +28,10 @@ func set_gold(new_gold):
 
 
 func setPlayerSkill(skill, index=null):
-	if !index:
-		index = selected_skills.find(null)
-
-	selected_skills[index] = skill
+	if index:
+		selected_skills[index] = skill
+	else:
+		var null_index = selected_skills.find(null)
+		
+		if null_index > 1 and skill in shop_data["skills"]:
+			selected_skills[null_index] = skill
