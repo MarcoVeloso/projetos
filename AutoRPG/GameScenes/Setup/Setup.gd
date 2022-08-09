@@ -10,6 +10,7 @@ var skills_list = []
 func _ready():
 	loadPassives()
 	loadSkills()
+	active_skillpanel.descriptionOnly()
 
 
 func loadPassives():
