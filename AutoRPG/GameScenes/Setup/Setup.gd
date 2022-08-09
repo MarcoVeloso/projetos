@@ -4,7 +4,8 @@ onready var passive_skillpanel = $UI/PassivePanel/Passive
 onready var active_skillpanel = $UI/ActivesPanel/Skill
 onready var skill_buttons = $UI/ActivesPanel/SkillButtons
 
-var skills_list = []
+var passives = PlayerData.shop_data["passives"]
+var skills = PlayerData.shop_data["skills"]
 
 
 func _ready():
@@ -14,28 +15,37 @@ func _ready():
 
 
 func loadPassives():
-	var skills = PlayerData.shop_data["passives"]
-	var current_skill = PlayerData.passive_skill
-	
-	passive_skillpanel.drawSkill(current_skill, skills[current_skill])
-	
-	for key in skills.keys():
-		if !skills[key].costs:
+	updatePassiveDescription(PlayerData.passive_skill)
+
+	for key in passives.keys():
+		if !passives[key].costs:
 			passive_skillpanel.loadItems([key])
 
+
 func loadSkills():
-	var skills = PlayerData.shop_data["skills"]
-	
+	var skills_list = []
+
+	updateSkillsScreen("SLASH")
+
 	for key in skills.keys():
 		if !skills[key].costs:
 			skills_list.append(key)
-	
+
 	skills_list.erase("SLASH")
-	
-	var first_skill = PlayerData.selected_skills[1]
-	
-	active_skillpanel.loadItems(skills_list)
-	active_skillpanel.drawSkill(first_skill, skills[first_skill])
+
+	for button in skill_buttons.get_children():
+		if button.name == "0":
+			continue
+
+		button.loadItems(skills_list)
+
+
+func updatePassiveDescription(passive):
+	passive_skillpanel.drawSkill(passive, passives[passive])
+
+
+func updateSkillsScreen(skill):
+	active_skillpanel.drawSkill(skill, skills[skill])
 	
 	for button in skill_buttons.get_children():
 		var index = int(button.name)
@@ -47,4 +57,3 @@ func loadSkills():
 		if skillname:
 			button.text = skillname
 			button.disabled = false
-			button.loadItems(skills_list)

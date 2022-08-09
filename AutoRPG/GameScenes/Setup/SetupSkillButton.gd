@@ -12,12 +12,13 @@ func loadItems(items):
 
 func _on_index_pressed(index):
 	var skill = popup.get_item_text(index)
+	var setup = get_node("/root/Setup")
 	
 	if "ActivesPanel" in str(get_path()):
 		PlayerData.setPlayerSkill(skill, self.name)
+		setup.updateSkillsScreen(skill)
 	else:
 		PlayerData.setPlayerPassive(skill)
-		
-	get_tree().reload_current_scene()
+		setup.updatePassiveDescription(skill)
 
 
