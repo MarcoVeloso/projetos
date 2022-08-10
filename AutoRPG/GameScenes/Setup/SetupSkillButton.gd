@@ -27,7 +27,7 @@ func _on_index_pressed(index):
 
 
 func _on_visibility_changed():
-	popup.rect_position.y -= 10
+	popup.rect_position.y = self.rect_global_position.y
 
 	if popup.rect_position.x > 30:
 		popup.rect_position.x = 4
