@@ -21,6 +21,8 @@ func _on_index_pressed(index):
 	if "ActivesPanel" in str(get_path()):
 		PlayerData.setPlayerSkill(skill, self.name)
 		setup.updateSkillsScreen(skill)
+		yield(get_tree().create_timer(0.1), "timeout")
+		self.pressed = true
 	else:
 		PlayerData.setPlayerPassive(skill)
 		setup.updatePassiveDescription(skill)
