@@ -9,7 +9,7 @@
 [sub_resource type="ButtonGroup" id=36]
 resource_name = "worlds"
 
-[node name="Stages" type="Node"]
+[node name="Stage" type="Node"]
 script = ExtResource( 4 )
 
 [node name="MenuBase" parent="." instance=ExtResource( 2 )]

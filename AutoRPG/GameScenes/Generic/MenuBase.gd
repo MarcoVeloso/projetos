@@ -10,10 +10,10 @@ func _ready():
 	var menu = get_parent().name
 	
 	title.text = GameData.menus[menu].name
-	gold.text = GameData.icon.GOLD + " " + str(PlayerData.gold)
+	gold.text = GameData.icon.GOLD + str(PlayerData.gold)
 	
-	buttonLeft.text = "← " + GameData.menus[menu].left
-	buttonRight.text = GameData.menus[menu].right + " →"
+	buttonLeft.text = "←" + GameData.menus[menu].left
+	buttonRight.text = GameData.menus[menu].right + "→"
 
 
 func goto_menu(menu):
@@ -21,10 +21,10 @@ func goto_menu(menu):
 
 
 func _on_ButtonLeft_pressed():
-	var menu = buttonLeft.text.replace("← ","")
+	var menu = buttonLeft.text.replace("←","")
 	goto_menu(menu)
 
 
 func _on_ButtonRight_pressed():
-	var menu = buttonRight.text.replace(" →","")
+	var menu = buttonRight.text.replace("→","")
 	goto_menu(menu)

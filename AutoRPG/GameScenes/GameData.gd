@@ -23,7 +23,7 @@ const icon = {
 }
 
 const menus = {
-	"Stages":{
+	"Stage":{
 		"name":"STAGE SELECT",
 		"scene":"res://GameScenes/StageSelect/StageSelect.tscn",
 		"left":"Setup",
@@ -32,14 +32,14 @@ const menus = {
 	"Shop":{
 		"name":"SHOP",
 		"scene":"res://GameScenes/Shop/Shop.tscn",
-		"left":"Stages",
+		"left":"Stage",
 		"right":"Setup",
 	},
 	"Setup":{
 		"name":"SETUP",
 		"scene":"res://GameScenes/Setup/Setup.tscn",
 		"left":"Shop",
-		"right":"Stages",
+		"right":"Stage",
 	},
 }
 
