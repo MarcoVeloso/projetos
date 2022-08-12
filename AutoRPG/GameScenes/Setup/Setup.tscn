@@ -190,11 +190,3 @@ group = SubResource( 1 )
 text = "✈"
 flat = false
 script = ExtResource( 5 )
-
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/1" to="UI/ActivesPanel/SkillButtons/1" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/2" to="UI/ActivesPanel/SkillButtons/2" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/3" to="UI/ActivesPanel/SkillButtons/3" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/4" to="UI/ActivesPanel/SkillButtons/4" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/5" to="UI/ActivesPanel/SkillButtons/5" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/6" to="UI/ActivesPanel/SkillButtons/6" method="_on_pressed"]
-[connection signal="pressed" from="UI/ActivesPanel/SkillButtons/7" to="UI/ActivesPanel/SkillButtons/7" method="_on_pressed"]
