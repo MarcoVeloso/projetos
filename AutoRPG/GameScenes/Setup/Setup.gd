@@ -25,7 +25,8 @@ func loadPassives():
 func loadSkills():
 	var skills_list = []
 
-	updateSkillsScreen("SLASH")
+	updateSkillsScreen()
+	updateSkillDescription("SLASH")
 
 	for key in skills.keys():
 		if !skills[key].costs:
@@ -44,9 +45,11 @@ func updatePassiveDescription(passive):
 	passive_skillpanel.drawSkill(passive, passives[passive])
 
 
-func updateSkillsScreen(skill):
+func updateSkillDescription(skill):
 	active_skillpanel.drawSkill(skill, skills[skill])
 	
+
+func updateSkillsScreen():
 	for button in skill_buttons.get_children():
 		var index = int(button.name)
 		var skillname = PlayerData.selected_skills[index]
