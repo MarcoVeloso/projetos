@@ -26,14 +26,14 @@ const menus = {
 	"Stage":{
 		"name":"STAGE SELECT",
 		"scene":"res://GameScenes/StageSelect/StageSelect.tscn",
-		"left":"Setup",
-		"right":"Shop",
+		"left":"Shop",
+		"right":"Setup",
 	},
 	"Shop":{
 		"name":"SHOP",
 		"scene":"res://GameScenes/Shop/Shop.tscn",
-		"left":"Stage",
-		"right":"Setup",
+		"left":"Setup",
+		"right":"Stage",
 	},
 	"Setup":{
 		"name":"SETUP",

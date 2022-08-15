@@ -33,12 +33,12 @@ margin_bottom = 12.0
 
 [node name="Gold" type="Label" parent="."]
 modulate = Color( 0.901961, 0.8, 0, 1 )
-margin_left = 29.0
+margin_left = 28.0
 margin_top = -1.0
-margin_right = 64.0
+margin_right = 63.0
 margin_bottom = 15.0
 custom_constants/line_spacing = -1
-text = "✁ 99999"
+text = "✁99999"
 align = 1
 
 [node name="ButtonLeft" type="Button" parent="."]
