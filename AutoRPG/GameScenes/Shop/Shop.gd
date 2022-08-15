@@ -1,6 +1,7 @@
 extends Node
 
 onready var skills_panel = $UI/Skills
+onready var stars = $UI/SkillsBackPanel/Stars
 
 
 func _ready():
@@ -33,6 +34,7 @@ func _on_Stats_pressed():
 
 func _on_Skills_pressed():
 	skillType("Skills")
+	stars.visible = true
 
 
 func _on_Passives_pressed():
@@ -42,3 +44,4 @@ func _on_Passives_pressed():
 func skillType(type):
 	GameData.current_shop_type = type
 	loadSkills(type.to_lower())
+	stars.visible = false
