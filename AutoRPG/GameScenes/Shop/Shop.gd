@@ -14,9 +14,10 @@ func loadSkills(type):
 	var skills = PlayerData.shop_data[type]
 	var skills_keys = skills.keys()
 	
-	for key in skills.keys():
-		if !skills[key].costs:
-			skills_keys.erase(key)
+	if type != 'stats':
+		for key in skills.keys():
+			if skills[key].level != 1:
+				skills_keys.erase(key)
 
 	for skill in skills_panel.get_children():
 		if skills_keys.empty():
@@ -30,11 +31,11 @@ func loadSkills(type):
 
 func _on_Stats_pressed():
 	skillType("Stats")
+	stars.visible = false
 
 
 func _on_Skills_pressed():
 	skillType("Skills")
-	stars.visible = true
 
 
 func _on_Passives_pressed():
@@ -44,4 +45,4 @@ func _on_Passives_pressed():
 func skillType(type):
 	GameData.current_shop_type = type
 	loadSkills(type.to_lower())
-	stars.visible = false
+	stars.visible = true

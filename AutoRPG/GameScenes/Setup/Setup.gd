@@ -42,7 +42,7 @@ func loadSkills():
 
 
 func updatePassiveDescription(passive):
-	passive_skillpanel.drawSkill(passive, passives[passive])
+	passive_skillpanel.drawSkill("passive", passives[passive])
 
 
 func updateSkillDescription(skill):

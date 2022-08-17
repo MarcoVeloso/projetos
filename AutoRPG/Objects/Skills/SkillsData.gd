@@ -11,6 +11,7 @@ const skills = {
 		"req":null,
 		"values":null,
 		"costs":null,
+		"level":0,
 	},
 	"HEAL": {
 		"title":"Heal",
@@ -22,6 +23,7 @@ const skills = {
 		"req":null,
 		"values":null,
 		"costs":null,
+		"level":1,
 	},
 	"CRESCENT": {
 		"title":"Crescent Slash",
@@ -33,6 +35,7 @@ const skills = {
 		"req":"2 ATK",
 		"values":null,
 		"costs":[40],
+		"level":1,
 	},
 	"SWIFT": {
 		"title":"Swift Attack",
@@ -44,6 +47,7 @@ const skills = {
 		"req":"3 ATK",
 		"values":null,
 		"costs":[200],
+		"level":1,
 	},
 	"CROSS": {
 		"title":"Cross Slash",
@@ -55,6 +59,7 @@ const skills = {
 		"req":"4 ATK",
 		"values":null,
 		"costs":[450],
+		"level":1,
 	},
 	"DEFEND": {
 		"title":"Defend",
@@ -66,6 +71,7 @@ const skills = {
 		"req":"5 ATK",
 		"values":null,
 		"costs":[600],
+		"level":1,
 	},
 	"EXPLOSION": {
 		"title":"Explosion",
@@ -77,6 +83,7 @@ const skills = {
 		"req":"3 MAG",
 		"values":null,
 		"costs":[300],
+		"level":1,
 	},
 	"FIREBALLS": {
 		"title":"Fireballs",
@@ -88,6 +95,7 @@ const skills = {
 		"req":"5 MAG",
 		"values":null,
 		"costs":[1700],
+		"level":2,
 	},
 	"ULTIMA": {
 		"title":"Ultima Explosion",
@@ -99,6 +107,7 @@ const skills = {
 		"req":"7 MAG",
 		"values":null,
 		"costs":[3000],
+		"level":2,
 	},
 }
 
@@ -108,7 +117,8 @@ const passives = {
 		"desc":"Deal the first attack on battles",
 		"req":null,
 		"values":null,
-		"costs":null
+		"costs":null,
+		"level":1,
 	},
 	"Regeneration": {
 		"title":"Regeneration",
@@ -116,20 +126,31 @@ const passives = {
 		"req":"4 MAG",
 		"values":null,
 		"costs":[200],
+		"level":1,
+	},
+	"Gold Boost": {
+		"title":"Gold Boost",
+		"desc":"Increase $ received by 20%",
+		"req":null,
+		"values":null,
+		"costs":[250],
+		"level":1,
 	},
 	"Attack Boost": {
 		"title":"Attack Boost",
-		"desc":"Increase ATK by 25%",
+		"desc":"Increase ATK by 20%",
 		"req":"5 ATK",
 		"values":null,
 		"costs":[300],
+		"level":1,
 	},
 	"Magic Boost": {
 		"title":"Magic Boost",
-		"desc":"Increase MAG by 25%",
+		"desc":"Increase MAG by 20%",
 		"req":"5 MAG",
 		"values":null,
 		"costs":[350],
+		"level":1,
 	},
 	"Action Gain Boost": {
 		"title":"Action Gain Boost",
@@ -137,6 +158,7 @@ const passives = {
 		"req":"6 MAG",
 		"values":null,
 		"costs":[500],
+		"level":1,
 	},
 }
 

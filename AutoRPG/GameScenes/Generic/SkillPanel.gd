@@ -47,7 +47,11 @@ func drawSkill(skillname, data):
 			req_ok = false
 
 	else:
-		button_text = GameData.icon.LIST
+		if skillname == "passive":
+			button_text = GameData.icon.LIST
+		else:
+			button_text = GameData.icon.CHECK
+			req_ok = false
 
 	desc_text += "\n" + skill.desc
 

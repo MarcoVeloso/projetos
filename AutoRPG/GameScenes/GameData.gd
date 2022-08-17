@@ -20,6 +20,7 @@ const icon = {
 	"FINAL":"✍",
 	"PLAY":"✂",
 	"LIST":"✎",
+	"CHECK":"✔",
 }
 
 const menus = {

@@ -68,13 +68,13 @@ text = "Passives"
 
 [node name="Stars" type="Label" parent="UI/SkillsBackPanel"]
 modulate = Color( 1, 0.701961, 0, 1 )
-margin_left = 29.0
-margin_top = 7.0
-margin_right = 60.0
-margin_bottom = 23.0
+margin_left = 5.0
+margin_top = 8.0
+margin_right = 107.0
+margin_bottom = 24.0
 rect_scale = Vector2( 0.8, 0.8 )
-text = " ✩"
-align = 1
+text = "✩"
+align = 2
 
 [node name="Skills" type="VBoxContainer" parent="UI"]
 margin_left = 3.0
